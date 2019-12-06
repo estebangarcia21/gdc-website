@@ -1,4 +1,4 @@
-#MainHeader {
+#mainHeader {
     font-family: Arial;
     text-align: center;
 }
@@ -12,7 +12,7 @@
     background-color: aquamarine; 
 }
 
-.StandardCenterText {
+.standardCenterText {
     font-size: 20;
     text-align: center;
 }
