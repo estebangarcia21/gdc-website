@@ -1,9 +1,9 @@
-.StandardCenterText {
-    font-size: 20;
+#MainHeader {
+    font-family: Arial;
     text-align: center;
 }
 
-#MainHeader {
-    font-family: Arial;
+.StandardCenterText {
+    font-size: 20;
     text-align: center;
 }
