@@ -1,18 +1,21 @@
 #mainHeader {
-    font-family: Arial;
+    font-family: 'Segoe UI';
     text-align: center;
+    color: white;
 }
 
-#background {
+.leftColumn {
     position: fixed;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
-    background-color: aquamarine; 
+    background-color: 6699ff;
 }
 
 .standardCenterText {
+    font-family: 'Segoe UI';
     font-size: 20;
     text-align: center;
+    color: white;
 }
