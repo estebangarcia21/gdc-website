@@ -1,5 +1,5 @@
 #mainHeader {
-    font-family: 'Segoe UI';
+    font-family: "Game Development Club";
     text-align: center;
     color: white;
 }
@@ -13,8 +13,8 @@
     background-color: 6699ff;
 }
 
-.standardCenterText {
-    font-family: 'Segoe UI';
+.stdfont {
+    font-family: '';
     font-size: 20;
     text-align: center;
     color: white;
