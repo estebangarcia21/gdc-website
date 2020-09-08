@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+a {
+    text-decoration: inherit;
+}
+
+.header-bar {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+
+    background-color: white;
+    outline: 2px solid black;
+
+    z-index: 1;
+}
+
+.main-text-format {
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -75%);
+
+    font-family: "Neucha", sans-serif;
+    font-size: 72px;
+    text-align: center;
+
+    word-wrap: none;
+
+    color: white;
+}
+
+.text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -75%);
+
+    font-family: "Neucha", sans-serif;
+    font-size: 32px;
+    text-align: center;
+
+    word-wrap: none;
+
+    color: white;
+}
+
+#section-one {
+    width: 100%;
+    height: 100vh;
+
+    background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
+}
+
+#section-two {
+    width: 100%;
+    height: 100vh;
+
+    background-image: white;
+}
