@@ -5,9 +5,9 @@ class Header extends React.Component {
     render() {
         return (
             <div className="header-bar">
-                <Link href="../pages/join-now" id="join-now-button">Join GDC</Link>
-                <a href="../pages/to-do.html" className="button">Projects</a>
-                <a href="../pages/to-do.html" className="button">To-Do</a>
+                <Link to="join-now" id="join-now-button">Join GDC</Link>
+                <a href="our-projects" className="button">Projects</a>
+                <Link to="to-do" className="button">To-Do</Link>
             </div>
         )
     }
