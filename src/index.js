@@ -1,27 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Navbar from "./components/Navbar.js";
-import PageSection from "./components/PageSection.js";
+import Header from "./components/objects/Header";
 
-import "./index.css";
+import Homepage from "./components/pages/home"
 
-function App() {
-    return (
-        <>
-            <Navbar />
-            <PageSection styleName="section-one" contents={
-            (
-                <>
-                    <div className="main-text-format">Game Development Club</div>
-                    <div className="text">Making games at Franklin High School since 2020</div>
-                </>
-            )
-            }/>
-            <PageSection />
-            <PageSection />
-        </>
-    )
+import "./assets/standardstyles.css";
+
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from "react-router-dom";
+
+class App extends React.Component {
+    render() {
+        return (
+            <>
+                <Router>
+
+                    <Header />
+
+                    <Route exact path ="/" component={Homepage} />
+                    <Route exact path="/" component={Homepage} />
+
+                </Router>
+            </>
+        )
+    }
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
