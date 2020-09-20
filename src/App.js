@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/objects/Header";
+import Footer from "./components/objects/Footer";
 
 import Homepage from "./components/pages/home";
 import Todopage from "./components/pages/to-do";
@@ -14,11 +15,11 @@ class App extends React.Component {
             <div>
                 <Router>
                     <Header />
-                    <div id="spacing" />
 
                     <Route exact path="/" component={Homepage} />
                     <Route exact path="/to-do" component={Todopage} />
 
+                    <Footer />
                 </Router>
             </div>
         )

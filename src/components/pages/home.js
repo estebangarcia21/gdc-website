@@ -4,7 +4,7 @@ import Card from "./../objects/Card";
 
 class Homepage extends React.Component {
     render() {
-        const cardOneText = "Some constant text value!!!";
+        const cardOneText = "Sample text in here!!!!!!!!!!!";
 
         return (
             <div>
@@ -14,11 +14,11 @@ class Homepage extends React.Component {
                 </div>
 
                 <div className="section">
-                    <Card title="Artists" x="150px" y="150px" text={cardOneText}/>
-                    <Card title="Musicians" x="450px" y="350px" text={cardOneText} />
-                    <Card title="Programmers" x="750px" y="150px" text={cardOneText} />
-                    <Card title="Animators" x="1050px" y="350px" text={cardOneText} />
-                    <Card title="Writers" x="1350px" y="150px" text={cardOneText} />
+                    <Card title="Artists" x="171px" y="150px" text={cardOneText}/>
+                    <Card title="Musicians" x="471px" y="350px" text={cardOneText} />
+                    <Card title="Programmers" x="771px" y="150px" text={cardOneText} />
+                    <Card title="Animators" x="1071px" y="350px" text={cardOneText} />
+                    <Card title="Writers" x="1371px" y="150px" text={cardOneText} />
                 </div>
             </div>
         );
