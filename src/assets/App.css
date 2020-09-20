@@ -153,3 +153,25 @@ a {
 .button:focus {
 	outline: none;
 }
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end)
+}
+
+.fade-in {
+    animation: opacity 2.1s;
+}
+
+@keyframes opacity {
+    0% { opacity: 0; }
+    66% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
