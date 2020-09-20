@@ -6,7 +6,7 @@ import Header from "./components/objects/Header";
 import Homepage from "./components/pages/home";
 import Todopage from "./components/pages/to-do";
 
-import "./assets/standardstyles.css";
+import "./assets/App.css";
 
 class App extends React.Component {
     render() {

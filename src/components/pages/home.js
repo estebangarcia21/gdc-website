@@ -1,7 +1,12 @@
 import React from "react";
 
+import Card from "./../objects/Card";
+
 class Homepage extends React.Component {
     render() {
+        const cardOneText = "Musicians are in charge of creating\
+        great music that is great xD";
+
         return (
             <div>
                 <div className="section section-one">
@@ -10,7 +15,7 @@ class Homepage extends React.Component {
                 </div>
 
                 <div className="section">
-                    
+                    <Card title="Musicians" x="200px" y="500px" text={cardOneText}/>
                 </div>
             </div>
         );

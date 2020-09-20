@@ -23,11 +23,6 @@ a {
     z-index: 1;
 }
 
-#spacing {
-    width: 100%;
-    height: 62px;
-}
-
 .title-text {
     position: relative;
     top: 37vh;
@@ -54,6 +49,19 @@ a {
     color: white;
 }
 
+.text {
+    position: relative;
+    top: 40vh;
+
+    font-family: "Neucha", sans-serif;
+    font-size: 16px;
+    text-align: center;
+
+    word-wrap: none;
+
+    color: black;
+}
+
 .section {
     position: relative;
 
@@ -65,41 +73,25 @@ a {
     background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
 }
 
-#section-two {
+.section-two {
     width: 100%;
     height: 100vh;
 
     background-image: white;
 }
 
-.button {
-    position: relative;
-    top: 20px;
+.card {
+    position: absolute;
+    width: 250px;
+    height: 500px;
 
-    margin: 20px;
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-
-    border: solid 2px black;
-    background-color: white;
-    padding: 10px 30px;
-    border-radius: 100px;
-
-    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
-    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
 }
 
-.button:hover {
-	background-color: black;
-	color: white;
-}
-
-.button:focus {
-	outline: none;
+#spacing {
+    width: 100%;
+    height: 62px;
 }
 
 #join-now-button {
@@ -132,17 +124,32 @@ a {
 	outline: none;
 }
 
-.card {
+.button {
     position: relative;
-    width: 250px;
-    height: 500px;
+    top: 20px;
 
-    width: 250px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: black;
     text-align: center;
+
+    border: solid 2px black;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 100px;
+
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
 }
 
-.box-one {
-    top: 50px;
-    left: 50px;
+.button:hover {
+	background-color: black;
+	color: white;
+}
+
+.button:focus {
+	outline: none;
 }
