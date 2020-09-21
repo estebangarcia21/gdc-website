@@ -4,7 +4,7 @@ class Todopage extends React.Component {
     render() {
         return (
             <div className="text">
-                <h1>We need to do everything xD</h1>
+                <h1>Here's what we have to do!</h1>
             </div>
         );
     }

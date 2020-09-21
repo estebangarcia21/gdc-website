@@ -17,12 +17,14 @@ class Homepage extends React.Component {
                     <div className="subtitle-text fade-in">Making games at Franklin High School since 2020</div>
                 </div>
 
-                <div className="section">
-                    <Card title="Artists" x="171px" y="150px" text={artistsDescription}/>
-                    <Card title="Musicians" x="471px" y="350px" text={musiciansDescription} />
-                    <Card title="Programmers" x="771px" y="150px" text={programmersDescription} />
-                    <Card title="Animators" x="1071px" y="350px" text={animatorsDescription} />
-                    <Card title="Writers" x="1371px" y="150px" text={writersDescription} />
+                <div className="text" style={{ marginTop: "35px", fontSize: "64px" }}>« How you can help »</div>
+
+                <div className="section section-two">
+                    <Card title="Artists" text={artistsDescription} />
+                    <Card title="Musicians" text={musiciansDescription} />
+                    <Card title="Programmers" text={programmersDescription} />
+                    <Card title="Animators" text={animatorsDescription} />
+                    <Card title="Writers" text={writersDescription} />
                 </div>
             </div>
         );
