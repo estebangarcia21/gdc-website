@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from "./components/objects/Header";
-import Footer from "./components/objects/Footer";
+import Header from "./assets/components/objects/Header";
+import Footer from "./assets/components/objects/Footer";
 
-import Homepage from "./components/pages/home";
-import Todopage from "./components/pages/to-do";
+import Homepage from "./assets/components/pages/home";
+import Todopage from "./assets/components/pages/to-do";
 
 import "./assets/App.css";
 
