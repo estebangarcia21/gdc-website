@@ -11,7 +11,10 @@ const App: React.FC = () => {
     return (
         <div>
             <Router>
-                <Route exact path="/gdc-react-deploy" component={Homepage} />
+                <Route
+                    exact
+                    path="/gdc-react-deploy"
+                    component={Homepage} />
 
                 <Route
                     exact
