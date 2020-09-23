@@ -2,31 +2,29 @@ import React from 'react';
 import GameSection from '../objects/GameSection';
 
 interface SidebarProps {
-    yearRange: string;
-    projectNames?: string[];
+    year: string;
+    projects?: string[];
 }
 
 const SidebarSection: React.FC<SidebarProps> = (props) => {
-    const jsxElements = props.projectNames?.map((element) => (
+    const projects = props.projects?.map((element) => (
         <li style={{ fontSize: '18px' }}>{element}</li>
     ));
 
     return (
         <div>
-            <div>
-                <p className='subtitle-text' style={{ fontSize: '26px' }}>
-                    {props.yearRange}
-                </p>
+            <p className='subtitle-text' style={{ fontSize: '26px' }}>
+                {props.year}
+            </p>
 
-                <ul
-                    className='text'
-                    style={{
-                        color: 'white',
-                    }}
-                >
-                    {jsxElements}
-                </ul>
-            </div>
+            <ul
+                className='text'
+                style={{
+                    color: 'white',
+                }}
+            >
+                {projects}
+            </ul>
         </div>
     );
 };
@@ -34,16 +32,7 @@ const SidebarSection: React.FC<SidebarProps> = (props) => {
 const Ourgamespage: React.FC = () => {
     return (
         <div>
-            <div
-                style={{
-                    position: 'fixed',
-                    backgroundImage:
-                        'linear-gradient(45deg, #5b49ff 25%, #28f5e4)',
-                    zIndex: 1,
-                    width: '250px',
-                    height: '100%',
-                }}
-            >
+            <div id='sidebar'>
                 <p
                     className='subtitle-text'
                     style={{
@@ -55,17 +44,25 @@ const Ourgamespage: React.FC = () => {
                 </p>
 
                 <SidebarSection
-                    yearRange='2020-2021'
-                    projectNames={['Spooksvile', 'GDC', 'E']}
+                    year='2020-2021'
+                    projects={['Spooksvile', 'Game-2']}
                 />
                 <SidebarSection
-                    yearRange='2021-2020'
-                    projectNames={['Our first proj', 'example!']}
+                    year='2021-2020'
+                    projects={['Our first proj', 'Example!']}
                 />
             </div>
 
             <GameSection
                 gameTitle='Spooksville'
+                gameDescription='Our first game!'
+            />
+            <GameSection
+                gameTitle='Game #2'
+                gameDescription='Our first game!'
+            />
+            <GameSection
+                gameTitle='EFEFEFEFEFEFEF '
                 gameDescription='Our first game!'
             />
         </div>

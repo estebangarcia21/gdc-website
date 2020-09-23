@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Header from '../objects/Header';
-
 import FloatingDiamond from '../objects/FloatingDiamond';
 
 const Homepage: React.FC = () => {

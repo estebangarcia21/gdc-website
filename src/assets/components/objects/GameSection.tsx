@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface Props {
     gameTitle: string;
@@ -8,18 +8,27 @@ interface Props {
 
 const GameSection: React.FC<Props> = (props) => {
     return (
-        <div className="card" style={{}}>
+        <div className='card'>
             <div
                 style={{
-                    width: "200px",
-                    height: "100px",
-                    top: 0,
-                    left: 0,
-                    position: "relative",
-                    backgroundColor: "red",
+                    width: '200px',
+                    height: '65px',
+                    position: 'relative',
+                    backgroundColor: 'black',
+                    float: 'left',
                 }}
             >
-                {props.gameTitle}
+                <div
+                    className='subtitle-text'
+                    style={{
+                        position: 'relative',
+                        top: '50%',
+                        transform: 'translate(0%, -50%)',
+                        fontSize: '1.4vw',
+                    }}
+                >
+                    {props.gameTitle}
+                </div>
             </div>
         </div>
     );

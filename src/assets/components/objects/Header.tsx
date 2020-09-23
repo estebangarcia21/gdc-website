@@ -16,8 +16,6 @@ class Header extends React.Component {
                         To-Do
                     </Link>
                 </div>
-
-                <div id='spacing' />
             </div>
         );
     }
