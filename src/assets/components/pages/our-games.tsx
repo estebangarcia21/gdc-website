@@ -7,10 +7,16 @@ interface SidebarProps {
 }
 
 const SidebarSection: React.FC<SidebarProps> = (props) => {
+    const jsxElements = props.projectNames?.map((element) => (
+        <li style={{ fontSize: '18px' }}>{element}</li>
+    ));
+
     return (
         <div>
             <div>
-                <p>{props.yearRange}</p>
+                <p className='subtitle-text' style={{ fontSize: '26px' }}>
+                    {props.yearRange}
+                </p>
 
                 <ul
                     className='text'
@@ -18,7 +24,7 @@ const SidebarSection: React.FC<SidebarProps> = (props) => {
                         color: 'white',
                     }}
                 >
-                    <li>Y</li>
+                    {jsxElements}
                 </ul>
             </div>
         </div>
@@ -42,12 +48,20 @@ const Ourgamespage: React.FC = () => {
                     className='subtitle-text'
                     style={{
                         marginTop: '20px',
+                        marginBottom: '5px',
                     }}
                 >
                     Timeline
                 </p>
 
-                <SidebarSection yearRange='2020-2021' />
+                <SidebarSection
+                    yearRange='2020-2021'
+                    projectNames={['Spooksvile', 'GDC', 'E']}
+                />
+                <SidebarSection
+                    yearRange='2021-2020'
+                    projectNames={['Our first proj', 'example!']}
+                />
             </div>
 
             <GameSection
