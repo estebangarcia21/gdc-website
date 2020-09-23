@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap&family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap&family=Bebas+Neue&display=swap');
 
 html,
 body {
@@ -26,7 +26,7 @@ a {
 .title-text {
     position: relative;
 
-    font-family: "Bebas Neue", cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 100px;
     text-align: center;
 
@@ -47,7 +47,7 @@ a {
 .subtitle-text {
     position: relative;
 
-    font-family: "Bebas Neue", cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 40px;
     text-align: center;
 
@@ -57,9 +57,8 @@ a {
 .text {
     position: relative;
 
-    font-family: "Neucha", sans-serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: 16px;
-    text-align: center;
 
     word-wrap: none;
 
@@ -108,7 +107,7 @@ a {
 
     margin: 20px;
 
-    font-family: "Source Code Pro", monospace;
+    font-family: 'Source Code Pro', monospace;
     font-size: 14px;
     letter-spacing: 1px;
     color: #ffffff;
@@ -140,7 +139,7 @@ a {
 
     margin: 20px;
 
-    font-family: "Source Code Pro", monospace;
+    font-family: 'Source Code Pro', monospace;
     font-size: 14px;
     letter-spacing: 1px;
     color: black;

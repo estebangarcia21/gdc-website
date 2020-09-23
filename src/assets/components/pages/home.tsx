@@ -1,22 +1,22 @@
-import React from "react"
+import React from 'react';
 
-import Header from "../objects/Header"
+import Header from '../objects/Header';
 
-import FloatingDiamond from "../objects/FloatingDiamond"
+import FloatingDiamond from '../objects/FloatingDiamond';
 
 const Homepage: React.FC = () => {
     return (
         <div>
             <Header />
 
-            <div id="title-background">
+            <div id='title-background'>
                 <div
-                    className="typing-effect title-text"
-                    style={{ top: "37vh" }}
+                    className='typing-effect title-text'
+                    style={{ top: '37vh' }}
                 >
                     Game Development Club
                 </div>
-                <div className="subtitle-text fade-in" style={{ top: "40vh" }}>
+                <div className='subtitle-text fade-in' style={{ top: '40vh' }}>
                     Making games at Franklin High School since 2020
                 </div>
 
@@ -24,18 +24,18 @@ const Homepage: React.FC = () => {
             </div>
 
             <div
-                className="text"
+                className='text'
                 style={{
-                    fontFamily: "'Bebas Neue', cursive",
-                    marginTop: "25px",
-                    marginBottom: "20px",
-                    fontSize: "64px",
+                    marginTop: '25px',
+                    marginBottom: '20px',
+                    textAlign: 'center',
+                    fontSize: '64px',
                 }}
             >
                 « Who we are »
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Homepage
+export default Homepage;
