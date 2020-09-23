@@ -7,13 +7,13 @@ class Header extends React.Component {
             <div>
                 <div className="header-bar">
                     <Link to="join-now" id="join-now-button">Join GDC</Link>
-                    <a href="our-projects" className="button">Projects</a>
+                    <Link to="" className="button">Our Games</Link>
                     <Link to="to-do" className="button">To-Do</Link>
                 </div>
 
                 <div id="spacing" />
             </div>
-        );
+        )
     }
 }
 

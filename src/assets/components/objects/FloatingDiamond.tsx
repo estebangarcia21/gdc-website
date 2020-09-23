@@ -8,9 +8,14 @@ interface Props {
 const FloatingDiamond: React.FC<Props> = (props) => {
     const x = 5 + props.x;
 
+    const style = {
+        left: x,
+        bottom: props.y
+    }
+
     return (
-        <div className="floating-diamond" style={{ left: x , bottom: props.y }}></div>
-    );
+        <div className="floating-diamond" style={ style }></div>
+    )
 }
 
 export default FloatingDiamond;

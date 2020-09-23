@@ -6,7 +6,7 @@ class Todopage extends React.Component {
             <div className="text">
                 <h1>Here's what we have to do!</h1>
             </div>
-        );
+        )
     }
 }
 

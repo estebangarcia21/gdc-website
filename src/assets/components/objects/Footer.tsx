@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
                 <p>Some contents</p>
             </footer>
         </div>
-    );
+    )
 }
 
 export default Footer;
