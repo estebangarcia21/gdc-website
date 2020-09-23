@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 html, body {
     margin: 0;
@@ -13,7 +14,7 @@ a {
 }
 
 .header-bar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 60px;
 
@@ -27,7 +28,7 @@ a {
     position: relative;
     top: 37vh;
 
-    font-family: "Neucha", sans-serif;
+    font-family: "Bebas Neue", cursive;
     font-size: 100px;
     text-align: center;
 
@@ -61,39 +62,6 @@ a {
     color: black;
 }
 
-.section {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-}
-
-.section-one {
-    background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
-}
-
-.section-two {
-    background-color: white;
-}
-
-.card {
-    position: relative;
-
-    width: 250px;
-    height: 500px;
-
-    margin-top: 35px;
-    margin-left: 72px;
-
-    float: left;
-    padding: 10px;
-
-    background-color: white;
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-}
-
 .footer {
     position: relative;
 
@@ -103,9 +71,38 @@ a {
     background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);;
 }
 
-#spacing {
+.floating-diamond {
+    position: absolute;
+
+    /* animation: Float 3s ease-in-out infinite; */
+
+    width: 20px;
+    height: 20px;
+
+    margin: 0px;
+
+    background-color: white;
+
+    transform: rotateZ(45deg);
+}
+
+@keyframes Float {
+    50% {
+        top: 20px;
+    }
+
+    0%, 100% {
+        top: 0px;
+    }
+}
+
+#title-background {
+    position: relative;
+
     width: 100%;
-    height: 62px;
+    height: 100vh;
+
+    background-image: linear-gradient(45deg,#5b49ff 25%, #28f5e4);
 }
 
 #join-now-button {
@@ -114,7 +111,7 @@ a {
 
     margin: 20px;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     font-size: 14px;
     letter-spacing: 1px;
     color: #ffffff;
@@ -144,7 +141,7 @@ a {
 
     margin: 20px;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     font-size: 14px;
     letter-spacing: 1px;
     color: black;

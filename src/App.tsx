@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./assets/components/objects/Header";
-import Footer from "./assets/components/objects/Footer";
+// import Footer from "./assets/components/objects/Footer";
 
 import Homepage from "./assets/components/pages/home";
 import Todopage from "./assets/components/pages/to-do";
@@ -15,13 +15,11 @@ const App: React.FC = () => {
             <Router>
                 <Header />
 
-                <Route exact path="/" component={Homepage} />
-                <Route exact path="/to-do" component={Todopage} />
-
-                <Footer />
+                <Route exact path="/gdc-react-deploy/" component={Homepage} />
+                <Route exact path="/gdc-react-deploy/to-do" component={Todopage} />
             </Router>
         </div>
-    )
+    );
 }
 
 export default App;
