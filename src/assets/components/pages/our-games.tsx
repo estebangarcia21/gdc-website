@@ -13,18 +13,11 @@ const SidebarSection: React.FC<SidebarProps> = (props) => {
 
     return (
         <div>
-            <p className='subtitle-text' style={{ fontSize: '26px' }}>
+            <p className='subtitle-text white' style={{ fontSize: '26px' }}>
                 {props.year}
             </p>
 
-            <ul
-                className='text'
-                style={{
-                    color: 'white',
-                }}
-            >
-                {projects}
-            </ul>
+            <ul className='text white'>{projects}</ul>
         </div>
     );
 };
@@ -34,7 +27,7 @@ const Ourgamespage: React.FC = () => {
         <div>
             <div id='sidebar'>
                 <p
-                    className='subtitle-text'
+                    className='subtitle-text white'
                     style={{
                         marginTop: '20px',
                         marginBottom: '5px',
@@ -59,11 +52,7 @@ const Ourgamespage: React.FC = () => {
             />
             <GameSection
                 gameTitle='Game #2'
-                gameDescription='Our first game!'
-            />
-            <GameSection
-                gameTitle='EFEFEFEFEFEFEF '
-                gameDescription='Our first game!'
+                gameDescription='Our second game, but was cancelled by corona virus.'
             />
         </div>
     );

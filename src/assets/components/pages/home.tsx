@@ -15,7 +15,10 @@ const Homepage: React.FC = () => {
                 >
                     Game Development Club
                 </div>
-                <div className='subtitle-text fade-in' style={{ top: '40vh' }}>
+                <div
+                    className='subtitle-text fade-in white'
+                    style={{ top: '40vh' }}
+                >
                     Making games at Franklin High School since 2020
                 </div>
 

@@ -3,10 +3,26 @@ import React from 'react';
 interface Props {
     gameTitle: string;
     gameDescription: string;
-    builds?: string[];
+    builds?: Build[];
+}
+
+interface Build {
+    operatingSystem: string;
+    version: string;
+    downloadLink: string;
 }
 
 const GameSection: React.FC<Props> = (props) => {
+    const builds = props.builds?.map((build) => (
+        <div>
+            <p className='subtitle-text black'>{build.operatingSystem}</p>
+            <p className='text black'>
+                {build.version}
+                {build.operatingSystem}
+            </p>
+        </div>
+    ));
+
     return (
         <div className='card'>
             <div
@@ -19,7 +35,7 @@ const GameSection: React.FC<Props> = (props) => {
                 }}
             >
                 <div
-                    className='subtitle-text'
+                    className='subtitle-text white'
                     style={{
                         position: 'relative',
                         top: '50%',
@@ -30,6 +46,8 @@ const GameSection: React.FC<Props> = (props) => {
                     {props.gameTitle}
                 </div>
             </div>
+
+            {builds}
         </div>
     );
 };
