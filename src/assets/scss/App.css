@@ -1,15 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap&family=Bebas+Neue&display=swap");
-html,
-body {
+.card {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 300px;
+  width: 60%;
+  height: 300px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sidebar {
   margin: 0px;
   padding: 0px;
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-image: linear-gradient(70deg, #5b49ff 25%, #28f5e4);
+  z-index: 1;
+  width: 250px;
+  height: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-/* Basic styles */
 .header-bar {
   position: fixed;
   width: 100%;
@@ -75,6 +87,11 @@ a {
           transform: rotateZ(45deg);
 }
 
+.fade-in {
+  -webkit-animation: opacity 2.1s;
+          animation: opacity 2.1s;
+}
+
 @-webkit-keyframes Float {
   50% {
     top: 20px;
@@ -92,6 +109,48 @@ a {
   0%,
   100% {
     top: 0px;
+  }
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
@@ -156,75 +215,13 @@ a {
           animation: typing 2s steps(40, end);
 }
 
-.fade-in {
-  -webkit-animation: opacity 2.1s;
-          animation: opacity 2.1s;
-}
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* Other */
-.card {
-  position: relative;
-  margin-top: 20px;
-  margin-right: 20px;
-  width: 60%;
-  height: 300px;
-  float: right;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#sidebar {
+html,
+body {
   margin: 0px;
   padding: 0px;
-  overflow: auto;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background-image: linear-gradient(70deg, #5b49ff 25%, #28f5e4);
-  z-index: 1;
-  width: 250px;
-  height: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=App.css.map */

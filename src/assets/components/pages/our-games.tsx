@@ -33,7 +33,7 @@ const Ourgamespage: React.FC = () => {
                         marginBottom: '5px',
                     }}
                 >
-                    Timeline
+                    Projects
                 </p>
 
                 <SidebarSection
@@ -54,6 +54,7 @@ const Ourgamespage: React.FC = () => {
                 gameTitle='Game #2'
                 gameDescription='Our second game, but was cancelled by corona virus.'
             />
+            <GameSection gameTitle='Example' gameDescription='Example desc!' />
         </div>
     );
 };
