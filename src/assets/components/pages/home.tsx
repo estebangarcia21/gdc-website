@@ -10,8 +10,8 @@ const Homepage: React.FC = () => {
             <Header />
 
             <div id="title-background">
-                <div className="typing-effect title-text">Game Development Club</div>
-                <div className="subtitle-text fade-in">Making games at Franklin High School since 2020</div>
+                <div className="typing-effect title-text" style={{ top: "37vh" }}>Game Development Club</div>
+                <div className="subtitle-text fade-in" style={{ top: "40vh" }}>Making games at Franklin High School since 2020</div>
 
                 <FloatingDiamond x={ 20 } y={ 70 } />
             </div>

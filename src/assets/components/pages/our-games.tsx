@@ -1,12 +1,15 @@
-import React from "react";
-import Header from "../objects/Header";
+import React from "react"
+import GameSection from "../objects/GameSection"
 
 const Ourgamespage: React.FC = () => {
     return (
         <div>
-            <Header />
+            <GameSection
+                gameTitle="Spooksville"
+                gameDescription="Our first game!"
+            />
         </div>
     )
 }
 
-export default Ourgamespage;
+export default Ourgamespage
