@@ -5,3 +5,6 @@ We create 2D games with a pixel art style using Unity.
 
 ## Work In Progress!
 The website is still in a WIP state.
+
+## Game Development Club Organization
+https://github.com/Game-Development-Club
