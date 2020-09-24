@@ -87,73 +87,6 @@
           transform: rotateZ(45deg);
 }
 
-.fade-in {
-  -webkit-animation: opacity 2.1s;
-          animation: opacity 2.1s;
-}
-
-@-webkit-keyframes Float {
-  50% {
-    top: 20px;
-  }
-  0%,
-  100% {
-    top: 0px;
-  }
-}
-
-@keyframes Float {
-  50% {
-    top: 20px;
-  }
-  0%,
-  100% {
-    top: 0px;
-  }
-}
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 #join-now-button {
   position: relative;
   top: 20px;
@@ -212,6 +145,53 @@
   margin: 0 auto;
   -webkit-animation: typing 2s steps(40, end);
           animation: typing 2s steps(40, end);
+}
+
+.fade-in {
+  -webkit-animation: opacity 2.5s;
+          animation: opacity 2.5s;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
 }
 
 html,

@@ -9,10 +9,7 @@ const Homepage: React.FC = () => {
             <Header />
 
             <div id='title-background'>
-                <div
-                    className='typing-effect title-text'
-                    style={{ top: '37vh' }}
-                >
+                <div className='title-text fade-in' style={{ top: '37vh' }}>
                     Game Development Club
                 </div>
                 <div
@@ -34,7 +31,7 @@ const Homepage: React.FC = () => {
                     fontSize: '64px',
                 }}
             >
-                « Who we are »
+                WIP Site!
             </div>
         </div>
     );

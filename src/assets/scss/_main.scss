@@ -79,39 +79,3 @@
 
     transform: rotateZ(45deg);
 }
-
-.fade-in {
-    animation: opacity 2.1s;
-}
-
-@keyframes Float {
-    50% {
-        top: 20px;
-    }
-
-    0%,
-    100% {
-        top: 0px;
-    }
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}

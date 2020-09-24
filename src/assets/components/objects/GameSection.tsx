@@ -1,16 +1,5 @@
 import React from 'react';
-
-interface Props {
-    gameTitle: string;
-    gameDescription: string;
-    builds?: Build[];
-}
-
-interface Build {
-    operatingSystem: string;
-    version: string;
-    downloadLink: string;
-}
+import { Game as Props } from '../pages/game-data';
 
 const GameSection: React.FC<Props> = (props) => {
     const builds = props.builds?.map((build) => (
