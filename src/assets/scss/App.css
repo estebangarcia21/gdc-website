@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap&family=Bebas+Neue&display=swap");
+.build-title {
+  position: relative;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  text-align: left;
+  word-wrap: none;
+  color: white;
+}
+
 .card {
   position: relative;
   margin-top: 20px;

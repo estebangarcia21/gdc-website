@@ -1,5 +1,5 @@
 import React from 'react';
-import GameSection from '../objects/GameSection';
+import { GameCardRenderer } from './game-data';
 
 interface SidebarProps {
     year: string;
@@ -45,14 +45,8 @@ const Ourgamespage: React.FC = () => {
                     projects={['Our first proj', 'Example!']}
                 />
             </div>
-            <GameSection
-                gameTitle='Spooksville'
-                gameDescription='Our first game!'
-            />
-            <GameSection
-                gameTitle='Game #2 (Unamed)'
-                gameDescription='Our second game, but was cancelled by corona virus.'
-            />
+
+            {GameCardRenderer.renderCards()}
         </div>
     );
 };

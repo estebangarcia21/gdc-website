@@ -1,4 +1,3 @@
-// A substitution for databases which I plan to learn later
 import React from 'react';
 import GameSection from '../objects/GameSection';
 
@@ -18,32 +17,40 @@ class GameBuild {
     }
 }
 
-class Spooksville implements Game {
-    gameTitle: string = 'Spooksville';
-    gameDescription: string = 'Cool game!';
-    builds?: GameBuild[] | undefined = [
-        new GameBuild('Windows', '1.0.0', 'somelink'),
-    ];
-}
-
 export interface Game {
     gameTitle: string;
     gameDescription: string;
     builds?: GameBuild[] | undefined;
 }
 
-export class ContentRenderer {
-    static games: Game[] = [new Spooksville()];
+// These values need to be migrated to a database with MikroORM / Apollo / GraphQL
+class Spooksville implements Game {
+    gameTitle: string = 'Spooksville';
+    gameDescription: string = 'Cool game xD!';
+    builds?: GameBuild[] | undefined = [
+        new GameBuild('Windows', 'v1.0.0', 'somelink'),
+    ];
+}
 
-    static render(): any {
-        return this.games.map((game) => {
+class GameTwo implements Game {
+    gameTitle: string = 'Game #2';
+    gameDescription: string =
+        'We worked on this game, but we never got to finish it because of the corona virus.';
+    builds?: undefined;
+}
+
+export class GameCardRenderer {
+    static games: Game[] = [new Spooksville(), new GameTwo()];
+
+    static renderCards(): any {
+        return this.games.map((game) => (
             <div>
                 <GameSection
                     gameTitle={game.gameTitle}
                     gameDescription={game.gameDescription}
                     builds={game.builds}
                 />
-            </div>;
-        });
+            </div>
+        ));
     }
 }

@@ -4,7 +4,7 @@ import { Game as Props } from '../pages/game-data';
 const GameSection: React.FC<Props> = (props) => {
     const builds = props.builds?.map((build) => (
         <div>
-            <p className='subtitle-text black'>{build.operatingSystem}</p>
+            <p className='build subtitle-text black'>{build.operatingSystem}</p>
             <p className='text black'>
                 {build.version}
                 {build.downloadLink}
