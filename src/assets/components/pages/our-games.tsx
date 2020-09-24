@@ -45,13 +45,12 @@ const Ourgamespage: React.FC = () => {
                     projects={['Our first proj', 'Example!']}
                 />
             </div>
-
             <GameSection
                 gameTitle='Spooksville'
                 gameDescription='Our first game!'
             />
             <GameSection
-                gameTitle='Game #2'
+                gameTitle='Game #2 (Unamed)'
                 gameDescription='Our second game, but was cancelled by corona virus.'
             />
         </div>

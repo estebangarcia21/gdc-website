@@ -11,18 +11,9 @@ const App: React.FC = () => {
     return (
         <div>
             <Router>
-                <Route exact path='/gdc-react-deploy' component={Homepage} />
-
-                <Route
-                    exact
-                    path='/gdc-react-deploy/to-do'
-                    component={Todopage}
-                />
-                <Route
-                    exact
-                    path='/gdc-react-deploy/our-games'
-                    component={Ourgamespage}
-                />
+                <Route exact path='/' component={Homepage} />
+                <Route exact path='/to-do' component={Todopage} />
+                <Route exact path='/our-games' component={Ourgamespage} />
             </Router>
         </div>
     );
