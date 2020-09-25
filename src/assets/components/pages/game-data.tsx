@@ -38,7 +38,7 @@ class GameTwo implements Game {
     gameTitle: string = 'Game #2';
     year: string = '2020-2021';
     gameDescription: string =
-        'We worked on this game, but we never got to finish it because of the corona virus.';
+        'We worked on this game, but we never got to finish it because of the corona virus. Yay!';
     builds?: GameBuild[] | undefined = [];
 }
 
