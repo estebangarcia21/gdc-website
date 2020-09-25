@@ -90,8 +90,10 @@ $margin-size: 2%;
 .search-bar input[type='text'] {
     width: 100%;
 
-    padding: 20px;
+    padding: 16px;
     padding-right: 60px;
+
+    font-family: $standard-font;
 
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.3);

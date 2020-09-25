@@ -12,8 +12,8 @@ const Ourgamespage: React.FC = () => {
             </div>
 
             <div className='description horizontal-center'>
-                Explore any of our games and download the installer for your
-                operating system
+                Explore any of our games and download the correct installer for
+                your operating system
             </div>
 
             <div className='search-bar horizontal-center'>
