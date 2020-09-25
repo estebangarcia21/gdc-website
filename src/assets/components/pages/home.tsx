@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../objects/Header';
-import PixelArtHammerImage from '../images/pa-hammer';
+import concept_art from '../images/concept_art.png';
 
 const Homepage: React.FC = () => {
     return (
@@ -17,9 +17,12 @@ const Homepage: React.FC = () => {
                     <div className='subtitle-text fade-in white'>
                         Making games at Franklin High School since 2020
                     </div>
-                    <div>
-                        <img src={PixelArtHammerImage} />
-                    </div>
+                    <img
+                        src={concept_art}
+                        width='40%'
+                        height='40%'
+                        className='horizontal-center gdc-artist-img box-shadow'
+                    />
                 </div>
             </div>
             <div

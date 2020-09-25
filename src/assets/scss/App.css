@@ -71,14 +71,8 @@
   margin: 5px;
 }
 
-.floating-diamond {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  margin: 0px;
-  background-color: white;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
+.gdc-artist-img {
+  margin-top: 175px;
 }
 
 .button {
@@ -157,8 +151,6 @@
   width: 300px;
   height: 300px;
   float: left;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .corner-box {
@@ -331,7 +323,8 @@ a {
   text-align: center;
 }
 
-.black {
-  color: black;
+.box-shadow {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*# sourceMappingURL=App.css.map */
