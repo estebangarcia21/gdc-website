@@ -31,15 +31,17 @@ const Homepage: React.FC = () => {
             </div>
 
             <div id='page-content'>
-                <div className='left-text'>
-                    Be part of a growing team of developers, artists, musicians,
-                    writers, and animators. Learn from others and collaborate
-                    with members to create a quality game.
-                </div>
+                <div className='text-section'>
+                    <div className='left-text'>
+                        Be part of a growing team of developers, artists,
+                        musicians, writers, and animators. Learn from others and
+                        collaborate with members to create a quality game.
+                    </div>
 
-                <Link to='/' className='button'>
-                    Learn more
-                </Link>
+                    <Link to='/' className='button'>
+                        Learn more
+                    </Link>
+                </div>
             </div>
         </div>
     );

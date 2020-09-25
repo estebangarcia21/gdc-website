@@ -59,6 +59,10 @@
   margin-right: 15%;
 }
 
+.text-section {
+  margin-bottom: 100px;
+}
+
 .left-text {
   position: relative;
   font-family: "Poppins", sans-serif;
