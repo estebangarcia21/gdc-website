@@ -53,11 +53,18 @@
   background-image: linear-gradient(45deg, #5b49ff 25%, #28f5e4);
 }
 
+#page-content {
+  margin-top: -20px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 .left-text {
   position: relative;
   font-family: "Poppins", sans-serif;
   font-size: 22px;
-  margin-left: 100px;
+  margin-top: 200px;
+  margin-bottom: 50px;
   max-width: 30ch;
   word-wrap: 70px;
 }
@@ -89,7 +96,6 @@
 
 .floating-diamond {
   position: absolute;
-  /* animation: Float 3s ease-in-out infinite; */
   width: 20px;
   height: 20px;
   margin: 0px;
@@ -98,8 +104,33 @@
           transform: rotateZ(45deg);
 }
 
+.button {
+  position: relative;
+  left: 15ch;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: black;
+  text-align: center;
+  border: solid 1px black;
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 32px;
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+.button:focus {
+  outline: none;
+}
+
 #header-bar {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 60px;
   background-color: white;
@@ -140,7 +171,7 @@
   outline: none;
 }
 
-.button {
+.header-button {
   position: relative;
   top: 20px;
   margin: 20px;
@@ -157,21 +188,13 @@
   transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
 }
 
-.button:hover {
+.header-button:hover {
   background-color: black;
   color: white;
 }
 
-.button:focus {
+.header-button:focus {
   outline: none;
-}
-
-.typing-effect {
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  -webkit-animation: typing 2s steps(40, end);
-          animation: typing 2s steps(40, end);
 }
 
 .fade-in {

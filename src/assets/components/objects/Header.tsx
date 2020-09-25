@@ -9,10 +9,10 @@ class Header extends React.Component {
                     <Link to='join-now' id='join-now-button'>
                         Join GDC
                     </Link>
-                    <Link to='our-games' className='button'>
+                    <Link to='our-games' className='header-button'>
                         Our Games
                     </Link>
-                    <Link to='to-do' className='button'>
+                    <Link to='to-do' className='header-button'>
                         To-Do
                     </Link>
                 </div>

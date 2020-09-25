@@ -1,5 +1,5 @@
 import React from 'react';
-import GameSection from '../objects/GameSection';
+import GameSection from '../objects/game-section';
 
 class GameBuild {
     operatingSystem: string;
@@ -24,14 +24,11 @@ export interface Game {
     builds?: GameBuild[] | undefined;
 }
 
-// These values need to be migrated to a database with MikroORM / Apollo / GraphQL
-// 2020-2021
 class Spooksville implements Game {
     gameTitle: string = 'Spooksville';
     year: string = '2020-2021';
     gameDescription: string =
-        'Our very first game as a club! A Halloween themed gamed where you go door to door\
-         to collect candy with a suprising boss battle at the end!';
+        'Our very first game as a club! A Halloween themed gamed where you go door to door to collect candy with a suprising boss battle at the end!';
     builds?: GameBuild[] | undefined = [
         new GameBuild('Windows', 'v1.0.0', 'somelink'),
     ];

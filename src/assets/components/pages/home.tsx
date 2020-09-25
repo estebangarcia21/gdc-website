@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Header from '../objects/Header';
+import Header from '../objects/header';
 
 const Homepage: React.FC = () => {
     return (
         <div>
             <Header />
+
             <div id='title-background'>
                 <div className='title-text fade-in' style={{ top: '37vh' }}>
                     Game Development Club
@@ -20,8 +22,7 @@ const Homepage: React.FC = () => {
             <div
                 className='text'
                 style={{
-                    marginTop: '25px',
-                    marginBottom: '20px',
+                    marginTop: '75px',
                     textAlign: 'center',
                     fontSize: '64px',
                 }}
@@ -29,10 +30,16 @@ const Homepage: React.FC = () => {
                 Collaborate. Create. Learn.
             </div>
 
-            <div className='left-text'>
-                Be part of a growing team of developers, artists, musicians,
-                writers, and animators. Learn from others who share your same
-                interests, and bakceijdfeiejiejiejfiejfiejf
+            <div id='page-content'>
+                <div className='left-text'>
+                    Be part of a growing team of developers, artists, musicians,
+                    writers, and animators. Learn from others and collaborate
+                    with members to create a quality game.
+                </div>
+
+                <Link to='/' className='button'>
+                    Learn more
+                </Link>
             </div>
         </div>
     );

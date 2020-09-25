@@ -1,4 +1,5 @@
 $standard-font: 'Poppins', sans-serif;
+$text-block-size: 30ch;
 
 #title-background {
     position: relative;
@@ -9,16 +10,25 @@ $standard-font: 'Poppins', sans-serif;
     background-image: linear-gradient(45deg, #5b49ff 25%, #28f5e4);
 }
 
+#page-content {
+    $margin-size: 15%;
+
+    margin-top: -20px;
+
+    margin-left: $margin-size;
+    margin-right: $margin-size;
+}
+
 .left-text {
     position: relative;
 
     font-family: $standard-font;
     font-size: 22px;
 
-    margin-left: 100px;
+    margin-top: 200px;
+    margin-bottom: 50px;
 
-    max-width: 30ch;
-
+    max-width: $text-block-size;
     word-wrap: 70px;
 }
 
@@ -58,8 +68,6 @@ $standard-font: 'Poppins', sans-serif;
 .floating-diamond {
     position: absolute;
 
-    /* animation: Float 3s ease-in-out infinite; */
-
     width: 20px;
     height: 20px;
 
@@ -68,4 +76,36 @@ $standard-font: 'Poppins', sans-serif;
     background-color: white;
 
     transform: rotateZ(45deg);
+}
+
+.button {
+    position: relative;
+
+    left: $text-block-size * 0.5;
+
+    font-family: $standard-font;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: black;
+    text-align: center;
+
+    border: solid 1px black;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 32px;
+
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s,
+        border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
+        border-color 0.3s;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+.button:focus {
+    outline: none;
 }
