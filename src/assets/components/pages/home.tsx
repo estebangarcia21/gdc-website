@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../objects/Header';
+import PixelArtHammerImage from '../images/pa-hammer';
 
 const Homepage: React.FC = () => {
     return (
@@ -9,14 +10,16 @@ const Homepage: React.FC = () => {
             <Header />
 
             <div id='title-background'>
-                <div className='title-text fade-in' style={{ top: '37vh' }}>
-                    Game Development Club
-                </div>
-                <div
-                    className='subtitle-text fade-in white'
-                    style={{ top: '40vh' }}
-                >
-                    Making games at Franklin High School since 2020
+                <div className='vertical-center'>
+                    <div className='title-text fade-in'>
+                        Game Development Club
+                    </div>
+                    <div className='subtitle-text fade-in white'>
+                        Making games at Franklin High School since 2020
+                    </div>
+                    <div>
+                        <img src={PixelArtHammerImage} />
+                    </div>
                 </div>
             </div>
             <div
@@ -32,10 +35,13 @@ const Homepage: React.FC = () => {
 
             <div id='page-content'>
                 <div className='text-section'>
-                    <div className='left-text'>
-                        Be part of a growing team of developers, artists,
-                        musicians, writers, and animators. Learn from others and
-                        collaborate with members to create a quality game.
+                    <div>
+                        <div className='left-text'>
+                            Be part of a growing team of developers, artists,
+                            musicians, writers, and animators. Learn from others
+                            and collaborate with members to create a quality
+                            game.
+                        </div>
                     </div>
 
                     <Link to='/' className='button'>

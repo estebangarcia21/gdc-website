@@ -7,7 +7,8 @@ $text-block-size: 30ch;
     width: 100%;
     height: 100vh;
 
-    background-image: linear-gradient(45deg, #5b49ff 25%, #28f5e4);
+    // background-image: linear-gradient(45deg, #5b49ff 25%, #28f5e4);
+    background-color: white;
 }
 
 #page-content {
@@ -19,11 +20,30 @@ $text-block-size: 30ch;
     margin-right: $margin-size;
 }
 
+.image {
+    position: relative;
+
+    width: 200px;
+    height: 200px;
+
+    &--right {
+        @extend .image;
+        float: right;
+    }
+
+    &--left {
+        @extend .image;
+        float: left;
+    }
+}
+
 .text-section {
     margin-bottom: 100px;
 }
 
 .left-text {
+    margin: 0px;
+
     position: relative;
 
     font-family: $standard-font;
@@ -31,6 +51,8 @@ $text-block-size: 30ch;
 
     margin-top: 200px;
     margin-bottom: 50px;
+
+    clear: left;
 
     max-width: $text-block-size;
     word-wrap: 70px;
@@ -45,7 +67,12 @@ $text-block-size: 30ch;
 
     font-weight: 600;
 
-    color: white;
+    color: black;
+
+    &--white {
+        @extend .title-text;
+        color: white;
+    }
 }
 
 .subtitle-text {
@@ -57,7 +84,7 @@ $text-block-size: 30ch;
 
     font-weight: 600;
 
-    color: white;
+    color: black;
 }
 
 .text {
