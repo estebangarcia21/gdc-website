@@ -1,5 +1,5 @@
 import React from 'react';
-import GameSection from '../objects/game-section';
+import GameSection from '../objects/GameSection';
 
 class GameBuild {
     operatingSystem: string;
