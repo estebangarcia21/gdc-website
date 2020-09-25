@@ -64,7 +64,7 @@ $text-block-size: 30ch;
     position: relative;
 
     font-family: $standard-font;
-    font-size: 16px;
+    font-size: 22px;
 
     margin: 5px;
 }
@@ -99,10 +99,14 @@ $text-block-size: 30ch;
     padding: 10px 30px;
     border-radius: 32px;
 
-    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s,
-        border-width 0.3s, border-color 0.3s;
-    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
-        border-color 0.3s;
+    $transition-time: 0.2s;
+
+    -webkit-transition: background-color $transition-time,
+        color $transition-time, width $transition-time,
+        border-width $transition-time, border-color $transition-time;
+    transition: background-color $transition-time, color $transition-time,
+        width $transition-time, border-width $transition-time,
+        border-color $transition-time;
 }
 
 .button:hover {

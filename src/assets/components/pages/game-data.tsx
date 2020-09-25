@@ -24,6 +24,7 @@ export interface Game {
     builds?: GameBuild[] | undefined;
 }
 
+// Games in class form. Migrate data to a PostgreSQL database in the future
 class Spooksville implements Game {
     gameTitle: string = 'Spooksville';
     yearRange: string = '2020-2021';
@@ -36,9 +37,9 @@ class Spooksville implements Game {
 
 class GameTwo implements Game {
     gameTitle: string = 'Game #2';
-    yearRange: string = '2020-2021';
+    yearRange: string = '2021-2022';
     gameDescription: string =
-        'We worked on this game, but we never got to finish it because of the corona virus. Yay!';
+        'We worked on this game, but we never got to finish it because of the corona virus :(';
     builds?: GameBuild[] | undefined = [];
 }
 
@@ -57,7 +58,7 @@ export class GameCardRenderer {
                     fontSize: '36px',
                 }}
             >
-                {yearRange}
+                {yearRange + ' Games'}
             </p>
         );
 
@@ -75,6 +76,7 @@ export class GameCardRenderer {
         return (
             <div>
                 {yearTitle}
+                <div className='line' />
                 {queryResults}
             </div>
         );
