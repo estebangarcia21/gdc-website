@@ -1,5 +1,5 @@
 .fade-in {
-    animation: opacity 2.5s;
+    animation: opacity 1.5s;
 }
 
 @keyframes opacity {
@@ -21,12 +21,6 @@
     -webkit-animation-delay: 2s;
     animation: slide 0.5s forwards;
     animation-delay: 2s;
-}
-
-@-webkit-keyframes slide {
-    100% {
-        left: 0;
-    }
 }
 
 @keyframes slide {

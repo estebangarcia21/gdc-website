@@ -1,13 +1,11 @@
 import React from 'react';
 
 import Header from '../objects/Header';
-import FloatingDiamond from '../objects/FloatingDiamond';
 
 const Homepage: React.FC = () => {
     return (
         <div>
             <Header />
-
             <div id='title-background'>
                 <div className='title-text fade-in' style={{ top: '37vh' }}>
                     Game Development Club
@@ -18,10 +16,7 @@ const Homepage: React.FC = () => {
                 >
                     Making games at Franklin High School since 2020
                 </div>
-
-                <FloatingDiamond x={20} y={70} />
             </div>
-
             <div
                 className='text'
                 style={{
@@ -31,7 +26,13 @@ const Homepage: React.FC = () => {
                     fontSize: '64px',
                 }}
             >
-                WIP Site!
+                Collaborate. Create. Learn.
+            </div>
+
+            <div className='left-text'>
+                Be part of a growing team of developers, artists, musicians,
+                writers, and animators. Learn from others who share your same
+                interests, and bakceijdfeiejiejiejfiejfiejf
             </div>
         </div>
     );

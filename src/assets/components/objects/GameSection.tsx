@@ -4,9 +4,11 @@ import { Game as Props } from '../pages/game-data';
 const GameSection: React.FC<Props> = (props) => {
     const builds = props.builds?.map((build) => (
         <div>
-            <p className='build subtitle-text black'>{build.operatingSystem}</p>
-            <p className='text black'>
+            <p className='build'>
+                {build.operatingSystem}
+                <br />
                 {build.version}
+                <br />
                 {build.downloadLink}
             </p>
         </div>
@@ -20,22 +22,16 @@ const GameSection: React.FC<Props> = (props) => {
                     height: '65px',
                 }}
             >
-                <div
-                    style={{
-                        width: '200px',
-                        height: '65px',
-                        position: 'relative',
-                        backgroundColor: 'black',
-                        float: 'left',
-                    }}
-                >
+                <div className='corner-box'>
                     <div
-                        className='subtitle-text white'
+                        className='text'
                         style={{
                             position: 'relative',
                             top: '50%',
                             transform: 'translate(0%, -50%)',
-                            fontSize: '1.4vw',
+                            fontSize: '30px',
+                            color: 'white',
+                            textAlign: 'center',
                         }}
                     >
                         {props.gameTitle}
@@ -43,16 +39,7 @@ const GameSection: React.FC<Props> = (props) => {
                 </div>
             </div>
 
-            <p
-                className='text black'
-                style={{
-                    marginLeft: '5px',
-                    marginTop: '5px',
-                    fontSize: '16px',
-                    fontFamily: '"Source Code Pro", monospace',
-                    letterSpacing: '-1px',
-                }}
-            >
+            <p className='text' style={{ textAlign: 'center' }}>
                 {props.gameDescription}
             </p>
 

@@ -5,7 +5,7 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <div className='header-bar'>
+                <div id='header-bar'>
                     <Link to='join-now' id='join-now-button'>
                         Join GDC
                     </Link>

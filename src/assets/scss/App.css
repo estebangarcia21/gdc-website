@@ -1,21 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap&family=Bebas+Neue&display=swap");
-.build-title {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap&family=Bebas+Neue&display=swap&family=Oxygen:wght@400&display=swap&family=Poppins:wght@600&display=swap&family=Poppins:wght@400&display=swap");
+.build {
   position: relative;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Oxygen', sans-serif;
   font-size: 20px;
   text-align: left;
-  word-wrap: none;
-  color: white;
+  margin-left: 20px;
+  color: black;
+}
+
+.build-title {
+  position: relative;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  color: black;
 }
 
 .card {
   position: relative;
   margin-top: 20px;
-  margin-left: 300px;
-  width: 60%;
+  margin-left: 30px;
+  width: 300px;
   height: 300px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.corner-box {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: black;
 }
 
 #sidebar {
@@ -31,24 +46,6 @@
   height: 100%;
 }
 
-.header-bar {
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  outline: 2px solid black;
-  z-index: 1;
-}
-
-.title-text {
-  position: relative;
-  font-family: 'Bebas Neue', cursive;
-  font-size: 100px;
-  text-align: center;
-  word-wrap: none;
-  color: white;
-}
-
 #title-background {
   position: relative;
   width: 100%;
@@ -56,33 +53,38 @@
   background-image: linear-gradient(45deg, #5b49ff 25%, #28f5e4);
 }
 
-.subtitle-text {
+.left-text {
   position: relative;
-  font-family: 'Bebas Neue', cursive;
-  font-size: 40px;
-  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  margin-left: 100px;
+  max-width: 30ch;
+  word-wrap: 70px;
 }
 
-.white {
+.title-text {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 72px;
+  text-align: center;
+  font-weight: 600;
   color: white;
 }
 
-.black {
-  color: black;
+.subtitle-text {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
 }
 
 .text {
   position: relative;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
-  word-wrap: none;
-}
-
-.footer {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
+  margin: 5px;
 }
 
 .floating-diamond {
@@ -94,6 +96,22 @@
   background-color: white;
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
+}
+
+#header-bar {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  outline: 2px solid black;
+  z-index: 1;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
 }
 
 #join-now-button {
@@ -157,8 +175,8 @@
 }
 
 .fade-in {
-  -webkit-animation: opacity 2.5s;
-          animation: opacity 2.5s;
+  -webkit-animation: opacity 1.5s;
+          animation: opacity 1.5s;
 }
 
 @-webkit-keyframes opacity {

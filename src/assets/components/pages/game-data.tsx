@@ -19,14 +19,19 @@ class GameBuild {
 
 export interface Game {
     gameTitle: string;
+    year: string;
     gameDescription: string;
     builds?: GameBuild[] | undefined;
 }
 
 // These values need to be migrated to a database with MikroORM / Apollo / GraphQL
+// 2020-2021
 class Spooksville implements Game {
     gameTitle: string = 'Spooksville';
-    gameDescription: string = 'Cool game xD!';
+    year: string = '2020-2021';
+    gameDescription: string =
+        'Our very first game as a club! A Halloween themed gamed where you go door to door\
+         to collect candy with a suprising boss battle at the end!';
     builds?: GameBuild[] | undefined = [
         new GameBuild('Windows', 'v1.0.0', 'somelink'),
     ];
@@ -34,9 +39,10 @@ class Spooksville implements Game {
 
 class GameTwo implements Game {
     gameTitle: string = 'Game #2';
+    year: string = '2020-2021';
     gameDescription: string =
         'We worked on this game, but we never got to finish it because of the corona virus.';
-    builds?: undefined;
+    builds?: GameBuild[] | undefined = [];
 }
 
 export class GameCardRenderer {
@@ -47,6 +53,7 @@ export class GameCardRenderer {
             <div>
                 <GameSection
                     gameTitle={game.gameTitle}
+                    year={game.year}
                     gameDescription={game.gameDescription}
                     builds={game.builds}
                 />
