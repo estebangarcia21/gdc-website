@@ -18,6 +18,25 @@
     background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
 }
 
+.gdc-logo {
+    position: relative;
+
+    top: 20px;
+    left: 30px;
+
+    z-index: 1;
+
+    float: right;
+
+    font-family: 'Fredericka The Great', cursive;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: black;
+    text-align: center;
+
+    padding: 10px 30px;
+}
+
 .header-button {
     position: relative;
 
@@ -29,8 +48,7 @@
     float: right;
 
     font-family: $standard-font;
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 16px;
     color: black;
     text-align: center;
 
@@ -38,6 +56,44 @@
 
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
+}
+
+.header-button-join-now {
+    position: relative;
+
+    top: 20px;
+    right: 30px;
+
+    z-index: 1;
+    float: right;
+
+    font-family: $standard-font;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: black;
+    text-align: center;
+
+    border: solid 1px black;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 32px;
+
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+
+    $transition-time: 0.2s;
+
+    -webkit-transition: background-color $transition-time,
+        color $transition-time, width $transition-time,
+        border-width $transition-time, border-color $transition-time;
+    transition: background-color $transition-time, color $transition-time,
+        width $transition-time, border-width $transition-time,
+        border-color $transition-time;
+}
+
+.header-button-join-now:hover {
+    background-color: black;
+    color: white;
 }
 
 .header-button:hover {

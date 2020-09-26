@@ -22,6 +22,7 @@ const Homepage: React.FC = () => {
                         width='40%'
                         height='40%'
                         className='horizontal-center gdc-artist-img box-shadow'
+                        alt='Art Sample'
                     />
                 </div>
             </div>
@@ -41,9 +42,11 @@ const Homepage: React.FC = () => {
                     <div>
                         <div className='left-text'>
                             Be part of a growing team of developers, artists,
-                            musicians, writers, and animators. Learn from others
-                            and collaborate with members to create a quality
-                            game.
+                            musicians, writers, and animators. Learn and
+                            collaborate with members to create a quality game.
+                            <span className='pop-text'>
+                                &nbsp;No previous experience needed.
+                            </span>
                         </div>
                     </div>
 

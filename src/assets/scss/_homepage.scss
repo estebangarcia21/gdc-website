@@ -7,7 +7,6 @@ $text-block-size: 30ch;
     width: 100%;
     height: 100vh;
 
-    // background-image: linear-gradient(45deg, #5b49ff 25%, #28f5e4);
     background-color: white;
 }
 
@@ -98,6 +97,10 @@ $text-block-size: 30ch;
 
 .gdc-artist-img {
     margin-top: 175px;
+}
+
+.pop-text {
+    color: rgb(240, 40, 40);
 }
 
 .button {
