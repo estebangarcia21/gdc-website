@@ -39,29 +39,34 @@ const Homepage: React.FC = () => {
 
             <div id='page-content'>
                 <div className='text-section'>
-                    <div>
-                        <div className='info-text--left'>
-                            Be part of a growing team of developers, artists,
-                            musicians, writers, and animators. Learn and
-                            collaborate with members to create a quality game.
-                            <span className='pop-text'>
-                                &nbsp;No previous experience needed.
-                            </span>
-                        </div>
-
-                        <Link to='/' className='button'>
-                            Learn more
-                        </Link>
+                    <div className='info-text--left'>
+                        Be part of a growing team of developers, artists,
+                        musicians, writers, and animators. Learn and collaborate
+                        with members to create a quality game.
+                        <span className='pop-text'>
+                            &nbsp;No previous experience needed.
+                        </span>
                     </div>
+
+                    <Link to='/' className='button--left'>
+                        Learn more
+                    </Link>
                 </div>
 
                 <div className='text-section'>
                     <div className='info-text--right'>
-                        Display a sense of passion at GDC with our amazing
-                        members and teams, we have a great workflow or something
-                        im just writing placeholder text so i can see how the
-                        word wrapping behaves with this new scss.
+                        Learn all the skills you need to become a successful
+                        contributor to our projects at Game Development Club.
+                        <span className='pop-text'>
+                            &nbsp;No paid applications or licenses
+                        </span>
+                        &nbsp;are needed to be a successful person in the game
+                        development industry.
                     </div>
+
+                    <Link to='/' className='button--right'>
+                        Our technologies
+                    </Link>
                 </div>
 
                 <div className='text-section'>

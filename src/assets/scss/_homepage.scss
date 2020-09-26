@@ -52,20 +52,17 @@ $text-block-size: 30ch;
     margin-bottom: 50px;
 
     max-width: $text-block-size;
-    word-wrap: break-word;
 
     &--left {
         @extend .info-text;
 
         margin-right: auto;
-        text-align: left;
     }
 
     &--right {
         @extend .info-text;
 
         margin-left: auto;
-        text-align: right;
     }
 }
 
@@ -118,8 +115,6 @@ $text-block-size: 30ch;
 .button {
     position: relative;
 
-    left: $text-block-size * 0.5;
-
     font-family: $standard-font;
 
     font-size: 14px;
@@ -140,6 +135,18 @@ $text-block-size: 30ch;
     transition: background-color $transition-time, color $transition-time,
         width $transition-time, border-width $transition-time,
         border-color $transition-time;
+
+    &--left {
+        @extend .button;
+        left: $text-block-size * 0.5;
+    }
+
+    &--right {
+        @extend .button;
+
+        float: right;
+        right: $text-block-size * 0.5;
+    }
 }
 
 .button:hover {

@@ -38,17 +38,14 @@
   margin-top: 200px;
   margin-bottom: 50px;
   max-width: 30ch;
-  word-wrap: break-word;
 }
 
 .info-text--left {
   margin-right: auto;
-  text-align: left;
 }
 
 .info-text--right {
   margin-left: auto;
-  text-align: right;
 }
 
 .title-text, .title-text--white {
@@ -88,9 +85,8 @@
   color: #2857f0;
 }
 
-.button {
+.button, .button--left, .button--right {
   position: relative;
-  left: 15ch;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
@@ -104,12 +100,21 @@
   transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
 }
 
-.button:hover {
+.button--left {
+  left: 15ch;
+}
+
+.button--right {
+  float: right;
+  right: 15ch;
+}
+
+.button:hover, .button--left:hover, .button--right:hover {
   background-color: black;
   color: white;
 }
 
-.button:focus {
+.button:focus, .button--left:focus, .button--right:focus {
   outline: none;
 }
 
