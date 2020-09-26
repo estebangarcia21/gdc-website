@@ -37,12 +37,12 @@ $text-block-size: 30ch;
 }
 
 .text-section {
+    position: relative;
+
     margin-bottom: 100px;
 }
 
-.left-text {
-    margin: 0px;
-
+.info-text {
     position: relative;
 
     font-family: $standard-font;
@@ -51,10 +51,22 @@ $text-block-size: 30ch;
     margin-top: 200px;
     margin-bottom: 50px;
 
-    clear: left;
-
     max-width: $text-block-size;
-    word-wrap: 70px;
+    word-wrap: break-word;
+
+    &--left {
+        @extend .info-text;
+
+        margin-right: auto;
+        text-align: left;
+    }
+
+    &--right {
+        @extend .info-text;
+
+        margin-left: auto;
+        text-align: right;
+    }
 }
 
 .title-text {
@@ -100,7 +112,7 @@ $text-block-size: 30ch;
 }
 
 .pop-text {
-    color: rgb(240, 40, 40);
+    color: rgb(40, 87, 240);
 }
 
 .button {

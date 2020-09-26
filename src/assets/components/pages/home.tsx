@@ -21,7 +21,7 @@ const Homepage: React.FC = () => {
                         src={concept_art}
                         width='40%'
                         height='40%'
-                        className='horizontal-center gdc-artist-img box-shadow'
+                        className='horizontal-center gdc-artist-img box-shadow fade-in'
                         alt='Art Sample'
                     />
                 </div>
@@ -40,7 +40,7 @@ const Homepage: React.FC = () => {
             <div id='page-content'>
                 <div className='text-section'>
                     <div>
-                        <div className='left-text'>
+                        <div className='info-text--left'>
                             Be part of a growing team of developers, artists,
                             musicians, writers, and animators. Learn and
                             collaborate with members to create a quality game.
@@ -48,11 +48,29 @@ const Homepage: React.FC = () => {
                                 &nbsp;No previous experience needed.
                             </span>
                         </div>
-                    </div>
 
-                    <Link to='/' className='button'>
-                        Learn more
-                    </Link>
+                        <Link to='/' className='button'>
+                            Learn more
+                        </Link>
+                    </div>
+                </div>
+
+                <div className='text-section'>
+                    <div className='info-text--right'>
+                        Display a sense of passion at GDC with our amazing
+                        members and teams, we have a great workflow or something
+                        im just writing placeholder text so i can see how the
+                        word wrapping behaves with this new scss.
+                    </div>
+                </div>
+
+                <div className='text-section'>
+                    <div className='info-text--left'>
+                        Display a sense of passion at GDC with our amazing
+                        members and teams, we have a great workflow or something
+                        im just writing placeholder text so i can see how the
+                        word wrapping behaves with this new scss.
+                    </div>
                 </div>
             </div>
         </div>

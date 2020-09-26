@@ -27,19 +27,28 @@
 }
 
 .text-section {
+  position: relative;
   margin-bottom: 100px;
 }
 
-.left-text {
-  margin: 0px;
+.info-text, .info-text--left, .info-text--right {
   position: relative;
   font-family: "Poppins", sans-serif;
   font-size: 22px;
   margin-top: 200px;
   margin-bottom: 50px;
-  clear: left;
   max-width: 30ch;
-  word-wrap: 70px;
+  word-wrap: break-word;
+}
+
+.info-text--left {
+  margin-right: auto;
+  text-align: left;
+}
+
+.info-text--right {
+  margin-left: auto;
+  text-align: right;
 }
 
 .title-text, .title-text--white {
@@ -76,7 +85,7 @@
 }
 
 .pop-text {
-  color: #f02828;
+  color: #2857f0;
 }
 
 .button {
