@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
 import { MikroORM } from '@mikro-orm/core';
 import { Game } from './entities/Game';
 import microConfig from './mikro-orm.config';
-
-import App from './App';
 
 const main = async () => {
     const orm = await MikroORM.init(microConfig);

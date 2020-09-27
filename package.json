@@ -1,6 +1,6 @@
 {
     "name": "game-development-club.github.io",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": false,
     "dependencies": {
         "@mikro-orm/cli": "^4.0.7",
@@ -16,7 +16,8 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "3.4.3"
+        "react-scripts": "3.4.3",
+        "ts-node": "^9.0.0"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -40,7 +41,7 @@
         ]
     },
     "devDependencies": {
-        "@types/node": "^14.11.1",
+        "@types/node": "^14.11.2",
         "@types/react-router-dom": "^5.1.5",
         "prettier": "2.1.2",
         "sass": "^1.26.11",
@@ -52,5 +53,18 @@
             "./src/mikro-orm.config.ts",
             "./dist/mikro-orm.config.js"
         ]
-    }
+    },
+    "description": "A website containing information about my high school game development club! We create 2D games with a pixel art style using Unity.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Stevemmmmmm/gdc-react-deploy.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Stevemmmmmm/gdc-react-deploy/issues"
+    },
+    "homepage": "https://github.com/Stevemmmmmm/gdc-react-deploy#readme"
 }
