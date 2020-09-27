@@ -15,7 +15,7 @@ const Homepage: React.FC = () => {
                         Game Development Club
                     </div>
                     <div className='subtitle-text fade-in white'>
-                        Making games at Franklin High School since 2020
+                        Making Games at Franklin High School Since 2020
                     </div>
                     <img
                         src={concept_art}
@@ -41,33 +41,32 @@ const Homepage: React.FC = () => {
                 <div className='info-text--left'>
                     Be part of a growing team of developers, artists, musicians,
                     writers, and animators. Learn and collaborate with members
-                    to create a quality game.
+                    to create a quality game.{' '}
                     <span className='pop-text'>
-                        &nbsp;No previous experience needed.
+                        No previous experience needed.
                     </span>
                 </div>
 
                 <div className='info-text--right'>
                     Learn all the skills you need to become a successful
-                    contributor to our projects at Game Development Club.
+                    contributor to our projects at Game Development Club.{' '}
                     <span className='pop-text'>
-                        &nbsp;No paid applications or licenses
-                    </span>
-                    &nbsp;are needed to be a successful person in the game
-                    development industry.
+                        No paid applications or licenses
+                    </span>{' '}
+                    are needed to be a successful person in the game development
+                    industry.
                 </div>
 
                 <div className='info-text--left'>
-                    Display a sense of passion at GDC with our amazing members
-                    and teams, we have a great workflow or something im just
-                    writing placeholder text so i can see how the word wrapping
-                    behaves with this new scss.
+                    Express your creative ideas to the drawing board. If you
+                    have an idea for a game, let it out at Game Development
+                    Club's meetings!{' '}
+                    <span className='pop-text'>All ideas are welcome</span> as
+                    long as they are school appropriate.
                 </div>
             </div>
 
-            <div className='subtitle-text'>
-                Join Game Development Club Today
-            </div>
+            <div className='subtitle-text'>Join Game Development Club</div>
             <div className='text horizontal-text-center'>
                 Join today and become part of a team that you can enjoy.
             </div>
