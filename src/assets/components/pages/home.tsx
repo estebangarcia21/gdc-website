@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Header from '../objects/Header';
 import concept_art from '../images/concept_art.png';
+import { Link } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
     return (
@@ -38,46 +38,46 @@ const Homepage: React.FC = () => {
             </div>
 
             <div id='page-content'>
-                <div className='text-section'>
-                    <div className='info-text--left'>
-                        Be part of a growing team of developers, artists,
-                        musicians, writers, and animators. Learn and collaborate
-                        with members to create a quality game.
-                        <span className='pop-text'>
-                            &nbsp;No previous experience needed.
-                        </span>
-                    </div>
-
-                    <Link to='/' className='button--left'>
-                        Learn more
-                    </Link>
+                <div className='info-text--left'>
+                    Be part of a growing team of developers, artists, musicians,
+                    writers, and animators. Learn and collaborate with members
+                    to create a quality game.
+                    <span className='pop-text'>
+                        &nbsp;No previous experience needed.
+                    </span>
                 </div>
 
-                <div className='text-section'>
-                    <div className='info-text--right'>
-                        Learn all the skills you need to become a successful
-                        contributor to our projects at Game Development Club.
-                        <span className='pop-text'>
-                            &nbsp;No paid applications or licenses
-                        </span>
-                        &nbsp;are needed to be a successful person in the game
-                        development industry.
-                    </div>
-
-                    <Link to='/' className='button--right'>
-                        Our technologies
-                    </Link>
+                <div className='info-text--right'>
+                    Learn all the skills you need to become a successful
+                    contributor to our projects at Game Development Club.
+                    <span className='pop-text'>
+                        &nbsp;No paid applications or licenses
+                    </span>
+                    &nbsp;are needed to be a successful person in the game
+                    development industry.
                 </div>
 
-                <div className='text-section'>
-                    <div className='info-text--left'>
-                        Display a sense of passion at GDC with our amazing
-                        members and teams, we have a great workflow or something
-                        im just writing placeholder text so i can see how the
-                        word wrapping behaves with this new scss.
-                    </div>
+                <div className='info-text--left'>
+                    Display a sense of passion at GDC with our amazing members
+                    and teams, we have a great workflow or something im just
+                    writing placeholder text so i can see how the word wrapping
+                    behaves with this new scss.
                 </div>
             </div>
+
+            <div className='subtitle-text'>
+                Join Game Development Club Today
+            </div>
+            <div className='text horizontal-text-center'>
+                Join today and become part of a team that you can enjoy.
+            </div>
+
+            <Link
+                to='join-gdc'
+                className='header-button-join-now--large horizontal-center'
+            >
+                Join GDC
+            </Link>
         </div>
     );
 };

@@ -6,8 +6,6 @@ $text-block-size: 30ch;
 
     width: 100%;
     height: 100vh;
-
-    background-color: white;
 }
 
 #page-content {
@@ -17,6 +15,10 @@ $text-block-size: 30ch;
 
     margin-left: $margin-size;
     margin-right: $margin-size;
+}
+
+.join-now {
+    text-align: center;
 }
 
 .image {
@@ -38,8 +40,6 @@ $text-block-size: 30ch;
 
 .text-section {
     position: relative;
-
-    margin-bottom: 100px;
 }
 
 .info-text {
@@ -53,16 +53,20 @@ $text-block-size: 30ch;
 
     max-width: $text-block-size;
 
+    margin-bottom: 100px;
+
     &--left {
         @extend .info-text;
 
         margin-right: auto;
+        text-align: left;
     }
 
     &--right {
         @extend .info-text;
 
         margin-left: auto;
+        text-align: right;
     }
 }
 
@@ -138,14 +142,16 @@ $text-block-size: 30ch;
 
     &--left {
         @extend .button;
-        left: $text-block-size * 0.5;
+
+        float: left;
+        transform: translate(55%, 0);
     }
 
     &--right {
         @extend .button;
 
         float: right;
-        right: $text-block-size * 0.5;
+        transform: translate(-50%, 0);
     }
 }
 

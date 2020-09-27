@@ -3,13 +3,16 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-color: white;
 }
 
 #page-content {
   margin-top: -20px;
   margin-left: 15%;
   margin-right: 15%;
+}
+
+.join-now {
+  text-align: center;
 }
 
 .image, .image--right, .image--left {
@@ -28,7 +31,6 @@
 
 .text-section {
   position: relative;
-  margin-bottom: 100px;
 }
 
 .info-text, .info-text--left, .info-text--right {
@@ -38,14 +40,17 @@
   margin-top: 200px;
   margin-bottom: 50px;
   max-width: 30ch;
+  margin-bottom: 100px;
 }
 
 .info-text--left {
   margin-right: auto;
+  text-align: left;
 }
 
 .info-text--right {
   margin-left: auto;
+  text-align: right;
 }
 
 .title-text, .title-text--white {
@@ -101,12 +106,15 @@
 }
 
 .button--left {
-  left: 15ch;
+  float: left;
+  -webkit-transform: translate(55%, 0);
+          transform: translate(55%, 0);
 }
 
 .button--right {
   float: right;
-  right: 15ch;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .button:hover, .button--left:hover, .button--right:hover {
@@ -115,6 +123,92 @@
 }
 
 .button:focus, .button--left:focus, .button--right:focus {
+  outline: none;
+}
+
+#header-bar {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  z-index: 1;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
+}
+
+.gdc-logo {
+  position: relative;
+  top: 20px;
+  left: 30px;
+  z-index: 1;
+  float: right;
+  font-family: 'Fredericka The Great', cursive;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: black;
+  text-align: center;
+  padding: 10px 30px;
+}
+
+.header-button {
+  position: relative;
+  top: 20px;
+  right: 30px;
+  z-index: 1;
+  float: right;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 10px 30px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.header-button-join-now, .header-button-join-now--large {
+  position: relative;
+  top: 20px;
+  right: 30px;
+  z-index: 1;
+  float: right;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: black;
+  text-align: center;
+  border: solid 1px black;
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 32px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
+}
+
+.header-button-join-now--large {
+  font-size: 28px;
+  padding: 20px 60px;
+  float: left;
+  border-radius: 0px;
+  margin-bottom: 100px;
+}
+
+.header-button-join-now:hover, .header-button-join-now--large:hover {
+  background-color: black;
+  color: white;
+}
+
+.header-button:hover {
+  color: #7a7a7a;
+}
+
+.header-button:focus {
   outline: none;
 }
 
@@ -225,84 +319,6 @@
   .search_box {
     width: 95%;
   }
-}
-
-#header-bar {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  z-index: 1;
-}
-
-#footer {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  background-image: linear-gradient(45deg, #ffa9a9 20%, #ffe81c);
-}
-
-.gdc-logo {
-  position: relative;
-  top: 20px;
-  left: 30px;
-  z-index: 1;
-  float: right;
-  font-family: 'Fredericka The Great', cursive;
-  font-size: 24px;
-  letter-spacing: 1px;
-  color: black;
-  text-align: center;
-  padding: 10px 30px;
-}
-
-.header-button {
-  position: relative;
-  top: 20px;
-  right: 30px;
-  z-index: 1;
-  float: right;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  color: black;
-  text-align: center;
-  padding: 10px 30px;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-
-.header-button-join-now {
-  position: relative;
-  top: 20px;
-  right: 30px;
-  z-index: 1;
-  float: right;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: black;
-  text-align: center;
-  border: solid 1px black;
-  background-color: white;
-  padding: 10px 30px;
-  border-radius: 32px;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-  -webkit-transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
-  transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
-}
-
-.header-button-join-now:hover {
-  background-color: black;
-  color: white;
-}
-
-.header-button:hover {
-  color: #7a7a7a;
-}
-
-.header-button:focus {
-  outline: none;
 }
 
 .fade-in {

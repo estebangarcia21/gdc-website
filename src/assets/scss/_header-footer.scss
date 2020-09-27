@@ -9,7 +9,7 @@
     z-index: 1;
 }
 
-#footer {
+.footer {
     position: relative;
 
     width: 100%;
@@ -89,6 +89,21 @@
     transition: background-color $transition-time, color $transition-time,
         width $transition-time, border-width $transition-time,
         border-color $transition-time;
+
+    &--large {
+        @extend .header-button-join-now;
+
+        $scale-factor: 2;
+
+        font-size: 14px * $scale-factor;
+        padding: 10px * $scale-factor 30px * $scale-factor;
+
+        float: left;
+
+        border-radius: 0px;
+
+        margin-bottom: 100px;
+    }
 }
 
 .header-button-join-now:hover {
