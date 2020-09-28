@@ -2,7 +2,7 @@ import React from 'react';
 
 const Joingdcpage: React.FC = () => {
     return (
-        <div>
+        <div className='fade-in'>
             <div
                 className='box-shadow'
                 style={{
@@ -23,6 +23,28 @@ const Joingdcpage: React.FC = () => {
                 >
                     Join Game Development Club
                 </p>
+
+                <div
+                    className='horizontal-text-center subtitle-text'
+                    style={{
+                        width: '50%',
+                        position: 'relative',
+                        float: 'left',
+                    }}
+                >
+                    Discord
+                </div>
+
+                <div
+                    className='horizontal-text-center subtitle-text'
+                    style={{
+                        width: '50%',
+                        position: 'relative',
+                        float: 'left',
+                    }}
+                >
+                    Remind
+                </div>
             </div>
         </div>
     );
