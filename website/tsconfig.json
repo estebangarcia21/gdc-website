@@ -11,8 +11,8 @@
         "strictNullChecks": true,
         "strictFunctionTypes": true,
         "noImplicitThis": true,
-        // "noUnusedLocals": true,
-        // "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "allowSyntheticDefaultImports": true,
@@ -30,5 +30,5 @@
         "jsx": "react"
     },
     "exclude": ["node_modules"],
-    "include": ["./src/**/*.tsx", "./src/**/*.ts", "src/mikro-orm.config.js"]
+    "include": ["./src/**/*.tsx", "./src/**/*.ts", "src/index.js"]
 }
