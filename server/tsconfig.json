@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "module": "CommonJS",
+        "target": "es6",
+        "module": "commonjs",
         "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
         "sourceMap": true,
         "outDir": "./dist",
@@ -20,15 +20,8 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "resolveJsonModule": true,
-        "baseUrl": ".",
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": false,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react"
+        "baseUrl": "."
     },
     "exclude": ["node_modules"],
-    "include": ["./src/**/*.tsx", "./src/**/*.ts", "src/mikro-orm.config.js"]
+    "include": ["./src/**/*.tsx", "./src/**/*.ts"]
 }
