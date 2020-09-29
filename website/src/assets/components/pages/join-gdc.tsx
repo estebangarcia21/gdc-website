@@ -1,49 +1,78 @@
 import React from 'react';
+import discordLogo from '../images/discord.png';
+import remindLogo from '../images/remind.png';
 
 const Joingdcpage: React.FC = () => {
+    const link: React.CSSProperties = {
+        fontSize: '24px',
+        fontFamily: '"Oxygen", monospace',
+        textAlign: 'center',
+        color: '#486ff0',
+        marginTop: '100px',
+    };
+
+    const halfPage: React.CSSProperties = {
+        float: 'left',
+        width: '50%',
+        height: '100%',
+    };
+
     return (
-        <div className='fade-in'>
-            <div
-                className='box-shadow'
-                style={{
-                    position: 'relative',
-                    marginTop: '50vh',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '75%',
-                    height: '75vh',
-                    backgroundColor: 'white',
-                }}
-            >
-                <p
-                    className='subtitle-text'
-                    style={{
-                        top: '20px',
-                    }}
-                >
-                    Join Game Development Club
-                </p>
+        <div>
+            {/* <p className='title-text'>Join Game Development Club</p> */}
 
+            <div style={halfPage}>
                 <div
-                    className='horizontal-text-center subtitle-text'
                     style={{
-                        width: '50%',
-                        position: 'relative',
-                        float: 'left',
+                        transform: 'translate(0%, 50%)',
                     }}
                 >
-                    Discord
+                    <img
+                        className='horizontal-center'
+                        src={discordLogo}
+                        alt='Discord Logo'
+                        width='200px'
+                        height='200px'
+                    />
+
+                    <p
+                        className='subtitle-text horizontal-center'
+                        style={{
+                            maxWidth: '20ch',
+                            wordWrap: 'break-word',
+                        }}
+                    >
+                        Join Via Discord
+                    </p>
+
+                    <p style={link}>https://discord.gg/x9YRUfx</p>
                 </div>
+            </div>
 
+            <div style={halfPage}>
                 <div
-                    className='horizontal-text-center subtitle-text'
                     style={{
-                        width: '50%',
-                        position: 'relative',
-                        float: 'left',
+                        transform: 'translate(0%, 50%)',
                     }}
                 >
-                    Remind
+                    <img
+                        className='horizontal-center'
+                        src={remindLogo}
+                        alt='Discord Logo'
+                        width='200px'
+                        height='200px'
+                    />
+                    <p
+                        className='subtitle-text horizontal-center'
+                        style={{
+                            maxWidth: '20ch',
+                            wordWrap: 'break-word',
+                        }}
+                    >
+                        Join Via Remind
+                    </p>
+
+                    <p style={link}>https://discord.gg/x9YRUfx</p>
                 </div>
             </div>
         </div>

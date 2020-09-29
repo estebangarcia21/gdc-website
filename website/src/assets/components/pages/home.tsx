@@ -1,8 +1,7 @@
 import React from 'react';
-
-import Header from '../objects/Header';
-import concept_art from '../images/concept_art.png';
 import { Link } from 'react-router-dom';
+import concept_art from '../images/concept_art.png';
+import Header from '../objects/Header';
 
 const Homepage: React.FC = () => {
     return (
