@@ -14,12 +14,23 @@ const Joingdcpage: React.FC = () => {
     const halfPage: React.CSSProperties = {
         float: 'left',
         width: '50%',
-        height: '100%',
+        height: '80%',
     };
 
     return (
         <div>
-            {/* <p className='title-text'>Join Game Development Club</p> */}
+            <p
+                className='title-text'
+                style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '20%',
+                    marginTop: '50px',
+                    marginBottom: '-35px',
+                }}
+            >
+                Join Game Development Club
+            </p>
 
             <div style={halfPage}>
                 <div
@@ -74,6 +85,18 @@ const Joingdcpage: React.FC = () => {
 
                     <p style={link}>https://discord.gg/x9YRUfx</p>
                 </div>
+            </div>
+
+            <div
+                className='subtitle-text'
+                style={{
+                    position: 'absolute',
+                    bottom: '0px',
+                    width: '100%',
+                    marginBottom: '45px',
+                }}
+            >
+                Discord is HIGHLY recommended!
             </div>
         </div>
     );
