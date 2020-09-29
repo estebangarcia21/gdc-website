@@ -17,52 +17,24 @@ $text-block-size: 30ch;
     margin-right: $margin-size;
 }
 
-.image {
+.gdc-artist-img {
+    margin-top: 175px;
+}
+
+.description-image {
     position: relative;
 
     width: 200px;
     height: 200px;
 
     &--right {
-        @extend .image;
+        @extend .description-image;
         float: right;
     }
 
     &--left {
-        @extend .image;
+        @extend .description-image;
         float: left;
-    }
-}
-
-.text-section {
-    position: relative;
-}
-
-.info-text {
-    position: relative;
-
-    font-family: $standard-font;
-    font-size: 22px;
-
-    margin-top: 200px;
-    margin-bottom: 50px;
-
-    max-width: $text-block-size;
-
-    margin-bottom: 100px;
-
-    &--left {
-        @extend .info-text;
-
-        margin-right: auto;
-        text-align: left;
-    }
-
-    &--right {
-        @extend .info-text;
-
-        margin-left: auto;
-        text-align: right;
     }
 }
 
@@ -94,6 +66,33 @@ $text-block-size: 30ch;
 
     color: black;
 }
+.info-text {
+    position: relative;
+
+    font-family: $standard-font;
+    font-size: 22px;
+
+    margin-top: 200px;
+    margin-bottom: 50px;
+
+    max-width: $text-block-size;
+
+    margin-bottom: 100px;
+
+    &--left {
+        @extend .info-text;
+
+        margin-right: auto;
+        text-align: left;
+    }
+
+    &--right {
+        @extend .info-text;
+
+        margin-left: auto;
+        text-align: right;
+    }
+}
 
 .text {
     position: relative;
@@ -104,6 +103,10 @@ $text-block-size: 30ch;
     margin: 5px;
 }
 
+.pop-text {
+    color: #486ff0;
+}
+
 .information-section-header {
     font-size: 64px;
     text-align: center;
@@ -111,15 +114,7 @@ $text-block-size: 30ch;
     margin-top: 75px;
 }
 
-.gdc-artist-img {
-    margin-top: 175px;
-}
-
-.pop-text {
-    color: #486ff0;
-}
-
-.button {
+.paragraph-button {
     position: relative;
 
     font-family: $standard-font;
@@ -144,25 +139,25 @@ $text-block-size: 30ch;
         border-color $transition-time;
 
     &--left {
-        @extend .button;
+        @extend .paragraph-button;
 
         float: left;
         transform: translate(55%, 0);
     }
 
     &--right {
-        @extend .button;
+        @extend .paragraph-button;
 
         float: right;
         transform: translate(-50%, 0);
     }
 }
 
-.button:hover {
+.paragraph-button:hover {
     background-color: black;
     color: white;
 }
 
-.button:focus {
+.paragraph-button:focus {
     outline: none;
 }
