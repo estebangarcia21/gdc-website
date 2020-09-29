@@ -25,14 +25,8 @@ const Homepage: React.FC = () => {
                     />
                 </div>
             </div>
-            <div
-                className='text'
-                style={{
-                    marginTop: '75px',
-                    textAlign: 'center',
-                    fontSize: '64px',
-                }}
-            >
+
+            <div className='information-section-header text'>
                 Collaborate. Create. Learn.
             </div>
 

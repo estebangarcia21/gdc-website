@@ -17,10 +17,6 @@ $text-block-size: 30ch;
     margin-right: $margin-size;
 }
 
-.join-now {
-    text-align: center;
-}
-
 .image {
     position: relative;
 
@@ -106,6 +102,13 @@ $text-block-size: 30ch;
     font-size: 22px;
 
     margin: 5px;
+}
+
+.information-section-header {
+    font-size: 64px;
+    text-align: center;
+
+    margin-top: 75px;
 }
 
 .gdc-artist-img {

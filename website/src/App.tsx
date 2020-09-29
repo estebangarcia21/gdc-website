@@ -4,7 +4,7 @@ import Homepage from './assets/components/pages/home';
 import Joingdcpage from './assets/components/pages/join-gdc';
 import Ourgamespage from './assets/components/pages/our-games';
 import Todopage from './assets/components/pages/to-do';
-import './assets/scss/App.scss';
+import './assets/scss/App.css';
 
 const App: React.FC = () => {
     return (
