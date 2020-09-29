@@ -1,10 +1,10 @@
-import 'reflect-metadata';
-import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import express from 'express';
+import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
-import { GameResolver } from './resolvers/GameResolver';
 import { createConnection } from 'typeorm';
 import { Game } from './entities/Game';
+import { GameResolver } from './resolvers/GameResolver';
 
 const main = async () => {
     await createConnection({

@@ -1,5 +1,11 @@
 $standard-font: 'Poppins', sans-serif;
 $text-block-size: 30ch;
+$standard-gradient: linear-gradient(
+    319deg,
+    #663dff 0%,
+    #aa00ff 37%,
+    #cc4499 100%
+);
 
 #title-background {
     position: relative;
@@ -15,6 +21,16 @@ $text-block-size: 30ch;
 
     margin-left: $margin-size;
     margin-right: $margin-size;
+}
+
+#purple-gradient {
+    width: 100%;
+    height: 10px;
+
+    margin-bottom: 50px;
+
+    background-color: #663dff;
+    background-image: $standard-gradient;
 }
 
 .gdc-artist-img {
@@ -66,6 +82,7 @@ $text-block-size: 30ch;
 
     color: black;
 }
+
 .info-text {
     position: relative;
 
@@ -104,7 +121,13 @@ $text-block-size: 30ch;
 }
 
 .pop-text {
-    color: #486ff0;
+    position: relative;
+
+    background: $standard-gradient;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .information-section-header {

@@ -20,13 +20,13 @@ const Homepage: React.FC = () => {
                         src={concept_art}
                         width='40%'
                         height='40%'
-                        className='horizontal-center gdc-artist-img box-shadow fade-in'
+                        className='horizontal-center gdc-artist-img box-shadow gradient-outline fade-in'
                         alt='Art Sample'
                     />
                 </div>
             </div>
 
-            <div className='information-section-header text'>
+            <div className='information-section-header pop-text text'>
                 Collaborate. Create. Learn.
             </div>
 
@@ -35,9 +35,9 @@ const Homepage: React.FC = () => {
                     Be part of a growing team of developers, artists, musicians,
                     writers, and animators. Learn and collaborate with members
                     to create a quality game.{' '}
-                    <span className='pop-text'>
-                        No previous experience needed.
-                    </span>
+                    <span className='pop-text'>No previous</span>
+                    <br />
+                    <span className='pop-text'>experience needed.</span>
                 </div>
 
                 <div className='info-text--right'>
@@ -53,15 +53,19 @@ const Homepage: React.FC = () => {
                 <div className='info-text--left'>
                     Express your creative ideas to the drawing board. If you
                     have an idea for a game, let it out at Game Development
-                    Club's meetings!{' '}
-                    <span className='pop-text'>All ideas are welcome</span> as
-                    long as they are school appropriate.
+                    Club's meetings! <span className='pop-text'>All</span>
+                    <br />
+                    <span className='pop-text'>ideas are welcome</span> as long
+                    as they are school appropriate.
                 </div>
             </div>
 
+            <div id='purple-gradient' />
+
             <div className='subtitle-text'>Join Game Development Club</div>
             <div className='text horizontal-text-center'>
-                Join today and become part of a team that you can enjoy.
+                Ready to be a part of Game Development Club? Join in a few
+                simple steps!
             </div>
 
             <Link
