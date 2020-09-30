@@ -81,6 +81,12 @@ $standard-gradient: linear-gradient(
     font-weight: 600;
 
     color: black;
+
+    &--white {
+        @extend .subtitle-text;
+
+        color: white;
+    }
 }
 
 .info-text {

@@ -1,6 +1,6 @@
 import React from 'react';
 import discordLogo from '../assets/images/discord.png';
-import remindLogo from '../assets/images/remind.png';
+import classroomLogo from '../assets/images/gc_logo.png';
 
 const Joingdcpage: React.FC = () => {
     return (
@@ -8,35 +8,49 @@ const Joingdcpage: React.FC = () => {
             <p className='title-text'>Join Game Development Club</p>
 
             <div className='half-page'>
-                <img
-                    className='horizontal-center'
-                    src={discordLogo}
-                    alt='Discord Logo'
-                    width='200px'
-                    height='200px'
-                />
+                <div className='join-gdc-background horizontal-center'>
+                    <img
+                        className='horizontal-center'
+                        src={discordLogo}
+                        alt='Discord Logo'
+                        width='200px'
+                        height='200px'
+                    />
 
-                <p className='subtitle-text horizontal-center'>
-                    Join Via Discord
-                </p>
+                    <p className='subtitle-text--white horizontal-center'>
+                        Join Via Discord
+                    </p>
 
-                <p className='join-gdc-link'>https://discord.gg/x9YRUfx</p>
+                    <a
+                        href='https://discord.gg/x9YRUfx'
+                        className='header-button-join-now--large horizontal-center'
+                    >
+                        Join Discord
+                    </a>
+                </div>
             </div>
 
             <div className='half-page'>
-                <img
-                    className='horizontal-center'
-                    src={remindLogo}
-                    alt='Discord Logo'
-                    width='200px'
-                    height='200px'
-                />
+                <div className='join-gdc-background horizontal-center'>
+                    <img
+                        className='horizontal-center'
+                        src={classroomLogo}
+                        alt='Discord Logo'
+                        width='200px'
+                        height='200px'
+                    />
 
-                <p className='subtitle-text horizontal-center'>
-                    Join Via Remind
-                </p>
+                    <p className='subtitle-text--white horizontal-center'>
+                        Join Via Classroom
+                    </p>
 
-                <p className='join-gdc-link'>https://discord.gg/x9YRUfx</p>
+                    <a
+                        href='https://classroom.google.com/c/MTc4NjQ4NjE4MzY2?cjc=glgda6k'
+                        className='header-button-join-now--large horizontal-center'
+                    >
+                        Join Classroom
+                    </a>
+                </div>
             </div>
         </div>
     );
