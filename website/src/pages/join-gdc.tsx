@@ -1,6 +1,6 @@
 import React from 'react';
-import discordLogo from '../assets/components/images/discord.png';
-import remindLogo from '../assets/components/images/remind.png';
+import discordLogo from '../assets/images/discord.png';
+import remindLogo from '../assets/images/remind.png';
 
 const Joingdcpage: React.FC = () => {
     return (

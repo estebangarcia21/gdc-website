@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import concept_art from '../assets/components/images/concept_art.png';
-import Header from '../assets/components/objects/Header';
+import Header from '../assets/components/Header';
+import concept_art from '../assets/images/concept_art.png';
 
 const Homepage: React.FC = () => {
     return (
