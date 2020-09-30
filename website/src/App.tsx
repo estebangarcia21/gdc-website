@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Homepage from './assets/components/pages/home';
-import Joingdcpage from './assets/components/pages/join-gdc';
-import Ourgamespage from './assets/components/pages/our-games';
-import Todopage from './assets/components/pages/to-do';
 import './assets/scss/App.css';
+import Homepage from './pages/home';
+import Joingdcpage from './pages/join-gdc';
+import Ourgamespage from './pages/our-games';
+import Todopage from './pages/to-do';
 
 const App: React.FC = () => {
     return (

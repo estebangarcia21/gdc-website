@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import concept_art from '../images/concept_art.png';
-import Header from '../objects/Header';
+import concept_art from '../assets/components/images/concept_art.png';
+import Header from '../assets/components/objects/Header';
 
 const Homepage: React.FC = () => {
     return (
@@ -26,7 +26,7 @@ const Homepage: React.FC = () => {
                 </div>
             </div>
 
-            <div className='information-section-header pop-text text'>
+            <div className='information-section-header text'>
                 Collaborate. Create. Learn.
             </div>
 
@@ -51,7 +51,7 @@ const Homepage: React.FC = () => {
                 </div>
 
                 <div className='info-text--left'>
-                    Express your creative ideas to the drawing board. If you
+                    Express your creative ideas on the drawing board. If you
                     have an idea for a game, let it out at Game Development
                     Club's meetings! <span className='pop-text'>All</span>
                     <br />
@@ -64,8 +64,7 @@ const Homepage: React.FC = () => {
 
             <div className='subtitle-text'>Join Game Development Club</div>
             <div className='text horizontal-text-center'>
-                Ready to be a part of Game Development Club? Join in a few
-                simple steps!
+                Join today and become part of a team that you can enjoy.
             </div>
 
             <Link
