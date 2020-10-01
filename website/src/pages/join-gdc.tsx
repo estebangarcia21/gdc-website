@@ -13,8 +13,8 @@ const Joingdcpage: React.FC = () => {
                         className='horizontal-center'
                         src={discordLogo}
                         alt='Discord Logo'
-                        width='200px'
-                        height='200px'
+                        width='45%'
+                        height='auto'
                     />
 
                     <p className='subtitle-text--white horizontal-center'>

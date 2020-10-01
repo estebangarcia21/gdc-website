@@ -368,6 +368,12 @@
   }
 }
 
+#join-gdc-background {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%);
+}
+
 #join-gdc-columns {
   background-color: black;
   margin-left: auto;
@@ -429,6 +435,10 @@ a {
 .box-shadow {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.responsive-image {
+  height: auto;
 }
 
 .gradient-outline {
