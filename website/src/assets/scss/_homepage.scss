@@ -2,16 +2,32 @@ $standard-font: 'Poppins', sans-serif;
 $text-block-size: 30ch;
 $standard-gradient: linear-gradient(
     319deg,
-    #663dff 0%,
-    #aa00ff 37%,
-    #cc4499 100%
+    rgba(190, 169, 42, 1) 0%,
+    rgba(212, 127, 30, 1) 41%,
+    rgba(255, 0, 124, 1) 100%
 );
+$standard-color: #2e3136;
 
 #title-background {
     position: relative;
 
     width: 100%;
     height: 100vh;
+
+    background-image: $standard-gradient;
+}
+
+#inline-card {
+    position: relative;
+
+    width: 80%;
+    height: 80%;
+
+    top: 12.5%;
+
+    margin: auto;
+
+    background-color: $standard-color;
 }
 
 #page-content {
@@ -63,7 +79,7 @@ $standard-gradient: linear-gradient(
 
     font-weight: 600;
 
-    color: black;
+    color: white;
 
     &--white {
         @extend .title-text;
@@ -80,7 +96,7 @@ $standard-gradient: linear-gradient(
 
     font-weight: 600;
 
-    color: black;
+    color: white;
 
     &--white {
         @extend .subtitle-text;

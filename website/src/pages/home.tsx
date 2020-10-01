@@ -9,20 +9,22 @@ const Homepage: React.FC = () => {
             <Header />
 
             <div id='title-background'>
-                <div className='vertical-center'>
-                    <div className='title-text fade-in'>
-                        Game Development Club
+                <div id='inline-card'>
+                    <div className='vertical-center'>
+                        <div className='title-text fade-in'>
+                            Game Development Club
+                        </div>
+                        <div className='subtitle-text fade-in white'>
+                            Making Games at Franklin High School Since 2020
+                        </div>
+                        <img
+                            src={concept_art}
+                            width='40%'
+                            height='40%'
+                            className='horizontal-center gdc-artist-img box-shadow gradient-outline fade-in'
+                            alt='Art Sample'
+                        />
                     </div>
-                    <div className='subtitle-text fade-in white'>
-                        Making Games at Franklin High School Since 2020
-                    </div>
-                    <img
-                        src={concept_art}
-                        width='40%'
-                        height='40%'
-                        className='horizontal-center gdc-artist-img box-shadow gradient-outline fade-in'
-                        alt='Art Sample'
-                    />
                 </div>
             </div>
 
