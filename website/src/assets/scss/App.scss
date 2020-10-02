@@ -1,3 +1,4 @@
+@import './constants.scss';
 @import './homepage';
 @import './header-footer';
 @import './our-games';
@@ -7,9 +8,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200\
 &family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap\
 &family=Bebas+Neue&display=swap&family=Oxygen:wght@400&display=swap\
-&family=Poppins:wght@600&display=swap\
 &family=Poppins:wght@400&display=swap\
-&family=Fredericka+the+Great&display=swap');
+&family=Fredericka+the+Great&display=swap\
+&family=Questrial&display=swap');
 
 html,
 body {

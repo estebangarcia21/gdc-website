@@ -4,7 +4,7 @@ const Ourgamespage: React.FC = () => {
     return (
         <div>
             <div id='our-games-header'>
-                <div className='title-text--white vertical-center'>Games</div>
+                <div className='title-text--black vertical-center'>Games</div>
             </div>
 
             <div className='black subtitle-text horizontal-text-center'>

@@ -1,12 +1,4 @@
-$standard-font: 'Poppins', sans-serif;
-$text-block-size: 30ch;
-$standard-gradient: linear-gradient(
-    319deg,
-    rgba(190, 169, 42, 1) 0%,
-    rgba(212, 127, 30, 1) 41%,
-    rgba(255, 0, 124, 1) 100%
-);
-$standard-color: #2e3136;
+$tile-color-a: #27272e;
 
 #title-background {
     position: relative;
@@ -14,39 +6,17 @@ $standard-color: #2e3136;
     width: 100%;
     height: 100vh;
 
-    background-image: $standard-gradient;
-}
-
-#inline-card {
-    position: relative;
-
-    width: 80%;
-    height: 80%;
-
-    top: 12.5%;
-
-    margin: auto;
+    margin: 0px;
 
     background-color: $standard-color;
 }
 
-#page-content {
-    $margin-size: 15%;
-
-    margin-top: -20px;
-
-    margin-left: $margin-size;
-    margin-right: $margin-size;
-}
-
-#purple-gradient {
+.page-content {
     width: 100%;
-    height: 10px;
 
-    margin-bottom: 50px;
+    margin: 0px;
 
-    background-color: #663dff;
-    background-image: $standard-gradient;
+    background-color: $tile-color-a;
 }
 
 .gdc-artist-img {
@@ -77,11 +47,9 @@ $standard-color: #2e3136;
     font-size: 72px;
     text-align: center;
 
-    font-weight: 600;
-
     color: white;
 
-    &--white {
+    &--black {
         @extend .title-text;
         color: white;
     }
@@ -94,52 +62,33 @@ $standard-color: #2e3136;
     font-size: 40px;
     text-align: center;
 
-    font-weight: 600;
-
     color: white;
 
-    &--white {
+    &--black {
         @extend .subtitle-text;
 
-        color: white;
-    }
-}
-
-.info-text {
-    position: relative;
-
-    font-family: $standard-font;
-    font-size: 22px;
-
-    margin-top: 200px;
-    margin-bottom: 50px;
-
-    max-width: $text-block-size;
-
-    margin-bottom: 100px;
-
-    &--left {
-        @extend .info-text;
-
-        margin-right: auto;
-        text-align: left;
-    }
-
-    &--right {
-        @extend .info-text;
-
-        margin-left: auto;
-        text-align: right;
+        color: black;
     }
 }
 
 .text {
     position: relative;
 
+    margin-left: auto;
+    margin-right: auto;
+
     font-family: $standard-font;
     font-size: 22px;
+    text-align: center;
 
-    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+    max-width: $text-block-size;
+
+    word-wrap: break-word;
+
+    color: white;
 }
 
 .pop-text {
@@ -153,10 +102,13 @@ $standard-color: #2e3136;
 }
 
 .information-section-header {
+    font-family: $standard-font;
+    color: white;
+
     font-size: 64px;
     text-align: center;
 
-    margin-top: 75px;
+    margin: 0px;
 }
 
 .paragraph-button {

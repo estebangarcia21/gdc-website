@@ -17,7 +17,7 @@ const Joingdcpage: React.FC = () => {
                         height='auto'
                     />
 
-                    <p className='subtitle-text--white horizontal-center'>
+                    <p className='subtitle-text--black horizontal-center'>
                         Join Via Discord
                     </p>
 
@@ -40,7 +40,7 @@ const Joingdcpage: React.FC = () => {
                         height='200px'
                     />
 
-                    <p className='subtitle-text--white horizontal-center'>
+                    <p className='subtitle-text--black horizontal-center'>
                         Join Via Classroom
                     </p>
 

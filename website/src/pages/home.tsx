@@ -1,39 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../assets/components/Header';
 import concept_art from '../assets/images/concept_art.png';
 
 const Homepage: React.FC = () => {
     return (
         <div>
-            <Header />
-
             <div id='title-background'>
-                <div id='inline-card'>
-                    <div className='vertical-center'>
-                        <div className='title-text fade-in'>
-                            Game Development Club
-                        </div>
-                        <div className='subtitle-text fade-in white'>
-                            Making Games at Franklin High School Since 2020
-                        </div>
-                        <img
-                            src={concept_art}
-                            width='40%'
-                            height='40%'
-                            className='horizontal-center gdc-artist-img box-shadow gradient-outline fade-in'
-                            alt='Art Sample'
-                        />
+                <div className='vertical-center'>
+                    <div className='title-text fade-in'>
+                        Game Development Club
                     </div>
+                    <div className='subtitle-text fade-in white'>
+                        Making Games at Franklin High School Since 2020
+                    </div>
+                    <img
+                        src={concept_art}
+                        width='40%'
+                        height='40%'
+                        className='horizontal-center gdc-artist-img box-shadow gradient-outline fade-in'
+                        alt='Art Sample'
+                    />
                 </div>
             </div>
 
-            <div className='information-section-header text'>
-                Collaborate. Create. Learn.
-            </div>
+            <div className='page-content'>
+                <div className='information-section-header'>
+                    Collaborate. Create. Learn.
+                </div>
 
-            <div id='page-content'>
-                <div className='info-text--left'>
+                <div className='text'>
                     Be part of a growing team of developers, artists, musicians,
                     writers, and animators. Learn and collaborate with members
                     to create a quality game.{' '}
@@ -42,7 +37,7 @@ const Homepage: React.FC = () => {
                     <span className='pop-text'>experience needed.</span>
                 </div>
 
-                <div className='info-text--right'>
+                <div className='text'>
                     Learn all the skills you need to become a successful
                     contributor to our projects at Game Development Club.{' '}
                     <span className='pop-text'>
@@ -52,7 +47,7 @@ const Homepage: React.FC = () => {
                     industry.
                 </div>
 
-                <div className='info-text--left'>
+                <div className='text'>
                     Express your creative ideas on the drawing board. If you
                     have an idea for a game, let it out at Game Development
                     Club's meetings! <span className='pop-text'>All</span>
@@ -62,9 +57,9 @@ const Homepage: React.FC = () => {
                 </div>
             </div>
 
-            <div id='purple-gradient' />
-
-            <div className='subtitle-text'>Join Game Development Club</div>
+            <div className='subtitle-text--black'>
+                Join Game Development Club
+            </div>
             <div className='text horizontal-text-center'>
                 Join today and become part of a team that you can enjoy.
             </div>
