@@ -1,3 +1,4 @@
+$margin-size: 100px;
 $tile-color-a: #1d1d1f;
 $tile-color-b: #171718;
 
@@ -37,15 +38,27 @@ $tile-color-b: #171718;
 }
 
 .horizontal-bar {
-    width: 90%;
+    width: 70ch;
     height: 2px;
 
     margin-top: 20px;
 
-    margin-left: auto;
-    margin-right: auto;
-
     background-image: $standard-gradient;
+
+    &--left {
+        @extend .horizontal-bar;
+
+        float: left;
+        margin-left: $margin-size;
+    }
+
+    &--right {
+        @extend .horizontal-bar;
+
+        float: right;
+        margin-left: auto;
+        margin-right: $margin-size;
+    }
 }
 
 .description-image {
@@ -108,11 +121,8 @@ $tile-color-b: #171718;
 .text {
     position: relative;
 
-    margin-left: auto;
-    margin-right: auto;
-
     font-family: $standard-font;
-    font-size: 22px;
+    font-size: 26px;
     text-align: center;
 
     margin-bottom: 0px;
@@ -121,6 +131,22 @@ $tile-color-b: #171718;
     word-wrap: break-word;
 
     color: white;
+
+    &--left {
+        @extend .text;
+
+        text-align: left;
+        margin-left: $margin-size;
+    }
+
+    &--right {
+        @extend .text;
+
+        text-align: right;
+
+        margin-left: auto;
+        margin-right: $margin-size;
+    }
 }
 
 .gradient-text {

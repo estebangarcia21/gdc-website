@@ -1,19 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-interface InfoSectionProps {
-    title: string;
+enum BarPosition {
+    LEFT,
+    RIGHT,
 }
 
-const InfoSection: React.FC<InfoSectionProps> = (props) => {
+interface SectionProps {
+    title: string;
+    barPosition: BarPosition;
+}
+
+const Section: React.FC<SectionProps> = (props) => {
+    const position =
+        props.barPosition === BarPosition.LEFT ? '--left' : '--right';
+
     return (
         <div>
             <div className='page-content'>
                 <div className='information-section-header'>{props.title}</div>
 
-                <div className='horizontal-bar' />
+                <div className={'horizontal-bar' + position} />
 
-                <p className='text'>{props.children}</p>
+                <p className={'text' + position}>{props.children}</p>
             </div>
         </div>
     );
@@ -33,20 +41,28 @@ const Homepage: React.FC = () => {
                 </div>
             </div>
 
-            <InfoSection title='BUILDING OUR COMMUNITY'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ad
-                consequatur porro ipsam. Vitae provident dolore iste, corrupti
-                magnam possimus id voluptas quisquam odio distinctio odit
-                accusantium exercitationem ipsam accusamus?
-            </InfoSection>
+            <Section
+                title='BUILDING OUR COMMUNITY'
+                barPosition={BarPosition.LEFT}
+            >
+                At Game Development Club, we are always activley looking for new
+                artists, programmers, animators, musicians, and writers to join
+                our community. From years of experience to complete beginner,
+                anyone may join Game Development Club at any time, regardless of
+                experience.
+            </Section>
 
-            <InfoSection title='SAMPLE TEXT'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                quam officia, illum iure dolorum explicabo doloremque provident
-                ipsam earum voluptas dignissimos at perferendis ipsa sapiente
-                magnam, sit necessitatibus eligendi delectus.
-            </InfoSection>
-
+            <Section
+                title='LEARN EVERYTHING YOU NEED TO KNOW'
+                barPosition={BarPosition.RIGHT}
+            >
+                Game Development Club offers an extensive amount of resources
+                and lessons to those who are interested in becomming better at
+                their craft. These resources give you the knowledge necessary to
+                become a succesful and contributing member at Game Development
+                Club.
+            </Section>
+            {/* 
             <div id='pre-footer'>
                 <p className='subtitle-text horizontal-text-center'>
                     JOIN GAME DEVELOPMENT CLUB
@@ -62,7 +78,7 @@ const Homepage: React.FC = () => {
                 >
                     Join GDC
                 </Link>
-            </div>
+            </div> */}
         </div>
     );
 };
