@@ -24,9 +24,23 @@ $tile-color-a: #1d1d1f;
     position: relative;
 
     width: 100%;
+    height: 100vh;
+
     margin-top: 0px;
 
     background-color: $tile-color-a;
+}
+
+.horizontal-bar {
+    width: 90%;
+    height: 2px;
+
+    margin-top: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-image: $standard-gradient;
 }
 
 .gdc-artist-img {
@@ -70,9 +84,15 @@ $tile-color-a: #1d1d1f;
 
     font-family: $standard-font;
     font-size: 40px;
-    text-align: center;
+    text-align: left;
 
     color: white;
+
+    &--centered {
+        @extend .subtitle-text;
+
+        text-align: center;
+    }
 
     &--black {
         @extend .subtitle-text;
@@ -100,9 +120,7 @@ $tile-color-a: #1d1d1f;
     color: white;
 }
 
-.pop-text {
-    position: relative;
-
+.gradient-text {
     background: $standard-gradient;
 
     background-clip: text;
