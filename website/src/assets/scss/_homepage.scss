@@ -1,4 +1,5 @@
 $tile-color-a: #1d1d1f;
+$tile-color-b: #171718;
 
 #title-background {
     position: relative;
@@ -20,15 +21,19 @@ $tile-color-a: #1d1d1f;
     background-color: $standard-color;
 }
 
+#pre-footer {
+    position: relative;
+    width: 100%;
+
+    background-color: $tile-color-b;
+}
+
 .page-content {
     position: relative;
+    background-color: $tile-color-a;
 
     width: 100%;
-    height: 100vh;
-
-    margin-top: 0px;
-
-    background-color: $tile-color-a;
+    margin: 0px;
 }
 
 .horizontal-bar {
@@ -41,10 +46,6 @@ $tile-color-a: #1d1d1f;
     margin-right: auto;
 
     background-image: $standard-gradient;
-}
-
-.gdc-artist-img {
-    margin-top: 175px;
 }
 
 .description-image {
@@ -86,6 +87,9 @@ $tile-color-a: #1d1d1f;
     font-size: 40px;
     text-align: left;
 
+    margin-top: 0px;
+    margin-bottom: 0px;
+
     color: white;
 
     &--centered {
@@ -111,8 +115,7 @@ $tile-color-a: #1d1d1f;
     font-size: 22px;
     text-align: center;
 
-    margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 
     max-width: $text-block-size;
     word-wrap: break-word;

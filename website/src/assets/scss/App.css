@@ -10,12 +10,17 @@
   background-color: #232426;
 }
 
-.page-content {
+#pre-footer {
   position: relative;
   width: 100%;
-  height: 100vh;
-  margin-top: 0px;
+  background-color: #171718;
+}
+
+.page-content {
+  position: relative;
   background-color: #1d1d1f;
+  width: 100%;
+  margin: 0px;
 }
 
 .horizontal-bar {
@@ -25,10 +30,6 @@
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(127deg, #1ad74c 0%, #18f1b4 54%, #22e9e2 100%);
-}
-
-.gdc-artist-img {
-  margin-top: 175px;
 }
 
 .description-image, .description-image--right, .description-image--left {
@@ -62,6 +63,8 @@
   font-family: "Poppins", cursive;
   font-size: 40px;
   text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
   color: white;
 }
 
@@ -80,8 +83,7 @@
   font-family: "Poppins", cursive;
   font-size: 22px;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
   max-width: 30ch;
   word-wrap: break-word;
   color: white;
@@ -179,37 +181,22 @@
   outline: none;
 }
 
-.header-button-join-now, .header-button-join-now--large {
+.header-button-join-now {
   position: relative;
-  -webkit-transform: translate(0, 25%);
-          transform: translate(0, 25%);
-  right: 30px;
-  z-index: 1;
-  float: right;
   font-family: "Poppins", cursive;
-  font-size: 14px;
+  font-size: 16.8px;
+  display: inline-block;
   letter-spacing: 1px;
-  color: black;
-  text-align: center;
-  border: solid 1px black;
-  background-color: white;
-  padding: 10px 30px;
-  border-radius: 32px;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  color: white;
+  margin-top: 15px;
+  border: solid 1px #55e685;
+  background: #232426;
+  padding: 15px 45px;
   -webkit-transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
   transition: background-color 0.2s, color 0.2s, width 0.2s, border-width 0.2s, border-color 0.2s;
 }
 
-.header-button-join-now--large {
-  font-size: 28px;
-  padding: 20px 60px;
-  float: left;
-  border-radius: 0px;
-  margin-bottom: 100px;
-}
-
-.header-button-join-now:hover, .header-button-join-now--large:hover {
+.header-button-join-now:hover {
   background-color: black;
   color: white;
 }
@@ -421,6 +408,10 @@ a {
   top: 50%;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+}
+
+.black {
+  color: black;
 }
 
 .horizontal-center {
