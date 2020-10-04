@@ -1,18 +1,3 @@
-@import './constants.scss';
-@import './homepage';
-@import './header-footer';
-@import './our-games';
-@import './animations';
-@import './join-gdc';
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200\
-&family=Neucha&family=Syne&display=swap&family=Source+Code+Pro:wght@600&display=swap\
-&family=Bebas+Neue&display=swap&family=Oxygen:wght@400&display=swap\
-&family=Poppins:wght@400&display=swap\
-&family=Fredericka+the+Great&display=swap\
-&family=Questrial&display=swap\
-&family=Reem+Kufi&display=swap');
-
 html,
 body {
     margin: 0px;
@@ -21,40 +6,4 @@ body {
 
 a {
     text-decoration: none;
-}
-
-.vertical-center {
-    position: relative;
-
-    top: 50%;
-    transform: translate(0%, -50%);
-}
-
-.black {
-    color: black;
-}
-
-.horizontal-center {
-    position: relative;
-
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.horizontal-text-center {
-    text-align: center;
-}
-
-.box-shadow {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.responsive-image {
-    height: auto;
-}
-
-.gradient-outline {
-    position: relative;
-    background-image: $standard-gradient;
-    padding: 1px;
 }
