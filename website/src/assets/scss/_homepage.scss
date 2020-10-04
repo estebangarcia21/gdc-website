@@ -45,20 +45,8 @@ $tile-color-b: #171718;
 
     background-image: $standard-gradient;
 
-    &--left {
-        @extend .horizontal-bar;
-
-        float: left;
-        margin-left: $margin-size;
-    }
-
-    &--right {
-        @extend .horizontal-bar;
-
-        float: right;
-        margin-left: auto;
-        margin-right: $margin-size;
-    }
+    float: left;
+    margin-left: $margin-size;
 }
 
 .description-image {
@@ -123,7 +111,7 @@ $tile-color-b: #171718;
 
     font-family: $standard-font;
     font-size: 26px;
-    text-align: center;
+    text-align: left;
 
     margin-bottom: 0px;
 
@@ -132,21 +120,7 @@ $tile-color-b: #171718;
 
     color: white;
 
-    &--left {
-        @extend .text;
-
-        text-align: left;
-        margin-left: $margin-size;
-    }
-
-    &--right {
-        @extend .text;
-
-        text-align: right;
-
-        margin-left: auto;
-        margin-right: $margin-size;
-    }
+    margin-left: $margin-size;
 }
 
 .gradient-text {
@@ -168,19 +142,8 @@ $tile-color-b: #171718;
 
     top: 15px;
 
-    &--left {
-        @extend .information-section-header;
-
-        margin-left: $margin-size;
-        text-align: left;
-    }
-
-    &--right {
-        @extend .information-section-header;
-
-        margin-right: $margin-size;
-        text-align: right;
-    }
+    margin-left: $margin-size;
+    text-align: left;
 }
 
 .paragraph-button {

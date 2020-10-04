@@ -23,22 +23,13 @@
   margin: 0px;
 }
 
-.horizontal-bar, .horizontal-bar--left, .horizontal-bar--right {
+.horizontal-bar {
   width: 10%;
   height: 2px;
   margin-top: 20px;
   background-image: linear-gradient(127deg, #1ad74c 0%, #18f1b4 54%, #22e9e2 100%);
-}
-
-.horizontal-bar--left {
   float: left;
   margin-left: 100px;
-}
-
-.horizontal-bar--right {
-  float: right;
-  margin-left: auto;
-  margin-right: 100px;
 }
 
 .description-image, .description-image--right, .description-image--left {
@@ -85,26 +76,16 @@
   color: black;
 }
 
-.text, .text--left, .text--right, .description {
+.text, .description {
   position: relative;
   font-family: "Reem kufi", sans-serif;
   font-size: 26px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 0px;
   max-width: 30ch;
   word-wrap: break-word;
   color: white;
-}
-
-.text--left {
-  text-align: left;
   margin-left: 100px;
-}
-
-.text--right {
-  text-align: right;
-  margin-left: auto;
-  margin-right: 100px;
 }
 
 .gradient-text {
@@ -114,23 +95,15 @@
   -webkit-text-fill-color: transparent;
 }
 
-.information-section-header, .information-section-header--left, .information-section-header--right {
+.information-section-header {
   position: relative;
   font-family: "Reem kufi", sans-serif;
   color: white;
   font-size: 42px;
   text-align: center;
   top: 15px;
-}
-
-.information-section-header--left {
   margin-left: 100px;
   text-align: left;
-}
-
-.information-section-header--right {
-  margin-right: 100px;
-  text-align: right;
 }
 
 .paragraph-button, .paragraph-button--left, .paragraph-button--right {
