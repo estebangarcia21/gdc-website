@@ -38,7 +38,7 @@ $tile-color-b: #171718;
 }
 
 .horizontal-bar {
-    width: 70ch;
+    width: 10%;
     height: 2px;
 
     margin-top: 20px;
@@ -167,6 +167,20 @@ $tile-color-b: #171718;
     text-align: center;
 
     top: 15px;
+
+    &--left {
+        @extend .information-section-header;
+
+        margin-left: $margin-size;
+        text-align: left;
+    }
+
+    &--right {
+        @extend .information-section-header;
+
+        margin-right: $margin-size;
+        text-align: right;
+    }
 }
 
 .paragraph-button {
