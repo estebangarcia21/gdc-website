@@ -28,5 +28,26 @@
     width: 50%;
     height: 50%;
 
+    object-fit: contain;
+
     margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    #home-banner-left-panel {
+        left: unset;
+
+        width: 60%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #home-banner-right-panel {
+        display: none;
+    }
+
+    #home-banner {
+        margin-bottom: 20px;
+    }
 }

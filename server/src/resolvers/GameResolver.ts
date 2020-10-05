@@ -9,7 +9,7 @@ export class GameResolver {
     }
 
     @Query(() => [Game])
-    game(@Arg('yearCreated') yearCreated: string): Promise<Game[]> {
+    getGameByYear(@Arg('yearCreated') yearCreated: string): Promise<Game[]> {
         return Game.find({
             where: [{ yearCreated: yearCreated }],
         });

@@ -19,7 +19,7 @@ let GameResolver = class GameResolver {
     games() {
         return Game_1.Game.find();
     }
-    game(yearCreated) {
+    getGameByYear(yearCreated) {
         return Game_1.Game.find({
             where: [{ yearCreated: yearCreated }],
         });
@@ -37,7 +37,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], GameResolver.prototype, "game", null);
+], GameResolver.prototype, "getGameByYear", null);
 GameResolver = __decorate([
     type_graphql_1.Resolver()
 ], GameResolver);
