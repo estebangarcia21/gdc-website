@@ -19,6 +19,7 @@ const type_graphql_1 = require("type-graphql");
 const typeorm_1 = require("typeorm");
 const Game_1 = require("./entities/Game");
 const GameResolver_1 = require("./resolvers/GameResolver");
+const cors_1 = __importDefault(require("cors"));
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield typeorm_1.createConnection({
         type: 'postgres',
@@ -28,14 +29,14 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         entities: [Game_1.Game],
     });
     const app = express_1.default();
+    app.use(cors_1.default());
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: yield type_graphql_1.buildSchema({
             resolvers: [GameResolver_1.GameResolver],
-            validate: false,
         }),
         context: ({ req, res }) => ({ req, res }),
     });
-    apolloServer.applyMiddleware({ app });
+    apolloServer.applyMiddleware({ app, cors: true });
     app.listen(4000, () => {
         console.log('Server started on localhost:4000');
     });

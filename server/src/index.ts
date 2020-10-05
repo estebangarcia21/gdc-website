@@ -5,6 +5,7 @@ import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
 import { Game } from './entities/Game';
 import { GameResolver } from './resolvers/GameResolver';
+import cors from 'cors';
 
 const main = async () => {
     await createConnection({
@@ -16,15 +17,16 @@ const main = async () => {
     });
 
     const app = express();
+    app.use(cors());
+
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
             resolvers: [GameResolver],
-            validate: false,
         }),
         context: ({ req, res }) => ({ req, res }),
     });
 
-    apolloServer.applyMiddleware({ app });
+    apolloServer.applyMiddleware({ app, cors: true });
 
     app.listen(4000, () => {
         console.log('Server started on localhost:4000');

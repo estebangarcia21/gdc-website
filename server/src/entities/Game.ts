@@ -1,4 +1,4 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, Int, ObjectType } from 'type-graphql';
 import {
     BaseEntity,
     Column,
@@ -25,7 +25,7 @@ export class Game extends BaseEntity {
 
     @Field()
     @Column()
-    yearCreated: string;
+    year: string;
 
     @Field(() => String)
     @CreateDateColumn()

@@ -1,26 +1,38 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
-const GET_GAMES_FROM_YEAR_2020 = gql`
+const GET_GAMES = gql`
     {
-        getGameByYear(yearCreated: "2020") {
+        games {
             name
-            yearCreated
+            description
+            year
         }
     }
 `;
 
 const Ourgamespage: React.FC = () => {
-    const { loading, data } = useQuery<
-        { name: string; yearCreated: string },
-        { year: string }
-    >(GET_GAMES_FROM_YEAR_2020, {
-        variables: { year: '2020' },
-    });
+    const { data, loading } = useQuery<{
+        games: {
+            name: string;
+            description: string;
+            year: string;
+        }[];
+    }>(GET_GAMES);
 
-    console.log(data);
+    if (loading) return <div>Loading...</div>;
 
-    return <div></div>;
+    return (
+        <div>
+            {data?.games.map((game) => (
+                <div key={game.name}>
+                    <p>{game.name}</p>
+                    <p>{game.year}</p>
+                    <p>{game.description}</p>
+                </div>
+            ))}
+        </div>
+    );
 };
 
 export default Ourgamespage;

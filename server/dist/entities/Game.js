@@ -37,7 +37,7 @@ __decorate([
     type_graphql_1.Field(),
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Game.prototype, "yearCreated", void 0);
+], Game.prototype, "year", void 0);
 __decorate([
     type_graphql_1.Field(() => String),
     typeorm_1.CreateDateColumn(),
