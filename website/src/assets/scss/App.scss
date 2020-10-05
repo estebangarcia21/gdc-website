@@ -1,9 +1,8 @@
-@import './home';
+$font-family: 'MuseoModerno', sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400&display=swap');
-
-$font-family: 'Sulphur Point', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 
 html,
 body,
@@ -30,6 +29,13 @@ a {
     transform: translateY(-50%);
 }
 
+.horizontal-center {
+    position: relative;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
 .center-text {
     text-align: center;
 }
@@ -52,9 +58,15 @@ a {
 
 .text {
     font-family: $font-family;
-    font-size: 22px;
+    font-size: 18px;
 
     color: inherit;
+
+    &--gray {
+        @extend .text;
+
+        color: #535353;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -71,3 +83,5 @@ a {
         font-size: 1.5rem;
     }
 }
+
+@import './home';

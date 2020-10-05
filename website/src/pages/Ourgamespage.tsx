@@ -4,6 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 const GET_GAMES = gql`
     {
         games {
+            id
             name
             description
             year
@@ -14,6 +15,7 @@ const GET_GAMES = gql`
 const Ourgamespage: React.FC = () => {
     const { data, loading } = useQuery<{
         games: {
+            id: number;
             name: string;
             description: string;
             year: string;
@@ -25,10 +27,12 @@ const Ourgamespage: React.FC = () => {
     return (
         <div>
             {data?.games.map((game) => (
-                <div key={game.name}>
+                <div key={game.id}>
                     <p>{game.name}</p>
                     <p>{game.year}</p>
                     <p>{game.description}</p>
+                    <p>{game.id}</p>
+                    <br />
                 </div>
             ))}
         </div>

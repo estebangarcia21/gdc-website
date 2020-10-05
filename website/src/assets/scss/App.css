@@ -1,5 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
+html,
+body,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.horizontal-center, #info-cards {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.center-text {
+  text-align: center;
+}
+
+.title {
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: inherit;
+}
+
+.subtitle {
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 22px;
+  color: inherit;
+}
+
+.text, .text--gray {
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 18px;
+  color: inherit;
+}
+
+.text--gray {
+  color: #535353;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    text-align: center;
+  }
+  .subtitle {
+    text-align: center;
+  }
+  .text, .text--gray {
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+}
+
 #home-banner {
   width: 100%;
   height: 55vh;
@@ -26,6 +97,52 @@
   margin-left: auto;
 }
 
+#home-description {
+  position: relative;
+  max-width: 80ch;
+  word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#info-cards {
+  position: relative;
+  display: inline-block;
+  margin-top: 100px;
+}
+
+.info-card {
+  position: relative;
+  width: 250px;
+  float: left;
+  margin: 20px;
+}
+
+.info-card--title {
+  position: relative;
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 26px;
+  text-align: center;
+  color: black;
+  top: 2.5px;
+  margin-bottom: 5px;
+}
+
+.info-card--bar {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 2.5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  img {
+    width: 80%;
+    height: 250px;
+    margin-top: 80px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #home-banner-left-panel {
     left: unset;
@@ -38,65 +155,6 @@
   }
   #home-banner {
     margin-bottom: 20px;
-  }
-}
-
-html,
-body,
-p {
-  margin: 0px;
-  padding: 0px;
-}
-
-a {
-  text-decoration: none;
-}
-
-.box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-}
-
-.vertical-center {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.center-text {
-  text-align: center;
-}
-
-.title {
-  font-family: "Sulphur Point", sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  color: inherit;
-}
-
-.subtitle {
-  font-family: "Sulphur Point", sans-serif;
-  font-size: 22px;
-  color: inherit;
-}
-
-.text {
-  font-family: "Sulphur Point", sans-serif;
-  font-size: 22px;
-  color: inherit;
-}
-
-@media only screen and (max-width: 600px) {
-  .title {
-    text-align: center;
-  }
-  .subtitle {
-    text-align: center;
-  }
-  .text {
-    margin: 10px;
-    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=App.css.map */
