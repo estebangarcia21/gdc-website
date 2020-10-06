@@ -1,20 +1,21 @@
-import React from 'react';
-import concept_art from '../assets/images/concept_art.png';
-import programming_svg from '../assets/svgs/code.svg';
-import animation_svg from '../assets/svgs/animation-motion.svg';
-import music_svg from '../assets/svgs/music.svg';
-import art_svg from '../assets/svgs/brush-paintbrush.svg';
-import writers_svg from '../assets/svgs/pencil-draw.svg';
-import { useSpring, animated } from 'react-spring';
 import * as easings from 'd3-ease';
+import React from 'react';
+import { animated, useSpring } from 'react-spring';
+import { Spring } from 'react-spring/renderprops';
 import VisibilitySensor from 'react-visibility-sensor';
+import concept_art from '../assets/images/concept_art.png';
+import animation_svg from '../assets/svgs/animation-motion.svg';
+import art_svg from '../assets/svgs/brush-paintbrush.svg';
+import programming_svg from '../assets/svgs/code.svg';
+import music_svg from '../assets/svgs/music.svg';
+import writers_svg from '../assets/svgs/pencil-draw.svg';
 
-interface CardProps {
+interface TeamCardProps {
     title: string;
     icon: string;
 }
 
-const InfoCard: React.FC<CardProps> = (props) => {
+const TeamCard: React.FC<TeamCardProps> = (props) => {
     return (
         <div className='info-card'>
             <img
@@ -78,45 +79,68 @@ const Homepage: React.FC = () => {
                 </p>
             </animated.div>
 
-            <animated.div
-                style={useSpring({
-                    config: {
-                        duration: 650,
-                        easing: easings.easeCubic,
-                    },
-                    opacity: 1,
-                    transform: 'translateY(0px)',
-                    from: {
-                        opacity: 0,
-                        transform: 'translateY(50px)',
-                    },
-                })}
-            >
-                <p className='title center-text'>Join a Team</p>
+            <VisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                    <Spring
+                        config={{
+                            duration: 500,
+                            easing: easings.easeCubic,
+                        }}
+                        to={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible
+                                ? 'translateY(0)'
+                                : 'translateY(50px)',
+                        }}
+                    >
+                        {(props) => (
+                            <div style={{ ...props }}>
+                                <p className='title center-text'>Join a Team</p>
 
-                <div id='info-cards'>
-                    <InfoCard title='Programmers' icon={programming_svg}>
-                        Tie the project together! Programmers connect all assets
-                        and bring the game to life through Unity and C#.
-                    </InfoCard>
-                    <InfoCard title='Artists' icon={art_svg}>
-                        Work together with other artists to create amazing 2D
-                        visuals for our games. Any art style is welcome!
-                    </InfoCard>
-                    <InfoCard title='Animators' icon={animation_svg}>
-                        Bring the game to life! Work closely with the art team
-                        to make fluid, responsive, and engaging animations.
-                    </InfoCard>
-                    <InfoCard title='Writers' icon={writers_svg}>
-                        Layout layout the story of our games! Communicate with
-                        club members to create amazing stories!
-                    </InfoCard>
-                    <InfoCard title='Musicians' icon={music_svg}>
-                        Produce inspiring music that captures the feeling and
-                        emotion of the game environment.
-                    </InfoCard>
-                </div>
-            </animated.div>
+                                <div id='info-cards'>
+                                    <TeamCard
+                                        title='Programmers'
+                                        icon={programming_svg}
+                                    >
+                                        Tie the project together! Programmers
+                                        connect all assets and bring the game to
+                                        life through Unity and C#.
+                                    </TeamCard>
+                                    <TeamCard title='Artists' icon={art_svg}>
+                                        Work together with other artists to
+                                        create amazing 2D visuals for our games.
+                                        Any art style is welcome!
+                                    </TeamCard>
+                                    <TeamCard
+                                        title='Animators'
+                                        icon={animation_svg}
+                                    >
+                                        Bring the game to life! Work closely
+                                        with the art team to make fluid,
+                                        responsive, and engaging animations.
+                                    </TeamCard>
+                                    <TeamCard
+                                        title='Writers'
+                                        icon={writers_svg}
+                                    >
+                                        Layout layout the story of our games!
+                                        Communicate with club members to create
+                                        amazing stories!
+                                    </TeamCard>
+                                    <TeamCard
+                                        title='Musicians'
+                                        icon={music_svg}
+                                    >
+                                        Produce inspiring music that captures
+                                        the feeling and emotion of the game
+                                        environment.
+                                    </TeamCard>
+                                </div>
+                            </div>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
         </div>
     );
 };
