@@ -19,10 +19,12 @@ const InfoCard: React.FC<CardProps> = (props) => {
                 src={props.icon}
                 width='35px'
                 height='35px'
+                alt='Icon'
             />
             <p className='info-card--title'>{props.title}</p>
-            <div className='info-card--bar' />
-            <p className='text--gray center-text'>{props.children}</p>
+            <p className='text--gray info-card--text center-text'>
+                {props.children}
+            </p>
         </div>
     );
 };
@@ -50,30 +52,40 @@ const Homepage: React.FC = () => {
             </div>
 
             <p className='title center-text'>What is Game Development Club?</p>
+
             <p id='home-description' className='text center-text'>
-                Game Development Club is a team of students commited to create
-                fun and exciting games. From no experience to years of
-                experience, Game Development Club accepts anyone from any skill
-                level. Resources allow people to learn. Join the first
-                successful Game Development Club at Franklin High School and
-                learn how to create your own games!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                soluta, rem hic voluptatem accusamus tempora sapiente molestiae
+                at nesciunt dolore totam non, et, culpa consequuntur a ea
+                voluptates eum quibusdam? Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Quam rerum sapiente culpa similique
+                repellendus error fugiat itaque, fugit dolorum mollitia
+                distinctio odio, minima alias, quae repudiandae odit suscipit
+                cupiditate eum?
             </p>
 
+            <p className='title center-text'>Join a Team</p>
+
             <div id='info-cards'>
-                <InfoCard title='Programmer' icon={programming_svg}>
-                    Programmers are in charge of programming all of the game.
+                <InfoCard title='Programmers' icon={programming_svg}>
+                    Tie the project together! Programmers connect all assets and
+                    bring the game to life through Unity and C#.
                 </InfoCard>
-                <InfoCard title='Artist' icon={art_svg}>
-                    Programmers are in charge of programming all of the game.
+                <InfoCard title='Artists' icon={art_svg}>
+                    Work together with other artists to create amazing 2D
+                    visuals for our games. Any art style is welcome!
                 </InfoCard>
-                <InfoCard title='Animator' icon={animation_svg}>
-                    Programmers are in charge of programming all of the game.
+                <InfoCard title='Animators' icon={animation_svg}>
+                    Bring the game to life! Work closely with the art team to
+                    make fluid, responsive, and engaging animations.
                 </InfoCard>
-                <InfoCard title='Writer' icon={writers_svg}>
-                    Programmers are in charge of programming all of the game.
+                <InfoCard title='Writers' icon={writers_svg}>
+                    Layout layout the story of our games! Communicate with club
+                    members to create amazing stories!
                 </InfoCard>
-                <InfoCard title='Musician' icon={music_svg}>
-                    Programmers are in charge of programming all of the game.
+                <InfoCard title='Musicians' icon={music_svg}>
+                    Produce inspiring music that captures the feeling and
+                    emotion of the game environment.
                 </InfoCard>
             </div>
         </div>
