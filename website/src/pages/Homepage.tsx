@@ -4,6 +4,7 @@ import { animated, useSpring } from 'react-spring';
 import { Spring } from 'react-spring/renderprops';
 import VisibilitySensor from 'react-visibility-sensor';
 import concept_art from '../assets/images/concept_art.png';
+import chevron_arrow_right from '../assets/images/chevron_arrow_right.png';
 import animation_svg from '../assets/svgs/animation-motion.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
 import programming_svg from '../assets/svgs/code.svg';
@@ -86,10 +87,41 @@ const Homepage: React.FC = () => {
                 </p>
             </animated.div>
 
-            <div id='why-join-section'>
-                <h1 className='title--white'>
-                    Why join Game Development Club?
-                </h1>
+            <div>
+                <img
+                    id='why-join-section--arrow'
+                    src={chevron_arrow_right}
+                    width='75px'
+                    height='75px'
+                    alt='Right arrow'
+                />
+
+                <div id='why-join-section--left'>
+                    <h1
+                        className='title--white vertical-center'
+                        style={{
+                            fontSize: '42px',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Why join Game Development Club?
+                    </h1>
+                </div>
+
+                <div id='why-join-section--right'>
+                    <h1 className='title center-text'>Reasons to Join</h1>
+
+                    <div id='why-join-section--list-text'>
+                        <p>Meet new people who share your interests!</p>
+                        <br />
+                        <p>Learn game development skills!</p>
+                        <br />
+                        <p>Have fun with frequent milestone celebrations!</p>
+                        <br />
+                        <p>No previous experience needed!</p>
+                        <br />
+                    </div>
+                </div>
             </div>
 
             <VisibilitySensor partialVisibility>
@@ -98,10 +130,10 @@ const Homepage: React.FC = () => {
 
                     return (
                         <Spring
-                            delay={100}
+                            delay={300}
                             config={{
                                 duration: 500,
-                                easing: easings.easeBack,
+                                easing: easings.easeCubic,
                             }}
                             to={{
                                 opacity: isVisible ? 1 : 0,

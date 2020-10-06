@@ -46,12 +46,40 @@
 }
 
 #why-join-section {
-    width: 50%;
-    height: 500px;
+    &--arrow {
+        position: absolute;
 
-    background-color: #272c30;
+        transform: translate(-50%, -100%);
+        left: 50%;
+        bottom: -50%;
+    }
 
-    margin-bottom: 100px;
+    &--left {
+        float: left;
+
+        width: 50%;
+        height: 750px;
+
+        background-color: #272c30;
+    }
+
+    &--right {
+        float: left;
+
+        width: 50%;
+        height: 750px;
+
+        background-color: #f1f0e4;
+
+        margin-bottom: 100px;
+    }
+
+    &--list-text {
+        @extend .text;
+
+        font-size: 24px;
+        text-align: center;
+    }
 }
 
 #info-cards {
@@ -119,6 +147,20 @@
     }
 
     #home-banner {
-        margin-bottom: 20px;
+        margin-bottom: 100px;
+    }
+
+    #why-join-section--left {
+        width: 100%;
+        float: unset;
+    }
+
+    #why-join-section--right {
+        width: 100%;
+        float: unset;
+    }
+
+    #why-join-section--arrow {
+        display: none;
     }
 }
