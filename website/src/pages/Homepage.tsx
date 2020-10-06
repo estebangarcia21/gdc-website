@@ -5,6 +5,9 @@ import animation_svg from '../assets/svgs/animation-motion.svg';
 import music_svg from '../assets/svgs/music.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
 import writers_svg from '../assets/svgs/pencil-draw.svg';
+import { useSpring, animated } from 'react-spring';
+import * as easings from 'd3-ease';
+import VisibilitySensor from 'react-visibility-sensor';
 
 interface CardProps {
     title: string;
@@ -50,44 +53,70 @@ const Homepage: React.FC = () => {
                     />
                 </div>
             </div>
+            <animated.div
+                style={useSpring({
+                    config: {
+                        duration: 500,
+                    },
+                    opacity: 1,
+                    from: { opacity: 0 },
+                })}
+            >
+                <p className='title center-text'>
+                    What is Game Development Club?
+                </p>
 
-            <p className='title center-text'>What is Game Development Club?</p>
+                <p id='home-description' className='text center-text'>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odit soluta, rem hic voluptatem accusamus tempora sapiente
+                    molestiae at nesciunt dolore totam non, et, culpa
+                    consequuntur a ea voluptates eum quibusdam? Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Quam rerum
+                    sapiente culpa similique repellendus error fugiat itaque,
+                    fugit dolorum mollitia distinctio odio, minima alias, quae
+                    repudiandae odit suscipit cupiditate eum?
+                </p>
+            </animated.div>
 
-            <p id='home-description' className='text center-text'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                soluta, rem hic voluptatem accusamus tempora sapiente molestiae
-                at nesciunt dolore totam non, et, culpa consequuntur a ea
-                voluptates eum quibusdam? Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quam rerum sapiente culpa similique
-                repellendus error fugiat itaque, fugit dolorum mollitia
-                distinctio odio, minima alias, quae repudiandae odit suscipit
-                cupiditate eum?
-            </p>
+            <animated.div
+                style={useSpring({
+                    config: {
+                        duration: 650,
+                        easing: easings.easeCubic,
+                    },
+                    opacity: 1,
+                    transform: 'translateY(0px)',
+                    from: {
+                        opacity: 0,
+                        transform: 'translateY(50px)',
+                    },
+                })}
+            >
+                <p className='title center-text'>Join a Team</p>
 
-            <p className='title center-text'>Join a Team</p>
-
-            <div id='info-cards'>
-                <InfoCard title='Programmers' icon={programming_svg}>
-                    Tie the project together! Programmers connect all assets and
-                    bring the game to life through Unity and C#.
-                </InfoCard>
-                <InfoCard title='Artists' icon={art_svg}>
-                    Work together with other artists to create amazing 2D
-                    visuals for our games. Any art style is welcome!
-                </InfoCard>
-                <InfoCard title='Animators' icon={animation_svg}>
-                    Bring the game to life! Work closely with the art team to
-                    make fluid, responsive, and engaging animations.
-                </InfoCard>
-                <InfoCard title='Writers' icon={writers_svg}>
-                    Layout layout the story of our games! Communicate with club
-                    members to create amazing stories!
-                </InfoCard>
-                <InfoCard title='Musicians' icon={music_svg}>
-                    Produce inspiring music that captures the feeling and
-                    emotion of the game environment.
-                </InfoCard>
-            </div>
+                <div id='info-cards'>
+                    <InfoCard title='Programmers' icon={programming_svg}>
+                        Tie the project together! Programmers connect all assets
+                        and bring the game to life through Unity and C#.
+                    </InfoCard>
+                    <InfoCard title='Artists' icon={art_svg}>
+                        Work together with other artists to create amazing 2D
+                        visuals for our games. Any art style is welcome!
+                    </InfoCard>
+                    <InfoCard title='Animators' icon={animation_svg}>
+                        Bring the game to life! Work closely with the art team
+                        to make fluid, responsive, and engaging animations.
+                    </InfoCard>
+                    <InfoCard title='Writers' icon={writers_svg}>
+                        Layout layout the story of our games! Communicate with
+                        club members to create amazing stories!
+                    </InfoCard>
+                    <InfoCard title='Musicians' icon={music_svg}>
+                        Produce inspiring music that captures the feeling and
+                        emotion of the game environment.
+                    </InfoCard>
+                </div>
+            </animated.div>
         </div>
     );
 };
