@@ -35,7 +35,7 @@ const TeamCard: React.FC<TeamCardProps> = (props) => {
 
 const Homepage: React.FC = () => {
     const [loaded, setLoaded] = useState({
-        cards: false,
+        joinTeamCards: false,
     });
 
     return (
@@ -94,10 +94,11 @@ const Homepage: React.FC = () => {
 
             <VisibilitySensor partialVisibility>
                 {({ isVisible }) => {
-                    isVisible = loaded.cards ? true : isVisible;
+                    isVisible = loaded.joinTeamCards ? true : isVisible;
 
                     return (
                         <Spring
+                            delay={100}
                             config={{
                                 duration: 500,
                                 easing: easings.easeBack,
@@ -109,9 +110,11 @@ const Homepage: React.FC = () => {
                                     : 'translateY(50px)',
                             }}
                             onRest={() => {
+                                if (!isVisible) return;
+
                                 setLoaded({
                                     ...loaded,
-                                    cards: true,
+                                    joinTeamCards: true,
                                 });
                             }}
                         >

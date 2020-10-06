@@ -58,7 +58,10 @@
     position: relative;
     @extend .horizontal-center;
 
-    display: inline-block;
+    display: inline-flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
 
     margin-top: 20px;
     margin-bottom: 100px;
@@ -93,19 +96,19 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    img {
-        width: 80%;
-        height: 250px;
+    // img {
+    //     width: 80%;
+    //     height: 250px;
 
-        margin-top: 80px;
-    }
+    //     margin-top: 80px;
+    // }
 }
 
 @media only screen and (max-width: 600px) {
     #home-banner-left-panel {
         left: unset;
 
-        width: 60%;
+        width: 90%;
 
         margin-left: auto;
         margin-right: auto;
