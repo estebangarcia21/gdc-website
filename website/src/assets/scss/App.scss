@@ -5,6 +5,8 @@ $font-family: 'MuseoModerno', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 
 html,
+h1,
+h2,
 body,
 p {
     margin: 0px;
@@ -47,6 +49,12 @@ a {
     font-weight: 400;
 
     color: inherit;
+
+    &--white {
+        @extend .title;
+
+        color: white;
+    }
 }
 
 .subtitle {
