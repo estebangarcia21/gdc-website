@@ -4,7 +4,7 @@
 
     background-color: #191a1b;
 
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 
     color: white;
 }
@@ -147,6 +147,11 @@
         display: none;
     }
 
+    #home-description {
+        text-align: left;
+        margin: 35px;
+    }
+
     #home-banner-left-panel {
         left: unset;
 
@@ -160,7 +165,10 @@
         display: none;
     }
 
-    #home-banner {
-        margin-bottom: 100px;
+    #why-join-section--list-text {
+        $margin-size: 50px;
+
+        margin-left: $margin-size;
+        margin-right: $margin-size;
     }
 }

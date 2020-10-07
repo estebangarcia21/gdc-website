@@ -1,19 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
-html,
-h1,
-h2,
-body,
-p {
-  margin: 0px;
-  padding: 0px;
-}
-
-a {
-  text-decoration: none;
-}
-
 .box-shadow {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
@@ -80,7 +67,7 @@ a {
   width: 100%;
   height: 55vh;
   background-color: #191a1b;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   color: white;
 }
 
@@ -198,6 +185,10 @@ a {
   #header-image {
     display: none;
   }
+  #home-description {
+    text-align: left;
+    margin: 35px;
+  }
   #home-banner-left-panel {
     left: unset;
     width: 90%;
@@ -207,8 +198,22 @@ a {
   #home-banner-right-panel {
     display: none;
   }
-  #home-banner {
-    margin-bottom: 100px;
+  #why-join-section--list-text {
+    margin-left: 50px;
+    margin-right: 50px;
   }
+}
+
+html,
+h1,
+h2,
+body,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=App.css.map */
