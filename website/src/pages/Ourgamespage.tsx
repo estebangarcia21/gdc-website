@@ -13,7 +13,7 @@ const GET_GAMES = gql`
 `;
 
 const Ourgamespage: React.FC = () => {
-    const { data, loading } = useQuery<{
+    const { data, loading, error } = useQuery<{
         games: {
             id: number;
             name: string;
@@ -23,6 +23,10 @@ const Ourgamespage: React.FC = () => {
     }>(GET_GAMES);
 
     if (loading) return <div>Loading...</div>;
+    if (error) {
+        console.log(error.message);
+        return <div>Error!</div>;
+    }
 
     return (
         <div>
@@ -31,7 +35,6 @@ const Ourgamespage: React.FC = () => {
                     <p>{game.name}</p>
                     <p>{game.year}</p>
                     <p>{game.description}</p>
-                    <p>{game.id}</p>
                     <br />
                 </div>
             ))}

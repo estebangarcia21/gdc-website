@@ -49,16 +49,15 @@ const Homepage: React.FC = () => {
                             The Community of Communities
                         </h2>
                     </div>
-                </div>
 
-                <div id='home-banner-right-panel'>
-                    <img
-                        className='box-shadow'
-                        src={concept_art}
-                        width='80%'
-                        height='150%'
-                        alt='Images from our games'
-                    />
+                    <div>
+                        <img
+                            id='header-image'
+                            className='box-shadow'
+                            src={concept_art}
+                            alt='Images from our games'
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -88,13 +87,13 @@ const Homepage: React.FC = () => {
             </animated.div>
 
             <div id='why-join-section'>
-                <img
+                {/* <img
                     id='why-join-section--arrow'
                     src={chevron_arrow_right}
                     width='75px'
                     height='75px'
-                    alt='Right arrow'
-                />
+                    alt='Right facing arrow'
+                /> */}
 
                 <div id='why-join-section--left'>
                     <h1
@@ -109,16 +108,19 @@ const Homepage: React.FC = () => {
                 </div>
 
                 <div id='why-join-section--right'>
-                    <h1 className='title center-text'>Reasons to Join</h1>
-
-                    <div id='why-join-section--list-text'>
+                    <div
+                        id='why-join-section--list-text'
+                        className='vertical-center'
+                    >
                         <p>Meet new people who share your interests!</p>
                         <br />
                         <p>Learn game development skills!</p>
                         <br />
-                        <p>Have fun with frequent milestone celebrations!</p>
+                        <p>Have fun with frequent celebrations!</p>
                         <br />
                         <p>No previous experience needed!</p>
+                        <br />
+                        <p>Become better in your field!</p>
                         <br />
                     </div>
                 </div>
