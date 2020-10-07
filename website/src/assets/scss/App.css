@@ -111,6 +111,12 @@ a {
   margin-bottom: 100px;
 }
 
+#why-join-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #why-join-section--arrow {
   position: absolute;
   -webkit-transform: translate(-50%, -100%);
@@ -186,6 +192,9 @@ a {
   }
   #home-banner {
     margin-bottom: 100px;
+  }
+  #why-join-section {
+    display: unset;
   }
   #why-join-section--left {
     width: 100%;

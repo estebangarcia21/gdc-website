@@ -87,7 +87,7 @@ const Homepage: React.FC = () => {
                 </p>
             </animated.div>
 
-            <div>
+            <div id='why-join-section'>
                 <img
                     id='why-join-section--arrow'
                     src={chevron_arrow_right}
@@ -126,13 +126,10 @@ const Homepage: React.FC = () => {
 
             <VisibilitySensor partialVisibility>
                 {({ isVisible }) => {
-                    console.log(loaded.joinTeamCards);
-
                     isVisible = loaded.joinTeamCards ? true : isVisible;
 
                     return (
                         <Spring
-                            delay={300}
                             config={{
                                 duration: 500,
                                 easing: easings.easeCubic,
@@ -140,7 +137,7 @@ const Homepage: React.FC = () => {
                             to={{
                                 opacity: isVisible ? 1 : 0,
                                 transform: isVisible
-                                    ? 'translateY(0)'
+                                    ? 'translateY(0px)'
                                     : 'translateY(50px)',
                             }}
                             onRest={() => {

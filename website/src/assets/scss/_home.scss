@@ -46,6 +46,8 @@
 }
 
 #why-join-section {
+    display: flex;
+
     &--arrow {
         position: absolute;
 
@@ -148,6 +150,10 @@
 
     #home-banner {
         margin-bottom: 100px;
+    }
+
+    #why-join-section {
+        display: unset;
     }
 
     #why-join-section--left {
