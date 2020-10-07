@@ -11,9 +11,10 @@ A website about my high school Game Development Club.
 -   apollo
 -   typeorm
 
-## Work In Progress!
+## TODO
 
-The website is still in a WIP state.
+-   Migrate back-end to React's ContextAPI
+-   Complete the home page
 
 ## Game Development Club Organization
 
