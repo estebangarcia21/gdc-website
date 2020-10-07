@@ -126,6 +126,8 @@ const Homepage: React.FC = () => {
 
             <VisibilitySensor partialVisibility>
                 {({ isVisible }) => {
+                    console.log(loaded.joinTeamCards);
+
                     isVisible = loaded.joinTeamCards ? true : isVisible;
 
                     return (
