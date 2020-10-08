@@ -1,8 +1,8 @@
-$font-family: 'MuseoModerno', sans-serif;
-
 @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
 
 .box-shadow {
     $intensity: 0.4;
@@ -30,7 +30,7 @@ $font-family: 'MuseoModerno', sans-serif;
 }
 
 .title {
-    font-family: $font-family;
+    font-family: 'MuseoModerno', sans-serif;
     font-size: 36px;
 
     font-weight: 400;
@@ -45,23 +45,18 @@ $font-family: 'MuseoModerno', sans-serif;
 }
 
 .subtitle {
-    font-family: $font-family;
+    font-family: 'MuseoModerno', sans-serif;
     font-size: 22px;
 
     color: inherit;
 }
 
 .text {
-    font-family: $font-family;
-    font-size: 18px;
+    font-family: 'NTR', sans-serif;
+    font-size: 20px;
+    line-height: 0.8cm;
 
     color: inherit;
-
-    &--gray {
-        @extend .text;
-
-        color: #414141;
-    }
 }
 
 @media only screen and (max-width: 600px) {

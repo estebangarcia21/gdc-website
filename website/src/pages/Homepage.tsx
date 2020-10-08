@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { Spring } from 'react-spring/renderprops';
 import VisibilitySensor from 'react-visibility-sensor';
-// import chevron_arrow_right from '../assets/images/chevron_arrow_right.png';
 import concept_art from '../assets/images/concept_art.png';
 import animation_svg from '../assets/svgs/animation-motion.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
@@ -27,7 +26,10 @@ const TeamCard: React.FC<TeamCardProps> = (props) => {
                 alt='Icon'
             />
             <p className='info-card--title'>{props.title}</p>
-            <p className='text--gray info-card--text center-text'>
+            <p
+                className='text info-card--text center-text'
+                style={{ color: '#414141' }}
+            >
                 {props.children}
             </p>
         </div>
@@ -49,22 +51,24 @@ const Homepage: React.FC = () => {
                             The Community of Communities
                         </h2>
                     </div>
+                </div>
 
-                    <div>
-                        <img
-                            id='header-image'
-                            className='box-shadow'
-                            src={concept_art}
-                            alt='Images from our games'
-                        />
-                    </div>
+                <div>
+                    <img
+                        id='header-image'
+                        className='box-shadow'
+                        src={concept_art}
+                        alt='Images from our games'
+                    />
                 </div>
             </div>
 
             <animated.div
                 style={useSpring({
                     config: {
-                        duration: 500,
+                        delay: 250,
+                        duration: 1000,
+                        easing: easings.easeBack,
                     },
                     opacity: 1,
                     from: { opacity: 0 },
@@ -87,14 +91,6 @@ const Homepage: React.FC = () => {
             </animated.div>
 
             <div id='why-join-section'>
-                {/* <img
-                    id='why-join-section--arrow'
-                    src={chevron_arrow_right}
-                    width='75px'
-                    height='75px'
-                    alt='Right facing arrow'
-                /> */}
-
                 <div id='why-join-section--left'>
                     <h1
                         className='title--white vertical-center'
@@ -142,7 +138,7 @@ const Homepage: React.FC = () => {
                                     ? 'translateY(0px)'
                                     : 'translateY(50px)',
                             }}
-                            onRest={() => {
+                            onStart={() => {
                                 if (!isVisible) return;
 
                                 setLoaded({
