@@ -4,12 +4,12 @@ A website about my high school Game Development Club. This is my first full stac
 
 ## Technologies
 
--   react
--   typescript
--   react-spring
--   graphql
--   apollo
--   typeorm
+-   React
+-   Typescript
+-   React Spring
+-   GraphQL
+-   Apollo
+-   Typeorm
 
 ## TODO
 
