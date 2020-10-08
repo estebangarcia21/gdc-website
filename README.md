@@ -1,6 +1,6 @@
 # Game Development Club Website
 
-A website about my high school Game Development Club.
+A website about my high school Game Development Club. This is my first full stack project!
 
 ## Technologies
 
