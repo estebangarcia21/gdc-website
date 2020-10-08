@@ -14,7 +14,7 @@ A website about my high school Game Development Club. This is my first full stac
 ## TODO
 
 -   Migrate back-end to React's ContextAPI
--   Complete the home page
+-   Change app to be designed mobile-first
 
 ## Game Development Club Organization
 
