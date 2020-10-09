@@ -12,7 +12,7 @@ const GET_GAMES = gql`
     }
 `;
 
-const Ourgamespage: React.FC = () => {
+const OurGames: React.FC = () => {
     const { data, loading, error } = useQuery<{
         games: {
             id: number;
@@ -42,4 +42,4 @@ const Ourgamespage: React.FC = () => {
     );
 };
 
-export default Ourgamespage;
+export default OurGames;

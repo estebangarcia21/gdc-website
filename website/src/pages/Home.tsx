@@ -1,7 +1,6 @@
 import * as easings from 'd3-ease';
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
-import { Spring } from 'react-spring/renderprops';
 import VisibilitySensor from 'react-visibility-sensor';
 import animation_svg from '../assets/svgs/animation-motion.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
@@ -35,7 +34,7 @@ const TeamCard: React.FC<TeamCardProps> = (props) => {
     );
 };
 
-const Homepage: React.FC = () => {
+const Home: React.FC = () => {
     const [loaded, setLoaded] = useState({
         joinTeamCards: false,
     });
@@ -162,60 +161,7 @@ const Homepage: React.FC = () => {
                 </animated.div>
             </VisibilitySensor>
         </div>
-
-        // <Spring
-        //     config={{
-        //         duration: 500,
-        //         easing: easings.easeCubic,
-        //     }}
-        //     to={{
-        //         opacity: loaded.joinTeamCards ? 1 : 0,
-        //         transform: loaded.joinTeamCards
-        //             ? 'translateY(0px)'
-        //             : 'translateY(50px)',
-        //     }}
-        //     onStart={() => {}}
-        // >
-        //     {(props) => (
-        //         <div style={{ ...props }}>
-        //             <p className='title center-text'>Join a Team</p>
-
-        //             <div id='info-cards'>
-        //                 <TeamCard
-        //                     title='Programmers'
-        //                     icon={programming_svg}
-        //                 >
-        //                     Tie the project together! Programmers
-        //                     connect all assets and bring the game to
-        //                     life through Unity and C#.
-        //                 </TeamCard>
-        //                 <TeamCard title='Artists' icon={art_svg}>
-        //                     Work together with other artists to create
-        //                     amazing 2D visuals for our games. Any art
-        //                     style is welcome!
-        //                 </TeamCard>
-        //                 <TeamCard
-        //                     title='Animators'
-        //                     icon={animation_svg}
-        //                 >
-        //                     Bring the game to life! Work closely with
-        //                     the art team to make fluid, responsive, and
-        //                     engaging animations.
-        //                 </TeamCard>
-        //                 <TeamCard title='Writers' icon={writers_svg}>
-        //                     Layout layout the story of our games!
-        //                     Communicate with club members to create
-        //                     amazing stories!
-        //                 </TeamCard>
-        //                 <TeamCard title='Musicians' icon={music_svg}>
-        //                     Produce inspiring music that captures the
-        //                     feeling and emotion of the game environment.
-        //                 </TeamCard>
-        //             </div>
-        //         </div>
-        //     )}
-        // </Spring>
     );
 };
 
-export default Homepage;
+export default Home;
