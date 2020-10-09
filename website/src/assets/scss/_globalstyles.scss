@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
 
+body {
+    background-image: url('../images/texture.png');
+}
+
 .box-shadow {
     $intensity: 0.4;
 
@@ -34,6 +38,8 @@
     font-size: 36px;
 
     font-weight: 400;
+
+    margin: 0px 35px 0px 35px;
 
     color: inherit;
 

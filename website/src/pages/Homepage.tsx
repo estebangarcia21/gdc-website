@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { Spring } from 'react-spring/renderprops';
 import VisibilitySensor from 'react-visibility-sensor';
-import concept_art from '../assets/images/concept_art.png';
 import animation_svg from '../assets/svgs/animation-motion.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
 import programming_svg from '../assets/svgs/code.svg';
@@ -46,20 +45,11 @@ const Homepage: React.FC = () => {
             <div id='home-banner'>
                 <div className='vertical-center'>
                     <div id='home-banner-left-panel'>
-                        <h1 className='title'>Game Development Club</h1>
+                        <h1 id='home-banner--title'>Game Development Club</h1>
                         <h2 className='subtitle'>
                             The Community of Communities
                         </h2>
                     </div>
-                </div>
-
-                <div>
-                    <img
-                        id='header-image'
-                        className='box-shadow'
-                        src={concept_art}
-                        alt='Images from our games'
-                    />
                 </div>
             </div>
 
@@ -74,20 +64,20 @@ const Homepage: React.FC = () => {
                     from: { opacity: 0 },
                 })}
             >
-                <p className='title center-text'>
-                    What is Game Development Club?
-                </p>
+                <div id='home-description'>
+                    <p className='section-title'>
+                        What is Game Development Club?
+                    </p>
 
-                <p id='home-description' className='text center-text'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Odit soluta, rem hic voluptatem accusamus tempora sapiente
-                    molestiae at nesciunt dolore totam non, et, culpa
-                    consequuntur a ea voluptates eum quibusdam? Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quam rerum
-                    sapiente culpa similique repellendus error fugiat itaque,
-                    fugit dolorum mollitia distinctio odio, minima alias, quae
-                    repudiandae odit suscipit cupiditate eum?
-                </p>
+                    <p className='text center-text'>
+                        Game Development Club is a club where artists,
+                        programmers, animators, musicians, and writers work
+                        together to create amazing games!
+                        <br />
+                        <br />
+                        At Game Development Club, people can learn a
+                    </p>
+                </div>
             </animated.div>
 
             <div id='why-join-section'>
@@ -105,19 +95,17 @@ const Homepage: React.FC = () => {
 
                 <div id='why-join-section--right'>
                     <div
-                        id='why-join-section--list-text'
+                        id='why-join-section--list'
                         className='vertical-center'
                     >
-                        <p>Meet new people who share your interests!</p>
-                        <br />
-                        <p>Learn game development skills!</p>
-                        <br />
-                        <p>Have fun with frequent celebrations!</p>
-                        <br />
-                        <p>No previous experience needed!</p>
-                        <br />
-                        <p>Become better in your field!</p>
-                        <br />
+                        <ul>
+                            <li>Meet new people who share your interests</li>
+                            <li>Become better at your craft</li>
+                            <li>
+                                Experience a collaborative working enviornment
+                            </li>
+                            <li>Learn Game Development</li>
+                        </ul>
                     </div>
                 </div>
             </div>

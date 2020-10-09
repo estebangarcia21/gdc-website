@@ -1,12 +1,18 @@
 #home-banner {
     width: 100%;
-    height: 55vh;
+    height: 525px;
 
     background-color: #191a1b;
 
     margin-bottom: 100px;
 
     color: white;
+
+    &--title {
+        @extend .title;
+
+        margin-left: unset;
+    }
 }
 
 #home-banner-left-panel {
@@ -20,26 +26,18 @@
     height: 80%;
 }
 
-#header-image {
-    position: absolute;
-
-    width: 27.5vw;
-    height: 27.5vh;
-
-    top: 32.5%;
-    right: 10%;
-}
-
 #home-description {
     position: relative;
 
-    max-width: 80ch;
-    word-wrap: break-word;
-
-    margin-left: auto;
-    margin-right: auto;
-
+    margin: 30px;
     margin-bottom: 100px;
+
+    p {
+        max-width: 50ch;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 #why-join-section {
@@ -74,11 +72,26 @@
         margin-bottom: 100px;
     }
 
-    &--list-text {
+    &--list {
         @extend .text;
-
         font-size: 24px;
-        text-align: center;
+
+        ul {
+            margin-top: 0px;
+        }
+
+        li {
+            list-style: none;
+
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-image: url('../svgs/check-mark-line.svg');
+
+            background-size: 25px;
+            padding: 30px 0px 25px 50px;
+
+            margin-right: 25px;
+        }
     }
 }
 
@@ -93,6 +106,30 @@
 
     margin-top: 20px;
     margin-bottom: 100px;
+}
+
+.bar-seperator {
+    position: relative;
+
+    width: 75%;
+    height: 2px;
+
+    margin-top: 22px;
+
+    background-image: linear-gradient(
+        319deg,
+        #ff7d59 0%,
+        #ff583a 37%,
+        #f4a698 100%
+    );
+}
+
+.section-title {
+    font-family: 'MuseoModerno', sans-serif;
+    font-size: 36px;
+    text-align: center;
+
+    margin-bottom: 15px;
 }
 
 .info-card {
@@ -146,13 +183,17 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #header-image {
-        display: none;
+    #home-banner {
+        margin-bottom: 50px;
     }
 
     #home-description {
-        text-align: left;
-        margin: 35px;
+        p {
+            text-align: left;
+
+            margin-left: unset;
+            margin-right: unset;
+        }
     }
 
     #home-banner-left-panel {
@@ -173,5 +214,9 @@
 
         margin-left: $margin-size;
         margin-right: $margin-size;
+    }
+
+    .section-title {
+        text-align: left;
     }
 }
