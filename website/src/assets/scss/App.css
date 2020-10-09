@@ -68,15 +68,18 @@ body {
 }
 
 #home-banner {
-  width: 100%;
+  width: 92.5%;
   height: 525px;
+  -webkit-transform: rotateZ(-3deg);
+          transform: rotateZ(-3deg);
   background-color: #191a1b;
-  margin-bottom: 100px;
+  margin: 100px auto 100px auto;
   color: white;
 }
 
 #home-banner--title {
   margin-left: unset;
+  margin-right: unset;
 }
 
 #home-banner-left-panel {
@@ -200,7 +203,7 @@ body {
   font-size: 16px;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 800px) {
   #why-join-section {
     display: unset;
   }
@@ -219,6 +222,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   #home-banner {
+    margin-top: 50px;
     margin-bottom: 50px;
   }
   #home-description p {
