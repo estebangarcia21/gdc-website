@@ -56,9 +56,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .title, .title--white, #home-banner--title {
-    text-align: center;
-  }
+  .title, .title--white, #home-banner--title,
   .subtitle {
     text-align: center;
   }
@@ -223,7 +221,6 @@ body {
 @media only screen and (max-width: 600px) {
   #home-banner {
     margin-top: 50px;
-    margin-bottom: 50px;
   }
   #home-description p {
     text-align: left;
