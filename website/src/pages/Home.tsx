@@ -1,5 +1,6 @@
 import * as easings from 'd3-ease';
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import { animated, useSpring } from 'react-spring';
 import VisibilitySensor from 'react-visibility-sensor';
 import animation_svg from '../assets/svgs/animation-motion.svg';
@@ -15,19 +16,10 @@ interface TeamCardProps {
 
 const TeamCard: React.FC<TeamCardProps> = (props) => {
     return (
-        <div className='info-card'>
-            <img
-                className='horizontal-center'
-                src={props.icon}
-                width='35px'
-                height='35px'
-                alt='Icon'
-            />
+        <div className='info-card box-shadow'>
+            <img src={props.icon} width='35px' height='35px' alt='Icon' />
             <p className='info-card--title'>{props.title}</p>
-            <p
-                className='text info-card--text center-text'
-                style={{ color: '#414141' }}
-            >
+            <p className='info-card--text' style={{ color: '#414141' }}>
                 {props.children}
             </p>
         </div>
@@ -36,20 +28,24 @@ const TeamCard: React.FC<TeamCardProps> = (props) => {
 
 const Home: React.FC = () => {
     const [loaded, setLoaded] = useState({
+        title: false,
         joinTeamCards: false,
     });
+
+    const playAnimationOnce = (isVisible: boolean, key: string) => {
+        if (!isVisible) return;
+
+        setLoaded({
+            ...loaded,
+            [key]: true,
+        });
+    };
 
     return (
         <div>
             <div id='home-banner'>
-                <div className='vertical-center'>
-                    <div id='home-banner-left-panel'>
-                        <h1 id='home-banner--title'>Game Development Club</h1>
-                        <h2 className='subtitle'>
-                            The Community of Communities
-                        </h2>
-                    </div>
-                </div>
+                <h1>Game Development Club</h1>
+                <h2>The Community of Communities</h2>
             </div>
 
             <animated.div
@@ -63,12 +59,10 @@ const Home: React.FC = () => {
                     from: { opacity: 0 },
                 })}
             >
-                <div id='home-description'>
-                    <p className='section-title'>
-                        What is Game Development Club?
-                    </p>
+                <h3>What is Game Development Club?</h3>
 
-                    <p className='text center-text'>
+                <div className='wrapper'>
+                    <p>
                         Game Development Club is a club where artists,
                         programmers, animators, musicians, and writers work
                         together to create amazing games!
@@ -79,46 +73,22 @@ const Home: React.FC = () => {
                 </div>
             </animated.div>
 
-            <div id='why-join-section'>
-                <div id='why-join-section--left'>
-                    <h1
-                        className='title--white vertical-center'
-                        style={{
-                            fontSize: '42px',
-                            textAlign: 'center',
-                        }}
-                    >
-                        Why join Game Development Club?
-                    </h1>
-                </div>
+            <h3>Why join Game Development Club?</h3>
 
-                <div id='why-join-section--right'>
-                    <div
-                        id='why-join-section--list'
-                        className='vertical-center'
-                    >
-                        <ul>
-                            <li>Meet new people who share your interests</li>
-                            <li>Become better at your craft</li>
-                            <li>
-                                Experience a collaborative working enviornment
-                            </li>
-                            <li>Learn Game Development</li>
-                        </ul>
-                    </div>
-                </div>
+            <div id='join-reasons-container'>
+                <ul>
+                    <li>Meet new people who share your interests</li>
+                    <li>Become better at your craft</li>
+                    <li>Experience a collaborative working enviornment</li>
+                    <li>Learn Game Development</li>
+                </ul>
             </div>
 
             <VisibilitySensor
                 partialVisibility
-                onChange={(isVisible) => {
-                    if (!isVisible) return;
-
-                    setLoaded({
-                        ...loaded,
-                        joinTeamCards: true,
-                    });
-                }}
+                onChange={(isVisible) =>
+                    playAnimationOnce(isVisible, 'joinTeamCards')
+                }
             >
                 <animated.div
                     style={useSpring({
@@ -132,7 +102,7 @@ const Home: React.FC = () => {
                             : 'translateY(50px)',
                     })}
                 >
-                    <p className='title center-text'>Join a Team</p>
+                    <h4>Join a Team</h4>
 
                     <div id='info-cards'>
                         <TeamCard title='Programmers' icon={programming_svg}>

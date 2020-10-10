@@ -1,154 +1,79 @@
-@import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
-body {
-  background-image: url("../images/texture.png");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap");
+.wrapper {
+  max-width: 80ch;
+  margin: 0px auto;
 }
 
-.box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+h1, h2, h4 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 72px;
+  text-align: center;
+  margin: 0px;
 }
 
-.vertical-center {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+h2 {
+  font-size: 42px;
 }
 
-.horizontal-center, #info-cards {
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+h3 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 36px;
+  text-align: center;
+  margin: 35px 30px 35px 30px;
 }
 
-.center-text {
+h4 {
+  text-align: center;
+  font-size: 32px;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 0.8cm;
   text-align: center;
 }
 
-.title, .title--white, #home-banner--title {
-  font-family: 'MuseoModerno', sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  margin: 0px 35px 0px 35px;
-  color: inherit;
-}
-
-.title--white {
-  color: white;
-}
-
-.subtitle {
-  font-family: 'MuseoModerno', sans-serif;
-  font-size: 22px;
-  color: inherit;
-}
-
-.text, #why-join-section--list, .info-card--text {
-  font-family: 'NTR', sans-serif;
-  font-size: 20px;
+ul {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   line-height: 0.8cm;
-  color: inherit;
 }
 
-@media only screen and (max-width: 600px) {
-  .title, .title--white, #home-banner--title,
-  .subtitle {
-    text-align: center;
-  }
-  .text, #why-join-section--list, .info-card--text {
-    font-size: 1.25rem;
-  }
-}
-
-#home-banner {
-  width: 92.5%;
-  height: 525px;
-  -webkit-transform: rotateZ(-3deg);
-          transform: rotateZ(-3deg);
-  background-color: #191a1b;
-  margin: 100px auto 100px auto;
-  color: white;
-}
-
-#home-banner--title {
-  margin-left: unset;
-  margin-right: unset;
-}
-
-#home-banner-left-panel {
-  position: relative;
-  left: 10%;
-  zoom: 127.5%;
-  width: 40%;
-  height: 80%;
-}
-
-#home-description {
-  position: relative;
-  margin: 30px;
-  margin-bottom: 100px;
-}
-
-#home-description p {
-  max-width: 50ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#why-join-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#why-join-section--arrow {
-  position: absolute;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
-  left: 50%;
-  bottom: -375px;
-}
-
-#why-join-section--left {
-  float: left;
-  width: 50%;
-  height: 750px;
-  background-color: #272c30;
-}
-
-#why-join-section--right {
-  float: left;
-  width: 50%;
-  height: 750px;
-  background-color: #f1f0e4;
-  margin-bottom: 100px;
-}
-
-#why-join-section--list {
-  font-size: 24px;
-}
-
-#why-join-section--list ul {
-  margin-top: 0px;
-}
-
-#why-join-section--list li {
+li {
   list-style: none;
   background-repeat: no-repeat;
   background-position: left center;
   background-image: url("../svgs/check-mark-line.svg");
   background-size: 25px;
+  margin-right: 50px;
   padding: 30px 0px 25px 50px;
-  margin-right: 25px;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+}
+
+#home-banner {
+  display: flexbox;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px 0px 50px 0px;
+}
+
+#join-reasons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #info-cards {
-  position: relative;
+  width: 100%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -157,96 +82,33 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 100px;
-}
-
-.bar-seperator {
-  position: relative;
-  width: 75%;
-  height: 2px;
-  margin-top: 22px;
-  background-image: linear-gradient(319deg, #ff7d59 0%, #ff583a 37%, #f4a698 100%);
-}
-
-.section-title {
-  font-family: 'MuseoModerno', sans-serif;
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 15px;
+  margin: 20px auto 100px auto;
 }
 
 .info-card {
-  position: relative;
+  float: left;
   width: 250px;
   margin: 20px;
-  float: left;
-  -webkit-transition: -webkit-box-shadow 0.2s ease;
-  transition: -webkit-box-shadow 0.2s ease;
-  transition: box-shadow 0.2s ease;
-  transition: box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+  border-radius: 14px;
+  padding: 15px;
+}
+
+.info-card img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info-card--title {
-  position: relative;
-  font-family: 'MuseoModerno', sans-serif;
-  font-size: 26px;
-  text-align: center;
-  color: black;
-  top: 2.5px;
-  margin-bottom: 5px;
+  font-size: 20px;
+  margin: 10px;
 }
 
 .info-card--text {
   font-size: 16px;
 }
 
-@media only screen and (max-width: 800px) {
-  #why-join-section {
-    display: unset;
-  }
-  #why-join-section--left {
-    width: 100%;
-    float: unset;
-  }
-  #why-join-section--right {
-    width: 100%;
-    float: unset;
-  }
-  #why-join-section--arrow {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #home-banner {
-    margin-top: 50px;
-  }
-  #home-description p {
-    text-align: left;
-    margin-left: unset;
-    margin-right: unset;
-  }
-  #home-banner-left-panel {
-    left: unset;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #home-banner-right-panel {
-    display: none;
-  }
-  #why-join-section--list-text {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  .section-title {
-    text-align: left;
-  }
-}
-
-html,
-h1,
+html, h1, h2, h4,
 h2,
 body,
 p {

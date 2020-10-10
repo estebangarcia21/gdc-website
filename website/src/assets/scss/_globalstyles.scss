@@ -1,77 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
 
-body {
-    background-image: url('../images/texture.png');
+.wrapper {
+    max-width: 80ch;
+
+    margin: 0px auto;
 }
 
-.box-shadow {
-    $intensity: 0.4;
+h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 72px;
 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, $intensity),
-        0 6px 20px 0 rgba(0, 0, 0, $intensity - 0.1);
+    text-align: center;
+
+    margin: 0px;
 }
 
-.vertical-center {
-    position: relative;
-    top: 50%;
+h2 {
+    @extend h1;
 
-    transform: translateY(-50%);
+    font-size: 42px;
 }
 
-.horizontal-center {
-    position: relative;
-    left: 50%;
+h3 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 36px;
 
-    transform: translateX(-50%);
+    text-align: center;
+
+    margin: 35px 30px 35px 30px;
 }
 
-.center-text {
+h4 {
+    @extend h1;
+
+    text-align: center;
+    font-size: 32px;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 0.8cm;
+
     text-align: center;
 }
 
-.title {
-    font-family: 'MuseoModerno', sans-serif;
-    font-size: 36px;
-
-    font-weight: 400;
-
-    margin: 0px 35px 0px 35px;
-
-    color: inherit;
-
-    &--white {
-        @extend .title;
-
-        color: white;
-    }
-}
-
-.subtitle {
-    font-family: 'MuseoModerno', sans-serif;
-    font-size: 22px;
-
-    color: inherit;
-}
-
-.text {
-    font-family: 'NTR', sans-serif;
-    font-size: 20px;
+ul {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
     line-height: 0.8cm;
-
-    color: inherit;
 }
 
-@media only screen and (max-width: 600px) {
-    .title,
-    .subtitle {
-        text-align: center;
-    }
+li {
+    list-style: none;
 
-    .text {
-        font-size: 1.25rem;
-    }
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-image: url('../svgs/check-mark-line.svg');
+
+    background-size: 25px;
+    margin-right: 50px;
+    padding: 30px 0px 25px 50px;
+}
+
+.box-shadow {
+    $intensity: 0.225;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, $intensity),
+        0 6px 20px 0 rgba(0, 0, 0, $intensity - 0.1);
 }

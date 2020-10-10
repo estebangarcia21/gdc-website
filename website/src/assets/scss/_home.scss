@@ -1,225 +1,48 @@
 #home-banner {
-    width: 92.5%;
-    height: 525px;
+    display: flexbox;
+    align-items: center;
 
-    transform: rotateZ(-3deg);
-
-    background-color: #191a1b;
-
-    margin: 100px auto 100px auto;
-
-    color: white;
-
-    &--title {
-        @extend .title;
-
-        margin-left: unset;
-        margin-right: unset;
-    }
+    margin: 50px 0px 50px 0px;
 }
 
-#home-banner-left-panel {
-    position: relative;
-
-    left: 10%;
-
-    zoom: 127.5%;
-
-    width: 40%;
-    height: 80%;
-}
-
-#home-description {
-    position: relative;
-
-    margin: 30px;
-    margin-bottom: 100px;
-
-    p {
-        max-width: 50ch;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-#why-join-section {
+#join-reasons-container {
     display: flex;
-
-    &--arrow {
-        position: absolute;
-
-        transform: translate(-50%, 50%);
-
-        left: 50%;
-        bottom: -375px;
-    }
-
-    &--left {
-        float: left;
-
-        width: 50%;
-        height: 750px;
-
-        background-color: #272c30;
-    }
-
-    &--right {
-        float: left;
-
-        width: 50%;
-        height: 750px;
-
-        background-color: #f1f0e4;
-
-        margin-bottom: 100px;
-    }
-
-    &--list {
-        @extend .text;
-        font-size: 24px;
-
-        ul {
-            margin-top: 0px;
-        }
-
-        li {
-            list-style: none;
-
-            background-repeat: no-repeat;
-            background-position: left center;
-            background-image: url('../svgs/check-mark-line.svg');
-
-            background-size: 25px;
-            padding: 30px 0px 25px 50px;
-
-            margin-right: 25px;
-        }
-    }
+    justify-content: center;
 }
 
 #info-cards {
-    position: relative;
-    @extend .horizontal-center;
+    width: 100%;
 
     display: inline-flex;
-
     flex-wrap: wrap;
     justify-content: center;
 
-    margin-top: 20px;
-    margin-bottom: 100px;
-}
-
-.bar-seperator {
-    position: relative;
-
-    width: 75%;
-    height: 2px;
-
-    margin-top: 22px;
-
-    background-image: linear-gradient(
-        319deg,
-        #ff7d59 0%,
-        #ff583a 37%,
-        #f4a698 100%
-    );
-}
-
-.section-title {
-    font-family: 'MuseoModerno', sans-serif;
-    font-size: 36px;
-    text-align: center;
-
-    margin-bottom: 15px;
+    margin: 20px auto 100px auto;
 }
 
 .info-card {
-    position: relative;
+    float: left;
 
     width: 250px;
     margin: 20px;
 
-    float: left;
+    border-radius: 14px;
+    padding: 15px;
 
-    transition: box-shadow 0.2s ease;
-
-    &--title {
-        position: relative;
-
-        font-family: 'MuseoModerno', sans-serif;
-        font-size: 26px;
-        text-align: center;
-
-        color: black;
-
-        top: 2.5px;
-        margin-bottom: 5px;
-    }
-
-    &--text {
-        @extend .text;
-
-        font-size: 16px;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    #why-join-section {
-        display: unset;
-    }
-
-    #why-join-section--left {
-        width: 100%;
-        float: unset;
-    }
-
-    #why-join-section--right {
-        width: 100%;
-        float: unset;
-    }
-
-    #why-join-section--arrow {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #home-banner {
-        margin-top: 50px;
-    }
-
-    #home-description {
-        p {
-            text-align: left;
-
-            margin-left: unset;
-            margin-right: unset;
-        }
-    }
-
-    #home-banner-left-panel {
-        left: unset;
-
-        width: 90%;
+    img {
+        display: block;
 
         margin-left: auto;
         margin-right: auto;
     }
 
-    #home-banner-right-panel {
-        display: none;
+    &--title {
+        font-size: 20px;
+
+        margin: 10px;
     }
 
-    #why-join-section--list-text {
-        $margin-size: 50px;
-
-        margin-left: $margin-size;
-        margin-right: $margin-size;
-    }
-
-    .section-title {
-        text-align: left;
+    &--text {
+        font-size: 16px;
     }
 }
