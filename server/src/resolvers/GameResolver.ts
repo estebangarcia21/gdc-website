@@ -1,5 +1,5 @@
-import { Game } from "../entities/Game";
-import { Resolver, Query, Arg } from "type-graphql";
+import { Game } from '../entities/Game';
+import { Resolver, Query, Arg } from 'type-graphql';
 
 @Resolver()
 export class GameResolver {
@@ -10,7 +10,7 @@ export class GameResolver {
 
   @Query(() => [Game])
   async getGamesFromYear(
-    @Arg("year") year: string
+    @Arg('year') year: string
   ): Promise<Game[] | undefined> {
     return Game.find({
       where: [{ year: year }],

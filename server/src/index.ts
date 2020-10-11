@@ -1,17 +1,17 @@
-import { ApolloServer } from "apollo-server-express";
-import express from "express";
-import "reflect-metadata";
-import { buildSchema } from "type-graphql";
-import { createConnection } from "typeorm";
-import { Game } from "./entities/Game";
-import { GameResolver } from "./resolvers/GameResolver";
-import cors from "cors";
+import { ApolloServer } from 'apollo-server-express';
+import express from 'express';
+import 'reflect-metadata';
+import { buildSchema } from 'type-graphql';
+import { createConnection } from 'typeorm';
+import { Game } from './entities/Game';
+import { GameResolver } from './resolvers/GameResolver';
+import cors from 'cors';
 
 const main = async () => {
   await createConnection({
-    type: "postgres",
-    database: "gdcgames",
-    username: "postgres",
+    type: 'postgres',
+    database: 'gdcgames',
+    username: 'postgres',
     synchronize: true,
     entities: [Game],
   });
@@ -29,8 +29,8 @@ const main = async () => {
   apolloServer.applyMiddleware({ app });
 
   app.listen(4000, () => {
-    console.log("Server started on localhost:4000");
+    console.log('Server started on localhost:4000');
   });
 };
 
-main().catch((error) => console.log(error));
+main().catch(error => console.log(error));

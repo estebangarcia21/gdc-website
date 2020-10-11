@@ -46,7 +46,7 @@ __decorate([
 ], GameResolver.prototype, "games", null);
 __decorate([
     type_graphql_1.Query(() => [Game_1.Game]),
-    __param(0, type_graphql_1.Arg("year")),
+    __param(0, type_graphql_1.Arg('year')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)

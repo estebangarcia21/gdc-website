@@ -1,5 +1,5 @@
-import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 
 const GET_GAMES = gql`
   {
@@ -25,12 +25,12 @@ const OurGames: React.FC = () => {
   if (loading) return <div>Loading...</div>;
   if (error) {
     console.log(error.message);
-    return <div>Error!</div>;
+    return <div>Query request error!</div>;
   }
 
   return (
     <div>
-      {data?.games.map((game) => (
+      {data?.games.map(game => (
         <div key={game.id}>
           <p>{game.name}</p>
           <p>{game.year}</p>

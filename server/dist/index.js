@@ -22,9 +22,9 @@ const GameResolver_1 = require("./resolvers/GameResolver");
 const cors_1 = __importDefault(require("cors"));
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield typeorm_1.createConnection({
-        type: "postgres",
-        database: "gdcgames",
-        username: "postgres",
+        type: 'postgres',
+        database: 'gdcgames',
+        username: 'postgres',
         synchronize: true,
         entities: [Game_1.Game],
     });
@@ -38,8 +38,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     });
     apolloServer.applyMiddleware({ app });
     app.listen(4000, () => {
-        console.log("Server started on localhost:4000");
+        console.log('Server started on localhost:4000');
     });
 });
-main().catch((error) => console.log(error));
+main().catch(error => console.log(error));
 //# sourceMappingURL=index.js.map
