@@ -1,56 +1,56 @@
 #home-banner {
-    display: flexbox;
-    align-items: center;
+  display: flexbox;
+  align-items: center;
 
-    margin: 50px 0px 50px 0px;
+  margin: 50px 0px 50px 0px;
 }
 
 #join-reasons-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #info-cards {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    margin: 20px auto 100px auto;
+  margin: 20px auto 100px auto;
 }
 
 .wrapper {
-    max-width: 80ch;
+  max-width: 80ch;
 
-    margin: 0px auto;
+  margin: 0px auto;
 }
 
 .info-card {
-    width: 250px;
-    margin: 20px;
+  width: 250px;
+  margin: 20px;
 
-    border-radius: 14px;
-    padding: 15px;
+  border-radius: 14px;
+  padding: 15px;
 
-    p {
-        margin: 0px;
-    }
+  p {
+    margin: 0px;
+  }
 
-    img {
-        display: block;
+  img {
+    display: block;
 
-        margin: 0px auto;
-    }
+    margin: 0px auto;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .info-card {
-        p,
-        h3 {
-            text-align: center;
-        }
+  .info-card {
+    p,
+    h3 {
+      text-align: center;
     }
+  }
 }

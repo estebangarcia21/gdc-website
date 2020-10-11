@@ -2,8 +2,8 @@
 #home-banner {
   display: flexbox;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 50px 0px 50px 0px;
 }
 
@@ -12,8 +12,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -23,10 +23,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 20px auto 100px auto;
 }
 
@@ -68,15 +68,17 @@ body a {
 }
 
 body p {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 1cm;
   text-align: center;
   margin: 35px 30px;
 }
 
-body h1, body h2, body h4 {
-  font-family: 'Inter', sans-serif;
+body h1,
+body h2,
+body h4 {
+  font-family: "Inter", sans-serif;
   font-size: 64px;
   display: block;
   font-weight: 900;
@@ -90,7 +92,7 @@ body h2 {
 }
 
 body h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 36px;
   font-weight: 500;
   text-align: center;
@@ -104,7 +106,7 @@ body h4 {
 }
 
 body ul {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 0.8cm;
 }
@@ -120,8 +122,10 @@ body li {
 }
 
 .box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
+    0 6px 20px 0 rgba(0, 0, 0, 0.125);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
+    0 6px 20px 0 rgba(0, 0, 0, 0.125);
 }
 
 @media only screen and (max-width: 600px) {
@@ -132,7 +136,9 @@ body li {
 }
 
 @media only screen and (max-width: 525px) {
-  body h1, body h2, body h4 {
+  body h1,
+  body h2,
+  body h4 {
     font-size: 50px;
   }
   body h2 {

@@ -30,10 +30,10 @@ let GameResolver = class GameResolver {
             return Game_1.Game.find();
         });
     }
-    getGamesFromYear(yearCreated) {
+    getGamesFromYear(year) {
         return __awaiter(this, void 0, void 0, function* () {
             return Game_1.Game.find({
-                where: [{ yearCreated: yearCreated }],
+                where: [{ year: year }],
             });
         });
     }
@@ -46,7 +46,7 @@ __decorate([
 ], GameResolver.prototype, "games", null);
 __decorate([
     type_graphql_1.Query(() => [Game_1.Game]),
-    __param(0, type_graphql_1.Arg('yearCreated')),
+    __param(0, type_graphql_1.Arg("year")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
