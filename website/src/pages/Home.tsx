@@ -1,6 +1,5 @@
 import * as easings from 'd3-ease';
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
 import { animated, useSpring } from 'react-spring';
 import VisibilitySensor from 'react-visibility-sensor';
 import animation_svg from '../assets/svgs/animation-motion.svg';
@@ -14,12 +13,12 @@ interface TeamCardProps {
     icon: string;
 }
 
-const TeamCard: React.FC<TeamCardProps> = (props) => {
+const Card: React.FC<TeamCardProps> = (props) => {
     return (
         <div className='info-card box-shadow'>
             <img src={props.icon} width='35px' height='35px' alt='Icon' />
-            <p className='info-card--title'>{props.title}</p>
-            <p className='info-card--text' style={{ color: '#414141' }}>
+            <p style={{ fontSize: '20px', margin: '10px' }}>{props.title}</p>
+            <p style={{ fontSize: '14px', color: '#414141' }}>
                 {props.children}
             </p>
         </div>
@@ -32,20 +31,11 @@ const Home: React.FC = () => {
         joinTeamCards: false,
     });
 
-    const playAnimationOnce = (isVisible: boolean, key: string) => {
-        if (!isVisible) return;
-
-        setLoaded({
-            ...loaded,
-            [key]: true,
-        });
-    };
-
     return (
         <div>
             <div id='home-banner'>
                 <h1>Game Development Club</h1>
-                <h2>The Community of Communities</h2>
+                <h2>Creating games since 2019</h2>
             </div>
 
             <animated.div
@@ -86,9 +76,14 @@ const Home: React.FC = () => {
 
             <VisibilitySensor
                 partialVisibility
-                onChange={(isVisible) =>
-                    playAnimationOnce(isVisible, 'joinTeamCards')
-                }
+                onChange={(isVisible) => {
+                    if (!isVisible) return;
+
+                    setLoaded({
+                        ...loaded,
+                        joinTeamCards: true,
+                    });
+                }}
             >
                 <animated.div
                     style={useSpring({
@@ -105,28 +100,28 @@ const Home: React.FC = () => {
                     <h4>Join a Team</h4>
 
                     <div id='info-cards'>
-                        <TeamCard title='Programmers' icon={programming_svg}>
+                        <Card title='Programmers' icon={programming_svg}>
                             Tie the project together! Programmers connect all
                             assets and bring the game to life through Unity and
                             C#.
-                        </TeamCard>
-                        <TeamCard title='Artists' icon={art_svg}>
+                        </Card>
+                        <Card title='Artists' icon={art_svg}>
                             Work together with other artists to create amazing
                             2D visuals for our games. Any art style is welcome!
-                        </TeamCard>
-                        <TeamCard title='Animators' icon={animation_svg}>
+                        </Card>
+                        <Card title='Animators' icon={animation_svg}>
                             Bring the game to life! Work closely with the art
                             team to make fluid, responsive, and engaging
                             animations.
-                        </TeamCard>
-                        <TeamCard title='Writers' icon={writers_svg}>
+                        </Card>
+                        <Card title='Writers' icon={writers_svg}>
                             Layout layout the story of our games! Communicate
                             with club members to create amazing stories!
-                        </TeamCard>
-                        <TeamCard title='Musicians' icon={music_svg}>
+                        </Card>
+                        <Card title='Musicians' icon={music_svg}>
                             Produce inspiring music that captures the feeling
                             and emotion of the game environment.
-                        </TeamCard>
+                        </Card>
                     </div>
                 </animated.div>
             </VisibilitySensor>

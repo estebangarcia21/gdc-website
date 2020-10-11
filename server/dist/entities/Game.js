@@ -13,10 +13,6 @@ exports.Game = void 0;
 const type_graphql_1 = require("type-graphql");
 const typeorm_1 = require("typeorm");
 let Game = class Game extends typeorm_1.BaseEntity {
-    constructor() {
-        super(...arguments);
-        this.updatedAt = new Date();
-    }
 };
 __decorate([
     type_graphql_1.Field(),
@@ -38,16 +34,6 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Game.prototype, "year", void 0);
-__decorate([
-    type_graphql_1.Field(() => String),
-    typeorm_1.CreateDateColumn(),
-    __metadata("design:type", Date)
-], Game.prototype, "createdAt", void 0);
-__decorate([
-    type_graphql_1.Field(() => String),
-    typeorm_1.UpdateDateColumn(),
-    __metadata("design:type", Object)
-], Game.prototype, "updatedAt", void 0);
 Game = __decorate([
     type_graphql_1.ObjectType(),
     typeorm_1.Entity()

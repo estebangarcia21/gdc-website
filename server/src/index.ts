@@ -33,4 +33,4 @@ const main = async () => {
     });
 };
 
-main();
+main().catch((error) => console.log(error));

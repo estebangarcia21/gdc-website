@@ -8,41 +8,49 @@
 #join-reasons-container {
     display: flex;
     justify-content: center;
+
+    margin-bottom: 20px;
 }
 
 #info-cards {
     width: 100%;
 
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     margin: 20px auto 100px auto;
 }
 
-.info-card {
-    float: left;
+.wrapper {
+    max-width: 80ch;
 
+    margin: 0px auto;
+}
+
+.info-card {
     width: 250px;
     margin: 20px;
 
     border-radius: 14px;
     padding: 15px;
 
+    p {
+        margin: 0px;
+    }
+
     img {
         display: block;
 
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0px auto;
     }
+}
 
-    &--title {
-        font-size: 20px;
-
-        margin: 10px;
-    }
-
-    &--text {
-        font-size: 16px;
+@media only screen and (max-width: 600px) {
+    .info-card {
+        p,
+        h3 {
+            text-align: center;
+        }
     }
 }

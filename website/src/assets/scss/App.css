@@ -1,60 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap");
-.wrapper {
-  max-width: 80ch;
-  margin: 0px auto;
-}
-
-h1, h2, h4 {
-  font-family: 'Comfortaa', cursive;
-  font-size: 72px;
-  text-align: center;
-  margin: 0px;
-}
-
-h2 {
-  font-size: 42px;
-}
-
-h3 {
-  font-family: 'Comfortaa', sans-serif;
-  font-size: 36px;
-  text-align: center;
-  margin: 35px 30px 35px 30px;
-}
-
-h4 {
-  text-align: center;
-  font-size: 32px;
-}
-
-p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  line-height: 0.8cm;
-  text-align: center;
-}
-
-ul {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  line-height: 0.8cm;
-}
-
-li {
-  list-style: none;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-image: url("../svgs/check-mark-line.svg");
-  background-size: 25px;
-  margin-right: 50px;
-  padding: 30px 0px 25px 50px;
-}
-
-.box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap");
 #home-banner {
   display: flexbox;
   -webkit-box-align: center;
@@ -70,13 +14,14 @@ li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 20px;
 }
 
 #info-cards {
   width: 100%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -85,38 +30,113 @@ li {
   margin: 20px auto 100px auto;
 }
 
+.wrapper {
+  max-width: 80ch;
+  margin: 0px auto;
+}
+
 .info-card {
-  float: left;
   width: 250px;
   margin: 20px;
   border-radius: 14px;
   padding: 15px;
 }
 
+.info-card p {
+  margin: 0px;
+}
+
 .info-card img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px auto;
 }
 
-.info-card--title {
-  font-size: 20px;
-  margin: 10px;
+@media only screen and (max-width: 600px) {
+  .info-card p,
+  .info-card h3 {
+    text-align: center;
+  }
 }
 
-.info-card--text {
-  font-size: 16px;
-}
-
-html, h1, h2, h4,
-h2,
-body,
-p {
+body {
   margin: 0px;
   padding: 0px;
 }
 
-a {
+body a {
   text-decoration: none;
+}
+
+body p {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  line-height: 1cm;
+  text-align: center;
+  margin: 35px 30px;
+}
+
+body h1, body h2, body h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 64px;
+  display: block;
+  font-weight: 900;
+  text-align: center;
+  margin: 35px 30px;
+}
+
+body h2 {
+  font-size: 48px;
+  color: #000000;
+}
+
+body h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: center;
+  margin: 35px 30px 35px 30px;
+}
+
+body h4 {
+  font-weight: 500;
+  text-align: center;
+  font-size: 32px;
+}
+
+body ul {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  line-height: 0.8cm;
+}
+
+body li {
+  list-style: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url("../svgs/check-mark-line.svg");
+  background-size: 25px;
+  margin-right: 50px;
+  padding: 30px 0px 25px 50px;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+}
+
+@media only screen and (max-width: 600px) {
+  body p,
+  body h3 {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  body h1, body h2, body h4 {
+    font-size: 50px;
+  }
+  body h2 {
+    font-size: 34px;
+  }
 }
 /*# sourceMappingURL=App.css.map */
