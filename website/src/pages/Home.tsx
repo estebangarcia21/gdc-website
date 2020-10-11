@@ -13,7 +13,7 @@ interface TeamCardProps {
   icon: string;
 }
 
-const Card: React.FC<TeamCardProps> = props => {
+const Card: React.FC<TeamCardProps> = (props) => {
   return (
     <div className='info-card box-shadow'>
       <img src={props.icon} width='35px' height='35px' alt='Icon' />
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
 
       <VisibilitySensor
         partialVisibility
-        onChange={isVisible => {
+        onChange={(isVisible) => {
           if (!isVisible) return;
 
           setLoaded({

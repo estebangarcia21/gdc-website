@@ -34,12 +34,11 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         schema: yield type_graphql_1.buildSchema({
             resolvers: [GameResolver_1.GameResolver],
         }),
-        context: ({ req, res }) => ({ req, res }),
     });
     apolloServer.applyMiddleware({ app });
     app.listen(4000, () => {
         console.log('Server started on localhost:4000');
     });
 });
-main().catch(error => console.log(error));
+main().catch((error) => console.log(error));
 //# sourceMappingURL=index.js.map

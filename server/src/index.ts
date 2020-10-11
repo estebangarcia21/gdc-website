@@ -23,7 +23,6 @@ const main = async () => {
     schema: await buildSchema({
       resolvers: [GameResolver],
     }),
-    context: ({ req, res }) => ({ req, res }),
   });
 
   apolloServer.applyMiddleware({ app });
@@ -33,4 +32,4 @@ const main = async () => {
   });
 };
 
-main().catch(error => console.log(error));
+main().catch((error) => console.log(error));

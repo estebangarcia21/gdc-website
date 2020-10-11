@@ -30,7 +30,7 @@ const OurGames: React.FC = () => {
 
   return (
     <div>
-      {data?.games.map(game => (
+      {data?.games.map((game) => (
         <div key={game.id}>
           <p>{game.name}</p>
           <p>{game.year}</p>
