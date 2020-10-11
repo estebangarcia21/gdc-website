@@ -13,10 +13,10 @@ interface TeamCardProps {
   icon: string;
 }
 
-const Card: React.FC<TeamCardProps> = (props) => {
+const Card: React.FC<TeamCardProps> = props => {
   return (
-    <div className="info-card box-shadow">
-      <img src={props.icon} width="35px" height="35px" alt="Icon" />
+    <div className='info-card box-shadow'>
+      <img src={props.icon} width='35px' height='35px' alt='Icon' />
       <p style={{ fontSize: '20px', margin: '10px' }}>{props.title}</p>
       <p style={{ fontSize: '14px', color: '#414141' }}>{props.children}</p>
     </div>
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <div id="home-banner">
+      <div id='home-banner'>
         <h1>Game Development Club</h1>
         <h2>Creating games since 2019</h2>
       </div>
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
       >
         <h3>What is Game Development Club?</h3>
 
-        <div className="wrapper">
+        <div className='wrapper'>
           <p>
             Game Development Club is a club where artists, programmers,
             animators, musicians, and writers work together to create amazing
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
 
       <h3>Why join Game Development Club?</h3>
 
-      <div id="join-reasons-container">
+      <div id='join-reasons-container'>
         <ul>
           <li>Meet new people who share your interests</li>
           <li>Become better at your craft</li>
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
 
       <VisibilitySensor
         partialVisibility
-        onChange={(isVisible) => {
+        onChange={isVisible => {
           if (!isVisible) return;
 
           setLoaded({
@@ -97,24 +97,24 @@ const Home: React.FC = () => {
         >
           <h4>Join a Team</h4>
 
-          <div id="info-cards">
-            <Card title="Programmers" icon={programming_svg}>
+          <div id='info-cards'>
+            <Card title='Programmers' icon={programming_svg}>
               Tie the project together! Programmers connect all assets and bring
               the game to life through Unity and C#.
             </Card>
-            <Card title="Artists" icon={art_svg}>
+            <Card title='Artists' icon={art_svg}>
               Work together with other artists to create amazing 2D visuals for
               our games. Any art style is welcome!
             </Card>
-            <Card title="Animators" icon={animation_svg}>
+            <Card title='Animators' icon={animation_svg}>
               Bring the game to life! Work closely with the art team to make
               fluid, responsive, and engaging animations.
             </Card>
-            <Card title="Writers" icon={writers_svg}>
+            <Card title='Writers' icon={writers_svg}>
               Layout layout the story of our games! Communicate with club
               members to create amazing stories!
             </Card>
-            <Card title="Musicians" icon={music_svg}>
+            <Card title='Musicians' icon={music_svg}>
               Produce inspiring music that captures the feeling and emotion of
               the game environment.
             </Card>
