@@ -23,6 +23,7 @@ const OurGames: React.FC = () => {
   }>(GET_GAMES);
 
   if (loading) return <div>Loading...</div>;
+
   if (error) {
     console.log(error.message);
     return <div>Query request error!</div>;
