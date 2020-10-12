@@ -12,11 +12,12 @@ Using my previous programming experience, I began learning and applying all of t
 ## Project Outcomes
 
 - Strengthened my Javascript, Typescript, and Node.js knowledge
-- Learned React, its built state management, and its ContextAPI
+- Learned React, its built in state management, and its ContextAPI
 - Learned responsive web design and DRY techniques
-- Learned how to create a GraphQL endpoint and connect it with a front-end via Apollo
-- Learned SQL query statements and PostgresQL
-- Learned how to deploy the website front-end to AWS Amplify
+- Learned how to create a GraphQL endpoint and connect it with the project front-end via Apollo
+- Learned SQL statements and PostgreSQL
+- Learned how to deploy a website front-end to AWS Amplify
+- Learned functional programming paradigm basics and concepts (currying, higher-order functions)
 
 ## Technologies
 
