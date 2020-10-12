@@ -6,13 +6,8 @@
 /.pnp
 .pnp.js
 
-startenv.sh
-
 # testing
-/coverage
-
-# production
-/build
+website/coverage
 
 # misc
 .DS_Store
