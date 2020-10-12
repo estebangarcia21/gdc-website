@@ -1,8 +1,31 @@
+.background-a {
+  width: 100%;
+
+  background-color: #f8d2b2;
+  padding: 20px 0px;
+
+  h1,
+  h2 {
+    color: white;
+  }
+}
+
+.background-b {
+  width: 100%;
+
+  background-color: #faecfd;
+  padding: 20px 0px;
+}
+
+.text-wrap {
+  max-width: 80ch;
+
+  margin: 0px auto;
+}
+
 #home-banner {
   display: flexbox;
   align-items: center;
-
-  margin: 50px 0px 50px 0px;
 }
 
 #join-reasons-container {
@@ -12,7 +35,7 @@
   margin-bottom: 20px;
 }
 
-#info-cards {
+#info-cards-container {
   width: 100%;
 
   display: flex;
@@ -22,17 +45,12 @@
   margin: 20px auto 100px auto;
 }
 
-.wrapper {
-  max-width: 80ch;
-
-  margin: 0px auto;
-}
-
 .info-card {
   width: 250px;
   margin: 20px;
 
-  border-radius: 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
   padding: 15px;
 
   p {

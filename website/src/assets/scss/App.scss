@@ -1,6 +1,6 @@
-@import "./home";
+@import './home';
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap');
 
 body {
   margin: 0px;
@@ -11,7 +11,7 @@ body {
   }
 
   p {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 18px;
     line-height: 1cm;
 
@@ -21,12 +21,12 @@ body {
   }
 
   h1 {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 64px;
 
     display: block;
 
-    font-weight: 900;
+    font-weight: 500;
 
     text-align: center;
     margin: 35px 30px;
@@ -40,7 +40,7 @@ body {
   }
 
   h3 {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 36px;
 
     font-weight: 500;
@@ -60,7 +60,7 @@ body {
   }
 
   ul {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 18px;
     line-height: 0.8cm;
   }
@@ -70,7 +70,7 @@ body {
 
     background-repeat: no-repeat;
     background-position: left center;
-    background-image: url("../svgs/check-mark-line.svg");
+    background-image: url('../svgs/check-mark-line.svg');
 
     background-size: 25px;
     margin-right: 50px;
@@ -102,6 +102,10 @@ body {
 
     h2 {
       font-size: 34px;
+    }
+
+    h4 {
+      font-size: 30px;
     }
   }
 }

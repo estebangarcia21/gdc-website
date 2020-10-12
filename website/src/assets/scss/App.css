@@ -1,10 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap");
+.background-a {
+  width: 100%;
+  background-color: #f8d2b2;
+  padding: 20px 0px;
+}
+
+.background-a h1, .background-a body h2, body .background-a h2, .background-a body h4, body .background-a h4,
+.background-a h2 {
+  color: white;
+}
+
+.background-b {
+  width: 100%;
+  background-color: #faecfd;
+  padding: 20px 0px;
+}
+
+.text-wrap {
+  max-width: 80ch;
+  margin: 0px auto;
+}
+
 #home-banner {
   display: flexbox;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 50px 0px 50px 0px;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #join-reasons-container {
@@ -12,33 +33,29 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 20px;
 }
 
-#info-cards {
+#info-cards-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 20px auto 100px auto;
-}
-
-.wrapper {
-  max-width: 80ch;
-  margin: 0px auto;
 }
 
 .info-card {
   width: 250px;
   margin: 20px;
-  border-radius: 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
   padding: 15px;
 }
 
@@ -68,20 +85,18 @@ body a {
 }
 
 body p {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 18px;
   line-height: 1cm;
   text-align: center;
   margin: 35px 30px;
 }
 
-body h1,
-body h2,
-body h4 {
-  font-family: "Inter", sans-serif;
+body h1, body h2, body h4 {
+  font-family: 'Inter', sans-serif;
   font-size: 64px;
   display: block;
-  font-weight: 900;
+  font-weight: 500;
   text-align: center;
   margin: 35px 30px;
 }
@@ -92,7 +107,7 @@ body h2 {
 }
 
 body h3 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 500;
   text-align: center;
@@ -106,7 +121,7 @@ body h4 {
 }
 
 body ul {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 18px;
   line-height: 0.8cm;
 }
@@ -122,10 +137,8 @@ body li {
 }
 
 .box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
-    0 6px 20px 0 rgba(0, 0, 0, 0.125);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
-    0 6px 20px 0 rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
 }
 
 @media only screen and (max-width: 600px) {
@@ -136,13 +149,14 @@ body li {
 }
 
 @media only screen and (max-width: 525px) {
-  body h1,
-  body h2,
-  body h4 {
+  body h1, body h2, body h4 {
     font-size: 50px;
   }
   body h2 {
     font-size: 34px;
+  }
+  body h4 {
+    font-size: 30px;
   }
 }
 /*# sourceMappingURL=App.css.map */
