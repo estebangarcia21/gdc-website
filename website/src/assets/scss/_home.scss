@@ -1,74 +1,74 @@
 .background-a {
-  width: 100%;
+    width: 100%;
 
-  background-color: #f8d2b2;
-  padding: 20px 0px;
+    background-color: #f8d2b2;
+    padding: 20px 0px;
 
-  h1,
-  h2 {
-    color: white;
-  }
+    h1,
+    h2 {
+        color: white;
+    }
 }
 
 .background-b {
-  width: 100%;
+    width: 100%;
 
-  background-color: #ecfdfd;
-  padding: 20px 0px;
+    background-color: #ecfdfd;
+    padding: 20px 0px;
 }
 
 .text-wrap {
-  max-width: 80ch;
+    max-width: 80ch;
 
-  margin: 0px auto;
+    margin: 0px auto;
 }
 
 #home-banner {
-  display: flexbox;
-  align-items: center;
+    display: flexbox;
+    align-items: center;
 }
 
 #join-reasons-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #info-cards-container {
-  width: 100%;
+    width: 100%;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-  margin: 20px auto 100px auto;
+    margin: 20px auto 100px auto;
 }
 
 .info-card {
-  width: 250px;
-  margin: 20px;
+    width: 250px;
+    margin: 20px;
 
-  border: 1px solid gray;
-  border-radius: 6px;
-  padding: 15px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 15px;
 
-  p {
-    margin: 0px;
-  }
+    p {
+        margin: 0px;
+    }
 
-  img {
-    display: block;
+    img {
+        display: block;
 
-    margin: 0px auto;
-  }
+        margin: 0px auto;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-  .info-card {
-    p,
-    h3 {
-      text-align: center;
+    .info-card {
+        p,
+        h3 {
+            text-align: center;
+        }
     }
-  }
 }
