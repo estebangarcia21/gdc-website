@@ -18,6 +18,7 @@ Using my previous programming experience, I began learning and applying all of t
 - Learned SQL statements and PostgreSQL
 - Learned how to deploy a website front-end to AWS Amplify
 - Learned functional programming paradigm basics and concepts (currying, higher-order functions)
+- Learned what a boilerplate is and how it applies across my code
 
 ## Technologies
 
