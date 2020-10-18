@@ -1,4 +1,4 @@
-import * as easings from 'd3-ease';
+import * as easing from 'd3-ease';
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -13,7 +13,7 @@ interface CardProps {
     icon: string;
 }
 
-const Card: React.FC<CardProps> = (props) => {
+const Card: React.FC<CardProps> = props => {
     return (
         <div className='info-card'>
             <img src={props.icon} width='35px' height='35px' alt='Icon' />
@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = (props) => {
 };
 
 const Home: React.FC = () => {
-    const [loaded, setLoaded] = useState({
+    const [playedAnimations, setPlayedAnimations] = useState({
         joinTeamCards: false,
     });
 
@@ -37,31 +37,27 @@ const Home: React.FC = () => {
                 <h2>The Community of Communities</h2>
             </div>
 
-            <animated.div
-                style={useSpring({
-                    config: {
-                        delay: 250,
-                        duration: 1000,
-                        easing: easings.easeBack,
-                    },
-                    opacity: 1,
-                    from: { opacity: 0 },
-                })}
-            >
-                <h3>What is Game Development Club?</h3>
+            <h3>What is Game Development Club?</h3>
 
-                <div className='text-wrap'>
-                    <p>
-                        Game Development Club is a club where artists,
-                        programmers, animators, musicians, and writers work
-                        together to create amazing games!
-                        <br />
-                        <br />
-                        At Game Development Club, people can learn how to create
-                        games!
-                    </p>
-                </div>
-            </animated.div>
+            <div className='text-wrap'>
+                <p>
+                    Game Development Club is a club where artists, programmers,
+                    animators, musicians, and writers work together to create
+                    amazing games!
+                    <br />
+                    <br />
+                    At Game Development Club, we accept people of any experience
+                    level. Whether you are a complete beginner or experienced in
+                    your field, Game Development Club has a place for you!
+                    <br />
+                    <br />
+                    Game Development Club makes it easy for you to learn what
+                    you need to know to become a successful contributor to your
+                    team. Watch free lessons under our resources section that
+                    are designated for your team and ask other members of your
+                    team for help when you get stuck or have a question!
+                </p>
+            </div>
 
             <h3>Why join Game Development Club?</h3>
 
@@ -69,18 +65,18 @@ const Home: React.FC = () => {
                 <ul>
                     <li>Meet people who share your interests</li>
                     <li>Grow in your field</li>
-                    <li>Experience a collaborative working enviornment</li>
+                    <li>Experience a collaborative working environment</li>
                     <li>Learn game development</li>
                 </ul>
             </div>
 
             <VisibilitySensor
                 partialVisibility
-                onChange={(isVisible) => {
+                onChange={isVisible => {
                     if (!isVisible) return;
 
-                    setLoaded({
-                        ...loaded,
+                    setPlayedAnimations({
+                        ...playedAnimations,
                         joinTeamCards: true,
                     });
                 }}
@@ -89,16 +85,17 @@ const Home: React.FC = () => {
                     style={useSpring({
                         config: {
                             duration: 500,
-                            easing: easings.easeCubic,
+                            easing: easing.easeCubic,
                         },
-                        opacity: loaded.joinTeamCards ? 1 : 0,
-                        transform: loaded.joinTeamCards
+                        opacity: playedAnimations.joinTeamCards ? 1 : 0,
+                        transform: playedAnimations.joinTeamCards
                             ? 'translateY(0px)'
                             : 'translateY(50px)',
                     })}
                 >
                     <div className='background-b'>
-                        <h4>Join a Team</h4>
+                        <h4>Ready to join?</h4>
+                        <h4>Join team...</h4>
 
                         <div id='info-cards-container'>
                             <Card title='Programmers' icon={programming_svg}>
@@ -117,13 +114,12 @@ const Home: React.FC = () => {
                                 animations.
                             </Card>
                             <Card title='Writers' icon={writers_svg}>
-                                Layout layout the story of our games!
-                                Communicate with club members to create amazing
-                                stories!
+                                Layout the story of our games! Communicate with
+                                club members to create amazing stories!
                             </Card>
                             <Card title='Musicians' icon={music_svg}>
                                 Produce inspiring music that captures the
-                                feeling and emotion of the game environment.
+                                feeling and emotion of the game scene.
                             </Card>
                         </div>
                     </div>
