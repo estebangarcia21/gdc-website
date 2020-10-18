@@ -13,8 +13,12 @@
 .background-b {
     width: 100%;
 
-    background-color: #ecfdfd;
+    background-image: linear-gradient(78deg, #f8d2b2, #f5b8b8);
     padding: 20px 0px;
+
+    h4 {
+        color: white;
+    }
 }
 
 .text-wrap {
@@ -49,9 +53,10 @@
     width: 250px;
     margin: 20px;
 
-    border: 1px solid gray;
+    border: 1px solid #929292;
+    background-color: white;
     border-radius: 6px;
-    padding: 15px;
+    padding: 20px;
 
     p {
         margin: 0px;

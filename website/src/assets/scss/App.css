@@ -12,8 +12,12 @@
 
 .background-b {
   width: 100%;
-  background-color: #ecfdfd;
+  background-image: linear-gradient(78deg, #f8d2b2, #f5b8b8);
   padding: 20px 0px;
+}
+
+.background-b h4 {
+  color: white;
 }
 
 .text-wrap {
@@ -54,9 +58,10 @@
 .info-card {
   width: 250px;
   margin: 20px;
-  border: 1px solid gray;
+  border: 1px solid #929292;
+  background-color: white;
   border-radius: 6px;
-  padding: 15px;
+  padding: 20px;
 }
 
 .info-card p {
@@ -96,14 +101,13 @@ body h1, body h2, body h4 {
   font-family: 'Inter', sans-serif;
   font-size: 64px;
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   margin: 35px 30px;
 }
 
 body h2 {
   font-size: 48px;
-  color: #000000;
 }
 
 body h3 {
@@ -115,15 +119,16 @@ body h3 {
 }
 
 body h4 {
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
-  font-size: 32px;
+  font-size: 46px;
 }
 
 body ul {
   font-family: 'Rubik', sans-serif;
   font-size: 18px;
   line-height: 0.8cm;
+  margin: 0px;
 }
 
 body li {
