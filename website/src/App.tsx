@@ -15,8 +15,6 @@ const client = new ApolloClient({
 const App: React.FC = () => {
     return (
         <ApolloProvider client={client}>
-            <Navbar />
-
             <Router>
                 <Switch>
                     <Route exact path='/' component={Home} />
