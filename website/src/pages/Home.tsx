@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
+import Navbar from '../assets/components/Navbar';
 import animation_svg from '../assets/svgs/animation-motion.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
 import programming_svg from '../assets/svgs/code.svg';
 import music_svg from '../assets/svgs/music.svg';
 import writers_svg from '../assets/svgs/pencil-draw.svg';
+import checkmark from '../assets/svgs/check-mark-line.svg';
 
 interface CardProps {
     title: string;
@@ -24,14 +26,22 @@ const Card: React.FC<CardProps> = props => {
     );
 };
 
+const Checkmark: React.FC = () => {
+    return <img src={checkmark} width='30' alt='Checkmark' />;
+};
+
 const Home: React.FC = () => {
     const [playedAnimations, setPlayedAnimations] = useState({
         joinTeamCards: false,
     });
 
+    const fadeInTime = 0.45;
+
     return (
         <div>
             <div className='background-a'>
+                <Navbar />
+
                 <motion.div
                     id='home-banner'
                     initial='hidden'
@@ -41,72 +51,116 @@ const Home: React.FC = () => {
                         visible: { opacity: 1 },
                     }}
                     transition={{
-                        duration: 0.45,
+                        duration: fadeInTime,
                     }}
                 >
                     <h1>Game Development Club</h1>
+
                     <p>
                         A club where artists, programmers, animators, musicians,
                         and writers work together to create amazing games!
                     </p>
                 </motion.div>
 
-                <h3>What is Game Development Club?</h3>
-
-                <p>
-                    At Game Development Club, we accept people of any experience
-                    level. Whether you are a complete beginner or experienced in
-                    your field, Game Development Club has a place for you!
-                    <br />
-                    <br />
-                    Game Development Club makes it easy for you to learn what
-                    you need to know to become a successful contributor to your
-                    team. Watch free lessons under our resources section that
-                    are designated for your team and ask other members of your
-                    team for help when you get stuck or have a question!
-                </p>
-            </div>
-
-            <h3>Why join Game Development Club?</h3>
-
-            <div id='join-reasons-container'>
-                <ul>
-                    <li>Meet people who share your interests</li>
-                    <li>Grow in your field</li>
-                    <li>Experience a collaborative working environment</li>
-                    <li>Learn game development</li>
-                </ul>
-            </div>
-
-            <VisibilitySensor
-                partialVisibility
-                onChange={isVisible => {
-                    if (!isVisible) return;
-
-                    setPlayedAnimations({
-                        ...playedAnimations,
-                        joinTeamCards: true,
-                    });
-                }}
-            >
                 <motion.div
+                    id='home-banner'
                     initial='hidden'
-                    animate={playedAnimations.joinTeamCards ? 'visible' : ''}
+                    animate='visible'
                     variants={{
-                        hidden: {
-                            opacity: 0,
-                            translateY: '50px',
-                        },
-                        visible: {
-                            opacity: 1,
-                            translateY: '0px',
-                        },
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1 },
                     }}
                     transition={{
-                        bounce: false,
+                        delay: fadeInTime,
+                        duration: fadeInTime,
                     }}
                 >
-                    <div className='background-b'>
+                    <h3>What is Game Development Club?</h3>
+
+                    <p>
+                        At Game Development Club, we accept people of any
+                        experience level. Whether you are a complete beginner or
+                        experienced in your field, Game Development Club has a
+                        place for you!
+                        <br />
+                        <br />
+                        Game Development Club makes it easy for you to learn
+                        what you need to know to become a successful contributor
+                        to your team. Watch free lessons under our resources
+                        section that are designated for your team and ask other
+                        members of your team for help when you get stuck or have
+                        a question!
+                    </p>
+                </motion.div>
+            </div>
+
+            <div className='background-b'>
+                <motion.div
+                    id='home-banner'
+                    initial='hidden'
+                    animate='visible'
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1 },
+                    }}
+                    transition={{
+                        delay: fadeInTime * 2,
+                        duration: fadeInTime,
+                    }}
+                >
+                    <h3>Why join Game Development Club?</h3>
+
+                    <p>
+                        <Checkmark />
+                        Meet people who share your interests
+                        <br />
+                        <br />
+                        <Checkmark />
+                        Grow in your field
+                        <br />
+                        <br />
+                        <Checkmark />
+                        Experience a collaborative working environment
+                        <br />
+                        <br />
+                        <Checkmark />
+                        Learn game development
+                    </p>
+                </motion.div>
+            </div>
+
+            <div className='background-a'>
+                <VisibilitySensor
+                    partialVisibility
+                    onChange={isVisible => {
+                        if (!isVisible) return;
+
+                        setPlayedAnimations({
+                            ...playedAnimations,
+                            joinTeamCards: true,
+                        });
+                    }}
+                >
+                    <motion.div
+                        initial='hidden'
+                        animate={
+                            playedAnimations.joinTeamCards ? 'visible' : ''
+                        }
+                        variants={{
+                            hidden: {
+                                opacity: 0,
+                                translateY: '50px',
+                            },
+                            visible: {
+                                opacity: 1,
+                                translateY: '0px',
+                            },
+                        }}
+                        transition={{
+                            delay: 0.1,
+                            bounce: false,
+                        }}
+                    >
                         <h4>Ready to join?</h4>
                         <h4>Join team...</h4>
 
@@ -134,11 +188,9 @@ const Home: React.FC = () => {
                                 feeling and emotion of the game scene.
                             </Card>
                         </div>
-                    </div>
-                </motion.div>
-            </VisibilitySensor>
-
-            <h3>Thanks!</h3>
+                    </motion.div>
+                </VisibilitySensor>
+            </div>
         </div>
     );
 };
