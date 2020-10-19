@@ -1,6 +1,5 @@
-import * as easing from 'd3-ease';
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { animated, useSpring } from 'react-spring';
 import VisibilitySensor from 'react-visibility-sensor';
 import animation_svg from '../assets/svgs/animation-motion.svg';
 import art_svg from '../assets/svgs/brush-paintbrush.svg';
@@ -32,20 +31,29 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <div id='home-banner' className='background-a'>
-                <h1>Game Development Club</h1>
-                <h2>The Community of Communities</h2>
-            </div>
+            <div className='background-a'>
+                <motion.div
+                    id='home-banner'
+                    initial='hidden'
+                    animate='visible'
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1 },
+                    }}
+                    transition={{
+                        duration: 0.45,
+                    }}
+                >
+                    <h1>Game Development Club</h1>
+                    <p>
+                        A club where artists, programmers, animators, musicians,
+                        and writers work together to create amazing games!
+                    </p>
+                </motion.div>
 
-            <h3>What is Game Development Club?</h3>
+                <h3>What is Game Development Club?</h3>
 
-            <div className='text-wrap'>
                 <p>
-                    Game Development Club is a club where artists, programmers,
-                    animators, musicians, and writers work together to create
-                    amazing games!
-                    <br />
-                    <br />
                     At Game Development Club, we accept people of any experience
                     level. Whether you are a complete beginner or experienced in
                     your field, Game Development Club has a place for you!
@@ -81,17 +89,22 @@ const Home: React.FC = () => {
                     });
                 }}
             >
-                <animated.div
-                    style={useSpring({
-                        config: {
-                            duration: 500,
-                            easing: easing.easeCubic,
+                <motion.div
+                    initial='hidden'
+                    animate={playedAnimations.joinTeamCards ? 'visible' : ''}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
+                            translateY: '50px',
                         },
-                        opacity: playedAnimations.joinTeamCards ? 1 : 0,
-                        transform: playedAnimations.joinTeamCards
-                            ? 'translateY(0px)'
-                            : 'translateY(50px)',
-                    })}
+                        visible: {
+                            opacity: 1,
+                            translateY: '0px',
+                        },
+                    }}
+                    transition={{
+                        bounce: false,
+                    }}
                 >
                     <div className='background-b'>
                         <h4>Ready to join?</h4>
@@ -99,9 +112,8 @@ const Home: React.FC = () => {
 
                         <div id='info-cards-container'>
                             <Card title='Programmers' icon={programming_svg}>
-                                Tie the project together! Programmers connect
-                                all assets and bring the game to life through
-                                Unity and C#.
+                                Tie the project together! Combine all assets and
+                                bring the game to life through Unity and C#.
                             </Card>
                             <Card title='Artists' icon={art_svg}>
                                 Work together with other artists to create
@@ -123,8 +135,10 @@ const Home: React.FC = () => {
                             </Card>
                         </div>
                     </div>
-                </animated.div>
+                </motion.div>
             </VisibilitySensor>
+
+            <h3>Thanks!</h3>
         </div>
     );
 };

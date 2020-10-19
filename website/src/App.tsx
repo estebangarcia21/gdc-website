@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import OurGames from './pages/OurGames';
 import About from './pages/About';
+import Navbar from './assets/components/Navbar';
 
 const client = new ApolloClient({
     uri: 'http://localhost:4000/graphql',
@@ -14,6 +15,8 @@ const client = new ApolloClient({
 const App: React.FC = () => {
     return (
         <ApolloProvider client={client}>
+            <Navbar />
+
             <Router>
                 <Switch>
                     <Route exact path='/' component={Home} />
