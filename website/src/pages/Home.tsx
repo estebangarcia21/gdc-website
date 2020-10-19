@@ -10,6 +10,7 @@ import writersSvg from '../assets/svgs/pencil-draw.svg';
 import checkmark from '../assets/svgs/check-mark-line.svg';
 import photoImage from '../assets/svgs/photo.svg';
 import codeImage from '../assets/svgs/code-illustration.svg';
+import musicImage from '../assets/svgs/music-illustration.svg';
 
 interface CardProps {
     title: string;
@@ -94,6 +95,25 @@ const Home: React.FC = () => {
                     }}
                     transition={{
                         duration: 2,
+                        yoyo: Infinity,
+                    }}
+                />
+                <motion.img
+                    src={musicImage}
+                    width='200px'
+                    className='side-image'
+                    style={{
+                        position: 'absolute',
+                        right: '400px',
+                        top: '310px',
+                    }}
+                    alt='Code'
+                    animate={{
+                        top: '300px',
+                    }}
+                    transition={{
+                        duration: 2,
+                        delay: 0.5,
                         yoyo: Infinity,
                     }}
                 />
