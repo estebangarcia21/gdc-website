@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import OurGames from './pages/OurGames';
 import About from './pages/About';
-import Navbar from './assets/components/Navbar';
 
 const client = new ApolloClient({
     uri: 'http://localhost:4000/graphql',

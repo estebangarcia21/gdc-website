@@ -13,7 +13,7 @@ body {
     h2,
     h3,
     h4 {
-        margin: 35px 20%;
+        margin: 35px 15%;
     }
 
     p {
@@ -25,7 +25,7 @@ body {
 
         max-width: 50ch;
 
-        color: inherit;
+        color: white;
     }
 
     h1 {
@@ -51,9 +51,13 @@ body {
 
     h3 {
         font-family: 'Inter', sans-serif;
-        font-size: 54px;
+        font-size: 42px;
+
+        max-width: 15ch;
 
         font-weight: 560000;
+
+        color: white;
     }
 
     h4 {
@@ -83,6 +87,7 @@ body {
         background-size: 25px;
 
         margin-right: 50px;
+        color: white;
         padding: 30px 0px 25px 50px;
     }
 }
@@ -111,7 +116,6 @@ body {
 
         transition: color 0.2s ease;
 
-        background-color: white;
         color: #696969;
     }
 

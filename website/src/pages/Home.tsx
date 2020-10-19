@@ -42,9 +42,9 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <Navbar />
-
             <div className='background-a'>
+                <Navbar />
+
                 <motion.div
                     id='home-banner'
                     initial={{ opacity: 0 }}

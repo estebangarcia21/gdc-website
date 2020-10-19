@@ -10,11 +10,12 @@
 .background-b {
     width: 100%;
 
-    background-image: #222;
+    background-color: #222;
     padding: 20px 0px;
 
-    h4 {
-        color: white;
+    img {
+        filter: contrast(0) brightness(100);
+        margin-right: 20px;
     }
 }
 
@@ -57,12 +58,21 @@
 
     p {
         margin: 0px;
+
+        color: black;
+        text-align: center;
     }
 
     img {
         display: block;
 
         margin: 0px auto;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .side-image {
+        display: none;
     }
 }
 

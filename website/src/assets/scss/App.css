@@ -10,12 +10,14 @@
 
 .background-b {
   width: 100%;
-  background-image: #222;
+  background-color: #222;
   padding: 20px 0px;
 }
 
-.background-b h4 {
-  color: white;
+.background-b img {
+  -webkit-filter: contrast(0) brightness(100);
+          filter: contrast(0) brightness(100);
+  margin-right: 20px;
 }
 
 .text-wrap {
@@ -62,11 +64,19 @@
 
 .info-card p {
   margin: 0px;
+  color: black;
+  text-align: center;
 }
 
 .info-card img {
   display: block;
   margin: 0px auto;
+}
+
+@media only screen and (max-width: 1400px) {
+  .side-image {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -88,7 +98,7 @@ body h4,
 body h2,
 body h3,
 body h4 {
-  margin: 35px 20%;
+  margin: 35px 15%;
 }
 
 body p {
@@ -97,7 +107,7 @@ body p {
   line-height: 1cm;
   text-align: left;
   max-width: 50ch;
-  color: inherit;
+  color: white;
 }
 
 
@@ -121,8 +131,10 @@ body h2 {
 
 body h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 54px;
+  font-size: 42px;
+  max-width: 15ch;
   font-weight: 560000;
+  color: white;
 }
 
 body h4 {
@@ -146,6 +158,7 @@ body li {
   background-image: url("../svgs/check-mark-line.svg");
   background-size: 25px;
   margin-right: 50px;
+  color: white;
   padding: 30px 0px 25px 50px;
 }
 
@@ -175,7 +188,6 @@ body li {
   margin: 0px 35px;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
-  background-color: white;
   color: #696969;
 }
 
