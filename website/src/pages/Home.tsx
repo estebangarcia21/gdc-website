@@ -17,6 +17,16 @@ interface CardProps {
     icon: string;
 }
 
+interface FloatingImageProps {
+    src: string;
+    alt: string;
+    width: string;
+    position: {
+        x: string;
+        y: number;
+    };
+}
+
 const Card: React.FC<CardProps> = props => {
     return (
         <div className='info-card'>
@@ -31,6 +41,30 @@ const Card: React.FC<CardProps> = props => {
 
 const Checkmark: React.FC = () => {
     return <img src={checkmark} width='30' alt='Checkmark' />;
+};
+
+const FloatingImage: React.FC<FloatingImageProps> = props => {
+    return (
+        <motion.img
+            src={props.src}
+            width={props.width}
+            className='side-image'
+            style={{
+                position: 'absolute',
+                right: props.position.x,
+                top: props.position.y + 'px',
+            }}
+            alt={props.alt}
+            animate={{
+                top: props.position.y - 10 + 'px',
+            }}
+            transition={{
+                delay: 0.35,
+                duration: 1.5,
+                yoyo: Infinity,
+            }}
+        />
+    );
 };
 
 const Home: React.FC = () => {
@@ -61,60 +95,31 @@ const Home: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <motion.img
+                <FloatingImage
                     src={photoImage}
-                    width='500px'
-                    className='side-image'
-                    style={{
-                        position: 'absolute',
-                        right: '75px',
-                        top: '75px',
-                    }}
                     alt='Sun'
-                    animate={{
-                        top: '65px',
-                    }}
-                    transition={{
-                        delay: 0.35,
-                        duration: 1.5,
-                        yoyo: Infinity,
+                    width='500px'
+                    position={{
+                        x: '75px',
+                        y: 75,
                     }}
                 />
-                <motion.img
+                <FloatingImage
                     src={codeImage}
-                    width='400px'
-                    className='side-image'
-                    style={{
-                        position: 'absolute',
-                        right: '50px',
-                        top: '400px',
-                    }}
                     alt='Code'
-                    animate={{
-                        top: '390px',
-                    }}
-                    transition={{
-                        duration: 2,
-                        yoyo: Infinity,
+                    width='400px'
+                    position={{
+                        x: '50px',
+                        y: 400,
                     }}
                 />
-                <motion.img
+                <FloatingImage
                     src={musicImage}
+                    alt='Bird'
                     width='200px'
-                    className='side-image'
-                    style={{
-                        position: 'absolute',
-                        right: '400px',
-                        top: '310px',
-                    }}
-                    alt='Code'
-                    animate={{
-                        top: '300px',
-                    }}
-                    transition={{
-                        duration: 2,
-                        delay: 0.5,
-                        yoyo: Infinity,
+                    position={{
+                        x: '400px',
+                        y: 310,
                     }}
                 />
 
