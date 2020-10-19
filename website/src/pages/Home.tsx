@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import Navbar from '../assets/components/Navbar';
-import animation_svg from '../assets/svgs/animation-motion.svg';
-import art_svg from '../assets/svgs/brush-paintbrush.svg';
-import programming_svg from '../assets/svgs/code.svg';
-import music_svg from '../assets/svgs/music.svg';
-import writers_svg from '../assets/svgs/pencil-draw.svg';
+import animationSvg from '../assets/svgs/animation-motion.svg';
+import artSvg from '../assets/svgs/brush-paintbrush.svg';
+import programmingSvg from '../assets/svgs/code.svg';
+import musicSvg from '../assets/svgs/music.svg';
+import writersSvg from '../assets/svgs/pencil-draw.svg';
 import checkmark from '../assets/svgs/check-mark-line.svg';
+import photoImage from '../assets/svgs/photo.svg';
+import codeImage from '../assets/svgs/code-illustration.svg';
 
 interface CardProps {
     title: string;
@@ -39,17 +41,13 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <div className='background-a'>
-                <Navbar />
+            <Navbar />
 
+            <div className='background-a'>
                 <motion.div
                     id='home-banner'
-                    initial='hidden'
-                    animate='visible'
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: { opacity: 1 },
-                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         duration: fadeInTime,
                     }}
@@ -62,14 +60,48 @@ const Home: React.FC = () => {
                     </p>
                 </motion.div>
 
+                <motion.img
+                    src={photoImage}
+                    width='500px'
+                    className='side-image'
+                    style={{
+                        position: 'absolute',
+                        right: '75px',
+                        top: '75px',
+                    }}
+                    alt='Sun'
+                    animate={{
+                        top: '65px',
+                    }}
+                    transition={{
+                        delay: 0.35,
+                        duration: 1.5,
+                        yoyo: Infinity,
+                    }}
+                />
+                <motion.img
+                    src={codeImage}
+                    width='400px'
+                    className='side-image'
+                    style={{
+                        position: 'absolute',
+                        right: '50px',
+                        top: '400px',
+                    }}
+                    alt='Code'
+                    animate={{
+                        top: '390px',
+                    }}
+                    transition={{
+                        duration: 2,
+                        yoyo: Infinity,
+                    }}
+                />
+
                 <motion.div
                     id='home-banner'
-                    initial='hidden'
-                    animate='visible'
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: { opacity: 1 },
-                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         delay: fadeInTime,
                         duration: fadeInTime,
@@ -97,12 +129,8 @@ const Home: React.FC = () => {
             <div className='background-b'>
                 <motion.div
                     id='home-banner'
-                    initial='hidden'
-                    animate='visible'
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: { opacity: 1 },
-                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         delay: fadeInTime * 2,
                         duration: fadeInTime,
@@ -165,25 +193,25 @@ const Home: React.FC = () => {
                         <h4>Join team...</h4>
 
                         <div id='info-cards-container'>
-                            <Card title='Programmers' icon={programming_svg}>
+                            <Card title='Programmers' icon={programmingSvg}>
                                 Tie the project together! Combine all assets and
                                 bring the game to life through Unity and C#.
                             </Card>
-                            <Card title='Artists' icon={art_svg}>
+                            <Card title='Artists' icon={artSvg}>
                                 Work together with other artists to create
                                 amazing 2D visuals for our games. Any art style
                                 is welcome!
                             </Card>
-                            <Card title='Animators' icon={animation_svg}>
+                            <Card title='Animators' icon={animationSvg}>
                                 Bring the game to life! Work closely with the
                                 art team to make fluid, responsive, and engaging
                                 animations.
                             </Card>
-                            <Card title='Writers' icon={writers_svg}>
+                            <Card title='Writers' icon={writersSvg}>
                                 Layout the story of our games! Communicate with
                                 club members to create amazing stories!
                             </Card>
-                            <Card title='Musicians' icon={music_svg}>
+                            <Card title='Musicians' icon={musicSvg}>
                                 Produce inspiring music that captures the
                                 feeling and emotion of the game scene.
                             </Card>
