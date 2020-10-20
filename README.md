@@ -25,7 +25,7 @@ Using my previous programming experience, I began learning and applying all of t
 - React
 - Sass
 - Typescript
-- React Spring
+- Framer Motion
 - GraphQL / TypeGraphQL
 - TypeORM
 - PostgreSQL
@@ -36,6 +36,7 @@ Using my previous programming experience, I began learning and applying all of t
 
 - Migrate back-end to React's ContextAPI to save on deployment costs
 - ~~Change app to be designed mobile-first and incorpate responsive web design / DRY techniques~~
+- ~~Switch animation library to Framer Motion (from React Spring)~~
 
 ## Game Development Club Organization
 
