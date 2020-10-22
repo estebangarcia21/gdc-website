@@ -1,8 +1,6 @@
 # dependencies
 server/node_modules
 website/node_modules
-.pnp
-.pnp.js
 
 # testing
 website/coverage
