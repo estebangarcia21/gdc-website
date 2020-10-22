@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import Navbar from '../assets/components/Navbar';
 import animationSvg from '../assets/svgs/animation-motion.svg';
 import artSvg from '../assets/svgs/brush-paintbrush.svg';
 import programmingSvg from '../assets/svgs/code.svg';
@@ -50,7 +49,6 @@ const FloatingImage: React.FC<FloatingImageProps> = props => {
             width={props.width}
             className='side-image'
             style={{
-                position: 'absolute',
                 right: props.position.x,
                 top: props.position.y + 'px',
             }}
@@ -77,7 +75,7 @@ const Home: React.FC = () => {
     return (
         <div>
             <div className='background-a'>
-                <Navbar />
+                {/* <Navbar /> */}
 
                 <motion.div
                     id='home-banner'
@@ -95,33 +93,37 @@ const Home: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <FloatingImage
-                    src={photoImage}
-                    alt='Sun'
-                    width='500px'
-                    position={{
-                        x: '75px',
-                        y: 75,
-                    }}
-                />
-                <FloatingImage
-                    src={codeImage}
-                    alt='Code'
-                    width='400px'
-                    position={{
-                        x: '50px',
-                        y: 400,
-                    }}
-                />
-                <FloatingImage
-                    src={musicImage}
-                    alt='Bird'
-                    width='200px'
-                    position={{
-                        x: '400px',
-                        y: 310,
-                    }}
-                />
+                <div id='image-container'>
+                    <div id='images'>
+                        <FloatingImage
+                            src={photoImage}
+                            alt='Sun'
+                            width='500px'
+                            position={{
+                                x: '75px',
+                                y: 75,
+                            }}
+                        />
+                        <FloatingImage
+                            src={codeImage}
+                            alt='Code'
+                            width='400px'
+                            position={{
+                                x: '50px',
+                                y: 400,
+                            }}
+                        />
+                        <FloatingImage
+                            src={musicImage}
+                            alt='Bird'
+                            width='200px'
+                            position={{
+                                x: '400px',
+                                y: 310,
+                            }}
+                        />
+                    </div>
+                </div>
 
                 <motion.div
                     id='home-banner'
