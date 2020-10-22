@@ -22,3 +22,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
+
+# builds
+/server/dist
+/website/build
