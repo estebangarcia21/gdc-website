@@ -1,9 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
-/server/node_modules
-/website/node_modules
-/node_modules
+server/node_modules
+website/node_modules
 .pnp
 .pnp.js
 
@@ -21,8 +18,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.vscode
-
 # builds
-/server/dist
-/website/build
+server/dist
+website/build
+
+# other
+.vscode
