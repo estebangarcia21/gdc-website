@@ -1,35 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
-.background-a {
-  width: 100%;
-  background-color: #111;
-  padding: 20px 0px;
-  color: white;
-}
-
-.background-b {
-  width: 100%;
-  background-color: #222;
-  padding: 20px 0px;
-}
-
-.background-b img {
-  -webkit-filter: contrast(0) brightness(100);
-  filter: contrast(0) brightness(100);
-  margin-right: 20px;
-}
-
-.text-wrap {
-  max-width: 80ch;
-  margin: 0px auto;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
 #home-banner {
   display: flexbox;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #image-container {
@@ -37,6 +13,37 @@
   right: 0px;
   top: 0px;
   width: 50%;
+}
+
+#join-footer {
+  text-align: center;
+  margin: 0px 0px 75px 0px;
+  cursor: pointer;
+}
+
+#join-footer p {
+  text-align: center;
+  max-width: unset;
+}
+
+#join-button {
+  position: relative;
+  -webkit-transition: 0.3s border ease-out;
+  transition: 0.3s border ease-out;
+  border: 1px solid black;
+  width: 200px;
+  height: 25px;
+  margin: 4px auto;
+  background-image: linear-gradient(145deg, #ff9f22, #c1b);
+  padding: 20px;
+  border-radius: 50px;
+  line-height: unset;
+  font-size: 20px;
+  text-align: left;
+}
+
+#join-button:hover {
+  border: 3px solid white;
 }
 
 .side-image {
@@ -59,11 +66,11 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 20px auto 100px auto;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px auto;
 }
 
 .info-card {
@@ -94,7 +101,7 @@
   display: block;
   margin: 0px auto;
   -webkit-filter: contrast(0) brightness(100);
-  filter: contrast(0) brightness(100);
+          filter: contrast(0) brightness(100);
 }
 
 @media only screen and (min-width: 1600px) {
@@ -148,6 +155,7 @@ body p {
   color: white;
 }
 
+
 body h1,
 body h2,
 body h4 {
@@ -192,7 +200,7 @@ body li {
   list-style: none;
   background-repeat: no-repeat;
   background-position: left center;
-  background-image: url('../svgs/check-mark-line.svg');
+  background-image: url("../svgs/check-mark-line.svg");
   background-size: 25px;
   margin-right: 50px;
   color: white;
@@ -200,10 +208,8 @@ body li {
 }
 
 .box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
-    0 6px 20px 0 rgba(0, 0, 0, 0.125);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
-    0 6px 20px 0 rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
 }
 
 #navbar {
@@ -213,11 +219,11 @@ body li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #navbar a {
@@ -236,6 +242,30 @@ body li {
 
 #navbar #gdc-logo {
   color: #696969;
+}
+
+.background-a {
+  width: 100%;
+  background-color: #111;
+  padding: 20px 0px;
+  color: white;
+}
+
+.background-b {
+  width: 100%;
+  background-color: #222;
+  padding: 20px 0px;
+}
+
+.background-b img {
+  -webkit-filter: contrast(0) brightness(100);
+          filter: contrast(0) brightness(100);
+  margin-right: 20px;
+}
+
+.text-wrap {
+  max-width: 80ch;
+  margin: 0px auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -258,6 +288,7 @@ body li {
 }
 
 @media only screen and (max-width: 525px) {
+  
   body h1,
   body h2,
   body h4 {

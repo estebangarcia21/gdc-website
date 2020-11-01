@@ -128,6 +128,33 @@ body {
   }
 }
 
+.background-a {
+  width: 100%;
+
+  background-color: #111;
+  padding: 20px 0px;
+
+  color: white;
+}
+
+.background-b {
+  width: 100%;
+
+  background-color: #222;
+  padding: 20px 0px;
+
+  img {
+    filter: contrast(0) brightness(100);
+    margin-right: 20px;
+  }
+}
+
+.text-wrap {
+  max-width: 80ch;
+
+  margin: 0px auto;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     p,
