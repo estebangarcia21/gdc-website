@@ -4,7 +4,7 @@ import './assets/scss/App.css';
 import Home from './pages/Home';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import OurGames from './pages/OurGames';
-import About from './pages/About';
+import Resources from './pages/Resources';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/our-games' component={OurGames} />
-          <Route path='/about' component={About} />
+          <Route path='/to-do' component={Resources} />
         </Switch>
       </Router>
     </ApolloProvider>
