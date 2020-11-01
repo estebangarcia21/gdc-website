@@ -238,6 +238,19 @@ const Home: React.FC = () => {
           </motion.div>
         </VisibilitySensor>
       </div>
+
+      <div className='background-a'>
+        <div id='join-footer'>
+          <h1>Join Game Development Club Today!</h1>
+
+          <p>
+            Join Game Development Club today and become part of a team that you
+            can enjoy!
+          </p>
+
+          <p id='join-button'>Join GDC</p>
+        </div>
+      </div>
     </div>
   );
 };
