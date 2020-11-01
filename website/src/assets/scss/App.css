@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 .background-a {
   width: 100%;
   background-color: #111;
@@ -16,7 +16,7 @@
 
 .background-b img {
   -webkit-filter: contrast(0) brightness(100);
-          filter: contrast(0) brightness(100);
+  filter: contrast(0) brightness(100);
   margin-right: 20px;
 }
 
@@ -28,8 +28,8 @@
 #home-banner {
   display: flexbox;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #image-container {
@@ -59,30 +59,42 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 20px auto 100px auto;
 }
 
 .info-card {
   width: 250px;
   margin: 20px;
-  background-color: white;
   border-radius: 6px;
   padding: 20px;
 }
 
 .info-card p {
   margin: 0px;
-  color: black;
+  color: white;
   text-align: center;
+}
+
+.info-card #title {
+  font-size: 1.5rem;
+  margin: 10px;
+  background: linear-gradient(145deg, #ff9f22, #c1b);
+  -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .info-card img {
   display: block;
   margin: 0px auto;
+  -webkit-filter: contrast(0) brightness(100);
+  filter: contrast(0) brightness(100);
 }
 
 @media only screen and (min-width: 1600px) {
@@ -136,7 +148,6 @@ body p {
   color: white;
 }
 
-
 body h1,
 body h2,
 body h4 {
@@ -181,7 +192,7 @@ body li {
   list-style: none;
   background-repeat: no-repeat;
   background-position: left center;
-  background-image: url("../svgs/check-mark-line.svg");
+  background-image: url('../svgs/check-mark-line.svg');
   background-size: 25px;
   margin-right: 50px;
   color: white;
@@ -189,8 +200,10 @@ body li {
 }
 
 .box-shadow {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
+    0 6px 20px 0 rgba(0, 0, 0, 0.125);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225),
+    0 6px 20px 0 rgba(0, 0, 0, 0.125);
 }
 
 #navbar {
@@ -200,11 +213,11 @@ body li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #navbar a {
@@ -245,7 +258,6 @@ body li {
 }
 
 @media only screen and (max-width: 525px) {
-  
   body h1,
   body h2,
   body h4 {

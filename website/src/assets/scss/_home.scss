@@ -1,117 +1,132 @@
 .background-a {
-    width: 100%;
+  width: 100%;
 
-    background-color: #111;
-    padding: 20px 0px;
+  background-color: #111;
+  padding: 20px 0px;
 
-    color: white;
+  color: white;
 }
 
 .background-b {
-    width: 100%;
+  width: 100%;
 
-    background-color: #222;
-    padding: 20px 0px;
+  background-color: #222;
+  padding: 20px 0px;
 
-    img {
-        filter: contrast(0) brightness(100);
-        margin-right: 20px;
-    }
+  img {
+    filter: contrast(0) brightness(100);
+    margin-right: 20px;
+  }
 }
 
 .text-wrap {
-    max-width: 80ch;
+  max-width: 80ch;
 
-    margin: 0px auto;
+  margin: 0px auto;
 }
 
 #home-banner {
-    display: flexbox;
-    align-items: center;
+  display: flexbox;
+  align-items: center;
 }
 
 #image-container {
-    position: absolute;
+  position: absolute;
 
-    right: 0px;
-    top: 0px;
+  right: 0px;
+  top: 0px;
 
-    width: 50%;
+  width: 50%;
 }
 
 .side-image {
-    position: absolute;
+  position: absolute;
 
-    right: 50px;
-    top: 0px;
+  right: 50px;
+  top: 0px;
 }
 
 #join-reasons-container {
-    display: flex;
+  display: flex;
 
-    margin-bottom: 20px;
-    margin-left: 20%;
+  margin-bottom: 20px;
+  margin-left: 20%;
 }
 
 #info-cards-container {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    margin: 20px auto 100px auto;
+  margin: 20px auto 100px auto;
 }
 
 .info-card {
-    width: 250px;
-    margin: 20px;
+  width: 250px;
+  margin: 20px;
 
-    background-color: white;
-    border-radius: 6px;
-    padding: 20px;
+  border-radius: 6px;
+  padding: 20px;
 
-    p {
-        margin: 0px;
+  p {
+    margin: 0px;
 
-        color: black;
-        text-align: center;
-    }
+    color: white;
+    text-align: center;
+  }
 
-    img {
-        display: block;
+  #title {
+    font-size: 1.5rem;
+    margin: 10px;
 
-        margin: 0px auto;
-    }
+    background: linear-gradient(145deg, rgb(255, 159, 34), #c1b);
+    -webkit-text-fill-color: transparent;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  img {
+    display: block;
+
+    margin: 0px auto;
+
+    filter: contrast(0) brightness(100);
+  }
 }
 
 @media only screen and (min-width: 1600px) {
-    #images {
-        position: relative;
+  #images {
+    position: relative;
 
-        right: 5%;
-    }
+    right: 5%;
+  }
 }
 
 @media only screen and (min-width: 2200px) {
-    #images {
-        position: relative;
+  #images {
+    position: relative;
 
-        right: 25%;
-    }
+    right: 25%;
+  }
 }
 
 @media only screen and (max-width: 1600px) {
-    #image-container {
-        display: none;
-    }
+  #image-container {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .info-card {
-        p,
-        h3 {
-            text-align: center;
-        }
+  .info-card {
+    p,
+    h3 {
+      text-align: center;
     }
+  }
 }
