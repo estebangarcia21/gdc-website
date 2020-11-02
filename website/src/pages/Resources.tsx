@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
-import GettingstartedProgrammers from './resource-pages/programmers/GettingstartedProgrammers';
+import React, { useContext, useState } from 'react';
+import {
+  addResource,
+  viewResource,
+} from '../contexts/resource-context/actions';
+import { ResourceContext } from '../contexts/resource-context/ResourceContext';
+import GettingStartedProgrammers from './resource-pages/programmers/GettingstartedProgrammers';
 
 interface DirectoryProps {
   name: string;
@@ -8,7 +13,7 @@ interface DirectoryProps {
 
 interface ResourceProps {
   name: string;
-  page: any;
+  page: React.FC;
 }
 
 const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
@@ -36,18 +41,54 @@ const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
   );
 };
 
-const Resource: React.FC<ResourceProps> = ({ name, page, children }) => {
+const Resource: React.FC<ResourceProps> = ({ name, page }) => {
+  const context = useContext(ResourceContext);
+
+  const resource = context.state.resources.find(r => r.name === name);
+
+  if (resource === undefined) {
+    context.dispatch(
+      addResource({
+        name: name,
+        page: page,
+        isActive: false,
+      })
+    );
+  }
+
   return (
     <div>
-      <h3 id='resource' onClick={() => {}}>
+      <h3
+        id='resource'
+        onClick={() => {
+          context.dispatch(viewResource(resource!));
+        }}
+      >
         {name}
       </h3>
-      <div>{children}</div>
     </div>
   );
 };
 
 const Resources: React.FC = () => {
+  const activeResource = useContext(ResourceContext).state.resources.find(
+    r => r.isActive
+  );
+
+  const HigherOrderComponent = (PassedComponent: any) => {
+    return class extends React.Component {
+      render() {
+        return (
+          <div>
+            <PassedComponent {...this.props} />
+          </div>
+        );
+      }
+    };
+  };
+
+  const ActivePage = HigherOrderComponent(activeResource?.page);
+
   return (
     <div>
       <div id='sidebar'>
@@ -57,13 +98,15 @@ const Resources: React.FC = () => {
           <Directory name='Getting Started' depth={1}>
             <Resource
               name='1.0 Downloading Programs'
-              page={GettingstartedProgrammers}
+              page={GettingStartedProgrammers}
             />
           </Directory>
         </Directory>
       </div>
 
-      <div id='content'></div>
+      <div id='content'>
+        <ActivePage />
+      </div>
     </div>
   );
 };

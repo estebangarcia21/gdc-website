@@ -5,6 +5,7 @@ import './assets/scss/App.css';
 import Home from './pages/Home';
 import OurGames from './pages/OurGames';
 import Resources from './pages/Resources';
+import { ResourceContextProvider } from '../src/contexts/resource-context/ResourceContext';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -20,7 +21,9 @@ const App: React.FC = () => {
             <OurGames />
           </Route>
           <Route path='/resources'>
-            <Resources />
+            <ResourceContextProvider>
+              <Resources />
+            </ResourceContextProvider>
           </Route>
           <Route path='/'>
             <Home />
