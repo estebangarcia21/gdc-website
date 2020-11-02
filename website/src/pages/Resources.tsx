@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  ADD_DIRECTORY,
-  DirectoryState,
-  TOGGLE_DIRECTORY,
-} from '../stores/directory/types';
+import { RootState } from '../stores';
+import { addDirectory, toggleDirectory } from '../stores/directory/actions';
+import { Directory as DirectoryStore } from '../stores/directory/types';
+import { Resource as ResourceStore } from '../stores/resource/types';
+import { addResource, setActive } from '../stores/resource/actions';
+import GettingstartedProgrammers from './resource-pages/programmers/GettingstartedProgrammers';
 
 interface DirectoryProps {
   name: string;
@@ -13,40 +14,32 @@ interface DirectoryProps {
 
 interface ResourceProps {
   name: string;
-  callback?: (event: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => void;
+  page: any;
 }
 
 const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
   const dispatch = useDispatch();
 
-  const directory = useSelector<DirectoryState, DirectoryState['directories']>(
-    state => state.directories
-  ).find(directory => directory.name == name);
+  const directory = useSelector<RootState, DirectoryStore[]>(
+    state => state.directories.directories
+  ).find(directory => directory.name === name);
 
   if (directory === undefined) {
-    dispatch({
-      type: ADD_DIRECTORY,
-      payload: {
+    dispatch(
+      addDirectory({
         name: name,
         isVisible: false,
         depth: depth,
-      },
-    });
+      })
+    );
   }
-
-  const toggleDirectory = (name: string) => {
-    dispatch({
-      type: TOGGLE_DIRECTORY,
-      payload: name,
-    });
-  };
 
   return (
     <div>
       <h4
         id='group-title'
         onClick={() => {
-          toggleDirectory(name);
+          dispatch(toggleDirectory(name));
         }}
       >
         {name}
@@ -56,10 +49,33 @@ const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
   );
 };
 
-const Resource: React.FC<ResourceProps> = ({ name, children }) => {
+const Resource: React.FC<ResourceProps> = ({ name, page, children }) => {
+  const dispatch = useDispatch();
+
+  const resource = useSelector<RootState, ResourceStore[]>(
+    state => state.resources.resources
+  ).find(resource => resource.name === name);
+
+  if (resource === undefined) {
+    dispatch(
+      addResource({
+        name: name,
+        page: page,
+        isActive: false,
+      })
+    );
+  }
+
   return (
     <div>
-      <h4 id='section'>{name}</h4>
+      <h4
+        id='section'
+        onClick={() => {
+          dispatch(setActive(name));
+        }}
+      >
+        {name}
+      </h4>
       <div>{children}</div>
     </div>
   );
@@ -73,7 +89,10 @@ const Resources: React.FC = () => {
 
         <Directory name='Programmers' depth={0}>
           <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Downloading Programs'></Resource>
+            <Resource
+              name='1.0 Downloading Programs'
+              page={GettingstartedProgrammers}
+            />
           </Directory>
         </Directory>
       </div>
