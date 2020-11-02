@@ -141,37 +141,24 @@
 
 #content {
   position: relative;
-  background-color: #222222;
+  background-color: #1a1a1a;
   width: 75%;
   height: 100vh;
   float: left;
 }
 
 #group-title {
-  margin-left: 80px;
-  font-size: 20px;
-  font-size: 20px;
   text-align: left;
   margin-top: 50px;
   cursor: pointer;
 }
 
-#section {
-  margin-left: 110px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-  text-align: left;
-}
-
 #resource {
-  margin-left: 140px;
-  font-size: 12px;
-  cursor: pointer;
-  margin-top: 20px;
-  font-size: 12px;
-  background-image: unset;
+  font-size: 14px;
+  margin-left: 110px;
+  max-width: unset;
   color: white;
+  cursor: pointer;
 }
 
 body {
