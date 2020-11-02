@@ -1,0 +1,57 @@
+#sidebar {
+  position: relative;
+
+  background-color: #111111;
+
+  width: 25%;
+  height: 100vh;
+
+  float: left;
+}
+
+#content {
+  position: relative;
+
+  background-color: #222222;
+
+  width: 75%;
+  height: 100vh;
+
+  float: left;
+}
+
+@mixin indent($level) {
+  margin-left: 50px + 30px * $level;
+  font-size: 20px - 4px * ($level - 1);
+}
+
+@mixin index {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#group-title {
+  @include indent(1);
+
+  font-size: 20px;
+  text-align: left;
+
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#section {
+  @include indent(2);
+  @include index;
+
+  text-align: left;
+}
+
+#resource {
+  @include indent(3);
+  @include index;
+
+  font-size: 12px;
+  background-image: unset;
+  color: white;
+}

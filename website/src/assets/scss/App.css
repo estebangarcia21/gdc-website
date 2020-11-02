@@ -131,6 +131,49 @@
   }
 }
 
+#sidebar {
+  position: relative;
+  background-color: #111111;
+  width: 25%;
+  height: 100vh;
+  float: left;
+}
+
+#content {
+  position: relative;
+  background-color: #222222;
+  width: 75%;
+  height: 100vh;
+  float: left;
+}
+
+#group-title {
+  margin-left: 80px;
+  font-size: 20px;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#section {
+  margin-left: 110px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: left;
+}
+
+#resource {
+  margin-left: 140px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 12px;
+  background-image: unset;
+  color: white;
+}
+
 body {
   margin: 0px;
   padding: 0px;
