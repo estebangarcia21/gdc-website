@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../stores';
-import { addResource, setActive } from '../stores/resource/actions';
-import { Resource as ResourceStore } from '../stores/resource/types';
 import GettingstartedProgrammers from './resource-pages/programmers/GettingstartedProgrammers';
 
 interface DirectoryProps {
@@ -17,22 +13,6 @@ interface ResourceProps {
 
 const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
   const [isViewed, setIsViewed] = useState(false);
-
-  // const dispatch = useDispatch();
-
-  // const directory = useSelector<RootState, DirectoryStore[]>(
-  //   state => state.directories.directories
-  // ).find(directory => directory.name === name);
-
-  // if (directory === undefined) {
-  //   dispatch(
-  //     addDirectory({
-  //       name: name,
-  //       isVisible: false,
-  //       depth: depth,
-  //     })
-  //   );
-  // }
 
   const marginLeft = 50 + 30 * depth;
   const fontSize = 20 - 4 * depth - 1;
@@ -57,30 +37,9 @@ const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
 };
 
 const Resource: React.FC<ResourceProps> = ({ name, page, children }) => {
-  const dispatch = useDispatch();
-
-  const resource = useSelector<RootState, ResourceStore[]>(
-    state => state.resources.resources
-  ).find(resource => resource.name === name);
-
-  if (resource === undefined) {
-    dispatch(
-      addResource({
-        name: name,
-        page: page,
-        isActive: false,
-      })
-    );
-  }
-
   return (
     <div>
-      <h3
-        id='resource'
-        onClick={() => {
-          dispatch(setActive(name));
-        }}
-      >
+      <h3 id='resource' onClick={() => {}}>
         {name}
       </h3>
       <div>{children}</div>
