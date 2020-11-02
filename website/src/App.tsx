@@ -16,9 +16,15 @@ const App: React.FC = () => {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route path='/our-games' component={OurGames} />
-          <Route path='/resources' component={Resources} />
-          <Route path='/' component={Home} />
+          <Route path='/our-games'>
+            <OurGames />
+          </Route>
+          <Route path='/resources'>
+            <Resources />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
         </Switch>
       </Router>
     </ApolloProvider>
