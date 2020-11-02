@@ -34,10 +34,17 @@ const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
     );
   }
 
+  const marginLeft = 50 + 30 * depth;
+  const fontSize = 20 - 4 * depth - 1;
+
   return (
     <div>
       <h4
         id='group-title'
+        style={{
+          marginLeft: `${marginLeft}px`,
+          fontSize: `${fontSize}px`,
+        }}
         onClick={() => {
           dispatch(toggleDirectory(name));
         }}
@@ -68,14 +75,14 @@ const Resource: React.FC<ResourceProps> = ({ name, page, children }) => {
 
   return (
     <div>
-      <h4
-        id='section'
+      <h3
+        id='resource'
         onClick={() => {
           dispatch(setActive(name));
         }}
       >
         {name}
-      </h4>
+      </h3>
       <div>{children}</div>
     </div>
   );
