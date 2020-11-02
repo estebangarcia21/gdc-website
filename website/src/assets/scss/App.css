@@ -18,7 +18,6 @@
 #join-footer {
   text-align: center;
   margin: 0px 0px 75px 0px;
-  cursor: pointer;
 }
 
 #join-footer p {
@@ -40,6 +39,7 @@
   line-height: unset;
   font-size: 20px;
   text-align: left;
+  cursor: pointer;
 }
 
 #join-button:hover {
