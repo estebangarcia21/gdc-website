@@ -4,7 +4,7 @@ export interface Directory {
   depth: number;
 }
 
-export interface DirectoryState {
+export interface DirectoryStates {
   directories: Directory[];
 }
 

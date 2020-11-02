@@ -1,18 +1,18 @@
 import {
   ADD_DIRECTORY,
   DirectoryActionTypes,
-  DirectoryState,
+  DirectoryStates,
   TOGGLE_DIRECTORY,
 } from './types';
 
-const initialState: DirectoryState = {
+const initialState: DirectoryStates = {
   directories: [],
 };
 
 export const directoryReducer = (
   state = initialState,
   action: DirectoryActionTypes
-): DirectoryState => {
+): DirectoryStates => {
   switch (action.type) {
     case ADD_DIRECTORY:
       return {
