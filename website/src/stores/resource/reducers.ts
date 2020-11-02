@@ -1,3 +1,4 @@
+import Welcome from '../../pages/resource-pages/programmers/Welcome';
 import {
   ResourceStates,
   ResourceActionTypes,
@@ -6,7 +7,13 @@ import {
 } from './types';
 
 const initialState: ResourceStates = {
-  resources: [],
+  resources: [
+    {
+      name: 'Default',
+      page: Welcome,
+      isActive: true,
+    },
+  ],
 };
 
 export const resourceReducer = (
