@@ -1,6 +1,6 @@
 export interface Resource {
   name: string;
-  page: any;
+  page: React.FC;
   isActive: boolean;
 }
 
