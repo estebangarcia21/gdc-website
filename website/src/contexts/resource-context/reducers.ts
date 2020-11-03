@@ -1,4 +1,4 @@
-import Welcome from '../../pages/resource-pages/programmers/Welcome';
+import Welcome from '../../pages/resource-pages/Welcome';
 import {
   ADD_RESOURCE,
   ResourceActionTypes,
