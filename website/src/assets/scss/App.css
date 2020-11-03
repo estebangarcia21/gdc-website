@@ -25,25 +25,33 @@
   max-width: unset;
 }
 
-#join-button {
+.button {
   position: relative;
-  -webkit-transition: 0.3s border ease-out;
-  transition: 0.3s border ease-out;
+  -webkit-transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
   border: 3px solid #111111;
-  width: 200px;
-  height: 25px;
-  margin: 4px auto;
+  display: inline-block;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
   background-image: linear-gradient(145deg, #ff9f22, #c1b);
-  padding: 20px;
+  padding: 20px 50px;
   border-radius: 10px;
-  line-height: unset;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
-  text-align: left;
+  font-weight: 600;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
 
-#join-button:hover {
+.button:hover {
   border: 3px solid white;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .side-image {
@@ -136,7 +144,8 @@
   width: 25%;
   height: 100vh;
   float: left;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #content {
@@ -145,7 +154,8 @@
   width: 75%;
   height: 100vh;
   float: left;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #welcome-page p {
@@ -161,7 +171,7 @@
 
 #resource {
   font-size: 14px;
-  margin-left: 110px;
+  margin-left: 140px;
   max-width: unset;
   color: white;
   cursor: pointer;
@@ -174,6 +184,64 @@
   font-weight: 600;
   color: white;
   margin: 35px 35px;
+}
+
+#join-gdc-container {
+  background-color: #111111;
+  height: 100vh;
+  min-height: 850px;
+}
+
+form {
+  position: relative;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0px auto;
+}
+
+form button {
+  margin: 30px 0px;
+}
+
+label {
+  font-family: 'Inter', sans-serif;
+  font-size: 35px;
+  color: white;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+input {
+  margin: 20px 0px;
+  background-color: #111111;
+  border: 1px solid transparent;
+  border-radius: 2.5px;
+  background-color: #111111;
+  font-size: 30px;
+  width: 100%;
+  color: white;
+  -webkit-transition: border-bottom 0.125s cubic-bezier(0.075, 0.82, 0.165, 1), width 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: border-bottom 0.125s cubic-bezier(0.075, 0.82, 0.165, 1), width 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-bottom: 3px solid #fff27c;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 3px solid #f57672;
+  width: 115%;
 }
 
 body {
