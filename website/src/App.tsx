@@ -1,11 +1,13 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ResourceContextProvider } from '../src/contexts/resource-context/ResourceContext';
 import './assets/scss/App.css';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
+import JoinGDC from './pages/JoinGDC';
 import OurGames from './pages/OurGames';
 import Resources from './pages/Resources';
-import { ResourceContextProvider } from '../src/contexts/resource-context/ResourceContext';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -16,7 +18,11 @@ const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <ScrollToTop />
         <Switch>
+          <Route path='/join-gdc'>
+            <JoinGDC />
+          </Route>
           <Route path='/our-games'>
             <OurGames />
           </Route>
