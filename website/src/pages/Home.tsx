@@ -12,7 +12,6 @@ import musicImage from '../assets/svgs/music-illustration.svg';
 import musicSvg from '../assets/svgs/music.svg';
 import writersSvg from '../assets/svgs/pencil-draw.svg';
 import photoImage from '../assets/svgs/photo.svg';
-import Navbar from '../components/Navbar';
 
 interface CardProps {
   title: string;
