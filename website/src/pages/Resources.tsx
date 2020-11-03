@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { CSSProperties, useContext, useState } from 'react';
 import {
   addResource,
   viewResource,
 } from '../contexts/resource-context/actions';
 import { ResourceContext } from '../contexts/resource-context/ResourceContext';
-import GettingStartedProgrammers from './resource-pages/programmers/GettingstartedProgrammers';
+import GettingStartedProgrammers from './resource-pages/programmers/GettingStartedProgrammers';
 
 interface DirectoryProps {
   name: string;
@@ -75,12 +75,12 @@ const Resources: React.FC = () => {
     r => r.isActive
   );
 
-  const HigherOrderComponent = (PassedComponent: any) => {
+  const HigherOrderComponent = (Component: any) => {
     return class extends React.Component {
       render() {
         return (
           <div>
-            <PassedComponent {...this.props} />
+            <Component {...this.props} />
           </div>
         );
       }
@@ -89,6 +89,16 @@ const Resources: React.FC = () => {
 
   const ActivePage = HigherOrderComponent(activeResource?.page);
 
+  const styles = (isDefault: boolean): CSSProperties => {
+    return isDefault
+      ? {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }
+      : {};
+  };
+
   return (
     <div>
       <div id='sidebar'>
@@ -96,15 +106,61 @@ const Resources: React.FC = () => {
 
         <Directory name='Programmers' depth={0}>
           <Directory name='Getting Started' depth={1}>
+            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
+          </Directory>
+          <Directory name='Your First Program' depth={1}>
             <Resource
-              name='1.0 Downloading Programs'
+              name='1.0 What is Object Oriented Programming'
               page={GettingStartedProgrammers}
             />
           </Directory>
         </Directory>
+        <Directory name='Programmers' depth={0}>
+          <Directory name='Getting Started' depth={1}>
+            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
+          </Directory>
+          <Directory name='Your First Program' depth={1}>
+            <Resource
+              name='1.0 What is Object Oriented Programming'
+              page={GettingStartedProgrammers}
+            />
+          </Directory>
+          <Directory name='Programmers' depth={0}>
+            <Directory name='Getting Started' depth={1}>
+              <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+              <Resource
+                name='1.1 Setting Up'
+                page={GettingStartedProgrammers}
+              />
+            </Directory>
+            <Directory name='Your First Program' depth={1}>
+              <Resource
+                name='1.0 What is Object Oriented Programming'
+                page={GettingStartedProgrammers}
+              />
+            </Directory>
+          </Directory>
+          <Directory name='Programmers' depth={0}>
+            <Directory name='Getting Started' depth={1}>
+              <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+              <Resource
+                name='1.1 Setting Up'
+                page={GettingStartedProgrammers}
+              />
+            </Directory>
+            <Directory name='Your First Program' depth={1}>
+              <Resource
+                name='1.0 What is Object Oriented Programming'
+                page={GettingStartedProgrammers}
+              />
+            </Directory>
+          </Directory>
+        </Directory>
       </div>
 
-      <div id='content'>
+      <div id='content' style={styles(activeResource?.name === 'Welcome')}>
         <ActivePage />
       </div>
     </div>
