@@ -1,38 +1,40 @@
 #sidebar {
-  position: relative;
-
   background-color: #111111;
 
   width: 25%;
   height: 100vh;
 
   float: left;
+
+  overflow: auto;
 }
 
 #content {
   position: relative;
 
-  background-color: #1a1a1a;
+  background-color: #181818;
 
   width: 75%;
   height: 100vh;
 
   float: left;
+
+  overflow: auto;
 }
 
-@mixin indent($level) {
-}
-
-@mixin index {
-  cursor: pointer;
-  margin-top: 20px;
+#welcome-page {
+  p {
+    text-align: center;
+  }
 }
 
 #group-title {
   text-align: left;
 
-  margin-top: 50px;
+  margin-top: 20px;
   cursor: pointer;
+
+  font-weight: 400;
 }
 
 #resource {
@@ -42,4 +44,16 @@
 
   color: white;
   cursor: pointer;
+
+  font-weight: 400;
+}
+
+#resource-title {
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+
+  color: white;
+
+  margin: 35px 35px;
 }
