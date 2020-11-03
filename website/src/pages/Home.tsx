@@ -1,15 +1,17 @@
+import { easeCubicOut } from 'd3-ease';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import VisibilitySensor from 'react-visibility-sensor';
 import animationSvg from '../assets/svgs/animation-motion.svg';
 import artSvg from '../assets/svgs/brush-paintbrush.svg';
+import checkmark from '../assets/svgs/check-mark-line.svg';
+import codeImage from '../assets/svgs/code-illustration.svg';
 import programmingSvg from '../assets/svgs/code.svg';
+import musicImage from '../assets/svgs/music-illustration.svg';
 import musicSvg from '../assets/svgs/music.svg';
 import writersSvg from '../assets/svgs/pencil-draw.svg';
-import checkmark from '../assets/svgs/check-mark-line.svg';
 import photoImage from '../assets/svgs/photo.svg';
-import codeImage from '../assets/svgs/code-illustration.svg';
-import musicImage from '../assets/svgs/music-illustration.svg';
 
 interface CardProps {
   title: string;
@@ -66,6 +68,7 @@ const FloatingImage: React.FC<FloatingImageProps> = props => {
 const Home: React.FC = () => {
   const [playedAnimations, setPlayedAnimations] = useState({
     joinTeamCards: false,
+    footer: false,
   });
 
   const fadeInTime = 0.45;
@@ -206,7 +209,7 @@ const Home: React.FC = () => {
               },
             }}
             transition={{
-              delay: 0.1,
+              delay: 0.15,
               bounce: false,
             }}
           >
@@ -240,16 +243,49 @@ const Home: React.FC = () => {
       </div>
 
       <div className='background-a'>
-        <div id='join-footer'>
-          <h1>Join Game Development Club Today!</h1>
+        <VisibilitySensor
+          partialVisibility
+          onChange={isVisible => {
+            if (!isVisible) return;
 
-          <p>
-            Join Game Development Club today and become part of a team that you
-            can enjoy!
-          </p>
+            setPlayedAnimations({
+              ...playedAnimations,
+              footer: true,
+            });
+          }}
+        >
+          <motion.div
+            id='join-footer'
+            initial='hidden'
+            animate={playedAnimations.footer ? 'visible' : ''}
+            variants={{
+              hidden: {
+                opacity: 0,
+                scale: 0.8,
+              },
+              visible: {
+                opacity: 1,
+                scale: 1,
+              },
+            }}
+            transition={{
+              ease: easeCubicOut,
+              delay: 0.15,
+              duration: 0.4,
+            }}
+          >
+            <h1>Join Game Development Club Today!</h1>
 
-          <p id='join-button'>Join GDC</p>
-        </div>
+            <p>
+              Join Game Development Club today and become part of a team that
+              you can enjoy!
+            </p>
+
+            <Link to='/join-gdc' className='button'>
+              Join Game Development Club
+            </Link>
+          </motion.div>
+        </VisibilitySensor>
       </div>
     </div>
   );
