@@ -1,4 +1,4 @@
-import React, { CSSProperties, useContext, useState } from 'react';
+import React, { CSSProperties, useContext, useEffect, useState } from 'react';
 import {
   addResource,
   viewResource,
@@ -19,7 +19,7 @@ interface ResourceProps {
 const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
   const [isViewed, setIsViewed] = useState(false);
 
-  const marginLeft = 50 + 30 * depth;
+  const marginLeft = 50 + 30 * (depth + 1);
   const fontSize = 20 - 4 * depth - 1;
 
   return (
@@ -46,15 +46,17 @@ const Resource: React.FC<ResourceProps> = ({ name, page }) => {
 
   const resource = context.state.resources.find(r => r.name === name);
 
-  if (resource === undefined) {
-    context.dispatch(
-      addResource({
-        name: name,
-        page: page,
-        isActive: false,
-      })
-    );
-  }
+  useEffect(() => {
+    if (resource === undefined) {
+      context.dispatch(
+        addResource({
+          name: name,
+          page: page,
+          isActive: false,
+        })
+      );
+    }
+  }, [name, page, resource, context]);
 
   return (
     <div>
@@ -102,7 +104,7 @@ const Resources: React.FC = () => {
   return (
     <div>
       <div id='sidebar'>
-        <h4>Resources</h4>
+        <p style={{ marginLeft: '50px', fontSize: '32px' }}>Resources</p>
 
         <Directory name='Programmers' depth={0}>
           <Directory name='Getting Started' depth={1}>
@@ -114,48 +116,6 @@ const Resources: React.FC = () => {
               name='1.0 What is Object Oriented Programming'
               page={GettingStartedProgrammers}
             />
-          </Directory>
-        </Directory>
-        <Directory name='Programmers' depth={0}>
-          <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
-          </Directory>
-          <Directory name='Your First Program' depth={1}>
-            <Resource
-              name='1.0 What is Object Oriented Programming'
-              page={GettingStartedProgrammers}
-            />
-          </Directory>
-          <Directory name='Programmers' depth={0}>
-            <Directory name='Getting Started' depth={1}>
-              <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-              <Resource
-                name='1.1 Setting Up'
-                page={GettingStartedProgrammers}
-              />
-            </Directory>
-            <Directory name='Your First Program' depth={1}>
-              <Resource
-                name='1.0 What is Object Oriented Programming'
-                page={GettingStartedProgrammers}
-              />
-            </Directory>
-          </Directory>
-          <Directory name='Programmers' depth={0}>
-            <Directory name='Getting Started' depth={1}>
-              <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-              <Resource
-                name='1.1 Setting Up'
-                page={GettingStartedProgrammers}
-              />
-            </Directory>
-            <Directory name='Your First Program' depth={1}>
-              <Resource
-                name='1.0 What is Object Oriented Programming'
-                page={GettingStartedProgrammers}
-              />
-            </Directory>
           </Directory>
         </Directory>
       </div>
