@@ -77,8 +77,6 @@ const Home: React.FC = () => {
   return (
     <div>
       <div className='background-a'>
-        <Navbar />
-
         <motion.div
           id='home-banner'
           initial={{ opacity: 0 }}
