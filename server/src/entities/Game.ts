@@ -3,7 +3,7 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
 @Entity()
-export class Game extends BaseEntity {
+export default class Game extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn()
   id!: number;
