@@ -1,11 +1,13 @@
 import { ApolloServer } from 'apollo-server-express';
+import cors from 'cors';
 import express from 'express';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
-import { Game } from './entities/Game';
-import { GameResolver } from './resolvers/GameResolver';
-import cors from 'cors';
+import Game from './entities/Game';
+import Todo from './entities/Todo';
+import GameResolver from './resolvers/GameResolver';
+import TodoResolver from './resolvers/TodoResolver';
 
 const main = async () => {
   await createConnection({
@@ -13,7 +15,7 @@ const main = async () => {
     database: 'gdcgames',
     username: 'postgres',
     synchronize: true,
-    entities: [Game],
+    entities: [Game, Todo],
   });
 
   const app = express();
@@ -21,7 +23,7 @@ const main = async () => {
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [GameResolver],
+      resolvers: [GameResolver, TodoResolver],
     }),
   });
 
