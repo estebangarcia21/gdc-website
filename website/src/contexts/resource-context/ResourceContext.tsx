@@ -1,6 +1,17 @@
 import React, { createContext, Dispatch, useReducer } from 'react';
-import { initialResourceState, resourceReducer } from './reducers';
+import Welcome from '../../pages/resource-pages/Welcome';
+import { resourceReducer } from './reducers';
 import { ResourceStates } from './types';
+
+const initialResourceState: ResourceStates = {
+  resources: [
+    {
+      name: 'Welcome',
+      page: Welcome,
+      isActive: true,
+    },
+  ],
+};
 
 export const ResourceContext = createContext<{
   state: ResourceStates;

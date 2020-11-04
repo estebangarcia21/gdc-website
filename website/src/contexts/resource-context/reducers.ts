@@ -1,4 +1,3 @@
-import Welcome from '../../pages/resource-pages/Welcome';
 import {
   ADD_RESOURCE,
   ResourceActionTypes,
@@ -6,18 +5,8 @@ import {
   VIEW_RESOURCE,
 } from './types';
 
-export const initialResourceState: ResourceStates = {
-  resources: [
-    {
-      name: 'Welcome',
-      page: Welcome,
-      isActive: true,
-    },
-  ],
-};
-
 export const resourceReducer = (
-  state = initialResourceState,
+  state: ResourceStates,
   action: ResourceActionTypes
 ): ResourceStates => {
   switch (action.type) {
