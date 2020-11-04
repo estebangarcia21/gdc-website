@@ -28,12 +28,12 @@ interface FloatingImageProps {
   };
 }
 
-const Card: React.FC<CardProps> = props => {
+const Card: React.FC<CardProps> = ({ title, icon, children }) => {
   return (
     <div className='info-card'>
-      <img src={props.icon} width='35px' height='35px' alt='Icon' />
-      <p id='title'>{props.title}</p>
-      <p style={{ fontSize: '14px', color: 'white' }}>{props.children}</p>
+      <img src={icon} width='35px' height='35px' alt='Icon' />
+      <p id='title'>{title}</p>
+      <p style={{ fontSize: '14px', color: 'white' }}>{children}</p>
     </div>
   );
 };
@@ -42,19 +42,24 @@ const Checkmark: React.FC = () => {
   return <img src={checkmark} width='30' alt='Checkmark' />;
 };
 
-const FloatingImage: React.FC<FloatingImageProps> = props => {
+const FloatingImage: React.FC<FloatingImageProps> = ({
+  src,
+  alt,
+  width,
+  position,
+}) => {
   return (
     <motion.img
-      src={props.src}
-      width={props.width}
+      src={src}
+      width={width}
       className='side-image'
       style={{
-        right: props.position.x,
-        top: props.position.y + 'px',
+        right: position.x,
+        top: position.y + 'px',
       }}
-      alt={props.alt}
+      alt={alt}
       animate={{
-        top: props.position.y - 10 + 'px',
+        top: position.y - 10 + 'px',
       }}
       transition={{
         delay: 0.35,
