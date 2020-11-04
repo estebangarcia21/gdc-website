@@ -77,19 +77,9 @@ const Resources: React.FC = () => {
     r => r.isActive
   );
 
-  const HigherOrderComponent = (Component: any) => {
-    return class extends React.Component {
-      render() {
-        return (
-          <div>
-            <Component {...this.props} />
-          </div>
-        );
-      }
-    };
-  };
-
-  const ActivePage = HigherOrderComponent(activeResource?.page);
+  const ActivePage = ((Page: React.FC): React.FC => ({ ...props }) => (
+    <Page {...props} />
+  ))(activeResource?.page!);
 
   const styles = (isDefault: boolean): CSSProperties => {
     return isDefault
@@ -114,6 +104,54 @@ const Resources: React.FC = () => {
           <Directory name='Your First Program' depth={1}>
             <Resource
               name='1.0 What is Object Oriented Programming'
+              page={GettingStartedProgrammers}
+            />
+          </Directory>
+        </Directory>
+        <Directory name='Artists' depth={0}>
+          <Directory name='Getting Started' depth={1}>
+            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
+          </Directory>
+          <Directory name='Your First Program' depth={1}>
+            <Resource
+              name='1.0 The Art Workflow'
+              page={GettingStartedProgrammers}
+            />
+          </Directory>
+        </Directory>
+        <Directory name='Animators' depth={0}>
+          <Directory name='Getting Started' depth={1}>
+            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
+          </Directory>
+          <Directory name='Your First Program' depth={1}>
+            <Resource
+              name='1.0 Animation Introduction'
+              page={GettingStartedProgrammers}
+            />
+          </Directory>
+        </Directory>
+        <Directory name='Writers' depth={0}>
+          <Directory name='Getting Started' depth={1}>
+            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
+          </Directory>
+          <Directory name='Your First Program' depth={1}>
+            <Resource
+              name='1.0 The Writing Workflow'
+              page={GettingStartedProgrammers}
+            />
+          </Directory>
+        </Directory>
+        <Directory name='Musicians' depth={0}>
+          <Directory name='Getting Started' depth={1}>
+            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
+            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
+          </Directory>
+          <Directory name='The Digital Audio Workstation' depth={1}>
+            <Resource
+              name='1.0 Learning the Digital Audio Workstation (DAW)'
               page={GettingStartedProgrammers}
             />
           </Directory>
