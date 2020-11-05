@@ -244,6 +244,87 @@ input:focus {
   width: 115%;
 }
 
+#todo-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 100px 0px;
+  margin: 0px auto;
+  max-width: 1040px;
+}
+
+#end {
+  background-color: #111111;
+  height: 100vh;
+}
+
+.todo-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 150px;
+  border: 3px solid #242424;
+  border-radius: 8px;
+  margin: 20px 20px;
+  -webkit-transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  cursor: pointer;
+}
+
+#dropdown-filter {
+  width: 250px;
+  height: 50px;
+  display: inline-block;
+  border: 3px solid white;
+  border: 3px solid #242424;
+  background-color: #111111;
+  border-radius: 8px;
+  margin: 30px auto;
+  -webkit-transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+
+#dropdown-filter p {
+  margin: 0px 0px;
+}
+
+#dropdown-filter-content {
+  display: table-cell;
+  position: absolute;
+  z-index: 1;
+}
+
+#dropdown-filter:hover {
+  border: 3px solid white;
+}
+
+.todo-card:hover {
+  border: 3px solid #f1df79;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
 body {
   margin: 0px;
   padding: 0px;
