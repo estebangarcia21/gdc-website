@@ -3,7 +3,7 @@ import Welcome from '../../pages/resource-pages/Welcome';
 import { resourceReducer } from './reducers';
 import { ResourceStates } from './types';
 
-const initialResourceState: ResourceStates = {
+const initialState: ResourceStates = {
   resources: [
     {
       name: 'Welcome',
@@ -17,12 +17,12 @@ export const ResourceContext = createContext<{
   state: ResourceStates;
   dispatch: Dispatch<any>;
 }>({
-  state: initialResourceState,
+  state: initialState,
   dispatch: () => null,
 });
 
 export const ResourceContextProvider: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(resourceReducer, initialResourceState);
+  const [state, dispatch] = useReducer(resourceReducer, initialState);
 
   return (
     <ResourceContext.Provider value={{ state, dispatch }}>
