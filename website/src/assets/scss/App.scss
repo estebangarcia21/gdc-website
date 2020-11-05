@@ -7,95 +7,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
-$font-family: 'Inter', sans-serif;
-
 body {
   margin: 0px;
+}
+
+p {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 24px;
+  line-height: 1cm;
+
+  color: white;
+}
+
+h1,
+h2,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  @extend .gradient-text;
+
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 42px;
+
+  max-width: 15ch;
+  color: white;
+}
+
+h3 {
+  @extend .gradient-text;
+
+  font-weight: 600;
+
+  text-align: center;
+  font-size: 46px;
+}
+
+ul {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  line-height: 0.8cm;
+
+  margin: 0px;
   padding: 0px;
+}
 
-  p,
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin: 35px 15%;
-  }
+li {
+  list-style: none;
 
-  p {
-    font-family: 'Didact Gothic', sans-serif;
-    font-size: 24px;
-    line-height: 1cm;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url('../svgs/check-mark-line.svg');
+  background-size: 25px;
 
-    text-align: left;
+  margin-right: 50px;
+  color: white;
+  padding: 30px 0px 25px 50px;
+}
 
-    max-width: 50ch;
+.gradient-text {
+  background: linear-gradient(145deg, rgb(255, 159, 34), #c1b);
+  -webkit-text-fill-color: transparent;
 
-    color: white;
-  }
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 
-  h1 {
-    font-family: $font-family;
-    font-size: 64px;
-
-    background: linear-gradient(145deg, rgb(255, 159, 34), #c1b);
-    -webkit-text-fill-color: transparent;
-
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-
-  h2 {
-    @extend h1;
-
-    font-weight: 600;
-    font-size: 48px;
-  }
-
-  h3 {
-    font-family: $font-family;
-    font-size: 42px;
-
-    max-width: 15ch;
-
-    color: white;
-  }
-
-  h4 {
-    @extend h1;
-
-    font-weight: 600;
-
-    text-align: center;
-    font-size: 46px;
-  }
-
-  h5 {
-  }
-
-  ul {
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    line-height: 0.8cm;
-
-    margin: 0px;
-    padding: 0px;
-  }
-
-  li {
-    list-style: none;
-
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-image: url('../svgs/check-mark-line.svg');
-    background-size: 25px;
-
-    margin-right: 50px;
-    color: white;
-    padding: 30px 0px 25px 50px;
-  }
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .box-shadow {
@@ -137,7 +120,7 @@ body {
 .background-a {
   width: 100%;
 
-  background-color: #111;
+  background-color: #111111;
   padding: 20px 0px;
 
   color: white;
@@ -146,7 +129,7 @@ body {
 .background-b {
   width: 100%;
 
-  background-color: #222;
+  background-color: #181818;
   padding: 20px 0px;
 
   img {
@@ -159,41 +142,4 @@ body {
   max-width: 80ch;
 
   margin: 0px auto;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    p,
-    h3 {
-      text-align: left;
-    }
-
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-      margin: 35px 20px;
-    }
-
-    h3 {
-      font-size: 40px;
-    }
-  }
-}
-
-@media only screen and (max-width: 525px) {
-  body {
-    h1 {
-      font-size: 50px;
-    }
-
-    h2 {
-      font-size: 34px;
-    }
-
-    h4 {
-      font-size: 30px;
-    }
-  }
 }

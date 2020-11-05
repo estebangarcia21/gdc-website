@@ -32,7 +32,9 @@ const Card: React.FC<CardProps> = ({ title, icon, children }) => {
   return (
     <div className='info-card'>
       <img src={icon} width='35px' height='35px' alt='Icon' />
-      <p id='title'>{title}</p>
+      <p id='title' className='gradient-text'>
+        {title}
+      </p>
       <p style={{ fontSize: '14px', color: 'white' }}>{children}</p>
     </div>
   );
@@ -79,10 +81,9 @@ const Home: React.FC = () => {
   const fadeInTime = 0.45;
 
   return (
-    <div>
+    <div id='home-container'>
       <div className='background-a'>
         <motion.div
-          id='home-banner'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -138,7 +139,7 @@ const Home: React.FC = () => {
             duration: fadeInTime,
           }}
         >
-          <h3>What is Game Development Club?</h3>
+          <h2>What is Game Development Club?</h2>
 
           <p>
             At Game Development Club, we accept people of any experience level.
@@ -165,7 +166,7 @@ const Home: React.FC = () => {
             duration: fadeInTime,
           }}
         >
-          <h3>Why join Game Development Club?</h3>
+          <h2>Why join Game Development Club?</h2>
 
           <p>
             <Checkmark />
@@ -216,8 +217,8 @@ const Home: React.FC = () => {
               bounce: false,
             }}
           >
-            <h4>Ready to join?</h4>
-            <h4>Join team...</h4>
+            <h3>Ready to join?</h3>
+            <h3>Join team...</h3>
 
             <div id='info-cards-container'>
               <Card title='Programmers' icon={programmingSvg}>
