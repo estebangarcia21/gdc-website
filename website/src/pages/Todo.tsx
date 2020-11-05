@@ -31,15 +31,10 @@ interface TodoData {
 
 const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
   const context = useContext(TodoContext);
-
   const todoObject = context.state.todos.find(t => t.id === todo.id);
 
   return (
-    <div
-      onClick={() => {
-        context.dispatch(viewTodo(todoObject!));
-      }}
-    >
+    <div>
       <h1 style={{ fontSize: '22px' }}>{todo.title}</h1>
       {todoObject?.isVisible && (
         <motion.p
@@ -73,39 +68,6 @@ const Todo: React.FC = () => {
   const context = useContext(TodoContext);
   const filter = context.state.filter;
 
-  const mapTodos = (todo: Todo) => {
-    const todoObject = context.state.todos.find(t => t.id === todo.id);
-
-    if (todoObject === undefined) {
-      context.dispatch(
-        addTodo({
-          id: todo.id,
-          isVisible: false,
-        })
-      );
-    }
-
-    return (
-      filter === todo.team && (
-        <motion.div
-          key={todo.id}
-          className='todo-card'
-          initial='closed'
-          animate={todoObject?.isVisible ? 'opened' : 'closed'}
-          variants={{
-            closed: { height: '150px' },
-            opened: {
-              height: '375px',
-            },
-          }}
-          transition={{ ease: easeCubicOut, duration: 0.55 }}
-        >
-          <TodoCard todo={todo} />
-        </motion.div>
-      )
-    );
-  };
-
   const { data, loading } = useQuery<TodoData>(GET_TODOS);
 
   if (loading) return <p>Loading...</p>;
@@ -132,7 +94,44 @@ const Todo: React.FC = () => {
         )}
       </button>
 
-      <div id='todo-container'>{data && data.todos.map(mapTodos)}</div>
+      <div id='todo-container'>
+        {data &&
+          data.todos.map(todo => {
+            const todoObject = context.state.todos.find(t => t.id === todo.id);
+
+            if (todoObject === undefined) {
+              context.dispatch(
+                addTodo({
+                  id: todo.id,
+                  isVisible: false,
+                })
+              );
+            }
+
+            return (
+              filter === todo.team && (
+                <motion.div
+                  key={todo.id}
+                  className='todo-card'
+                  initial='closed'
+                  animate={todoObject?.isVisible ? 'opened' : 'closed'}
+                  variants={{
+                    closed: { height: '150px' },
+                    opened: {
+                      height: '375px',
+                    },
+                  }}
+                  transition={{ ease: easeCubicOut, duration: 0.55 }}
+                  onClick={() => {
+                    context.dispatch(viewTodo(todoObject!));
+                  }}
+                >
+                  <TodoCard todo={todo} />
+                </motion.div>
+              )
+            );
+          })}
+      </div>
 
       <div id='end' />
     </div>
