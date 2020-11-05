@@ -2,11 +2,11 @@ import { Field, ObjectType } from 'type-graphql';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
-@Entity()
+@Entity({ name: 'games' })
 export default class Game extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
   @Field()
   @Column()
@@ -19,4 +19,8 @@ export default class Game extends BaseEntity {
   @Field()
   @Column()
   year: string;
+
+  @Field(() => [String])
+  @Column('text', { array: true })
+  tags: string[];
 }

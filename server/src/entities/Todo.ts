@@ -2,23 +2,27 @@ import { Field, ObjectType } from 'type-graphql';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
-@Entity()
+@Entity({ name: 'todos' })
 export default class Todo extends BaseEntity {
   @Field()
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
   @Field()
   @Column()
-  group: string;
+  team: string;
 
   @Field()
   @Column()
-  name: string;
+  title: string;
 
   @Field()
   @Column()
-  value: string;
+  assignee: string;
+
+  @Field()
+  @Column()
+  task: string;
 
   @Field()
   @Column()
