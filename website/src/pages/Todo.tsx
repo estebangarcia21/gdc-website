@@ -34,7 +34,22 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
   const todoObject = context.state.todos.find(t => t.id === todo.id);
 
   return (
-    <div>
+    <motion.div
+      key={todo.id}
+      className='todo-card'
+      initial='closed'
+      animate={todoObject?.isVisible ? 'opened' : 'closed'}
+      variants={{
+        closed: { height: '150px' },
+        opened: {
+          height: '375px',
+        },
+      }}
+      transition={{ ease: easeCubicOut, duration: 0.55 }}
+      onClick={() => {
+        context.dispatch(viewTodo(todoObject!));
+      }}
+    >
       <h1>{todo.title}</h1>
       {todoObject?.isVisible && (
         <motion.p
@@ -57,7 +72,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
           {todo.task}
         </motion.p>
       )}
-    </div>
+    </motion.div>
   );
 };
 
@@ -107,28 +122,7 @@ const Todo: React.FC = () => {
               );
             }
 
-            return (
-              filter === todo.team && (
-                <motion.div
-                  key={todo.id}
-                  className='todo-card'
-                  initial='closed'
-                  animate={todoObject?.isVisible ? 'opened' : 'closed'}
-                  variants={{
-                    closed: { height: '150px' },
-                    opened: {
-                      height: '375px',
-                    },
-                  }}
-                  transition={{ ease: easeCubicOut, duration: 0.55 }}
-                  onClick={() => {
-                    context.dispatch(viewTodo(todoObject!));
-                  }}
-                >
-                  <TodoCard todo={todo} />
-                </motion.div>
-              )
-            );
+            return filter === todo.team && <TodoCard todo={todo} />;
           })}
       </div>
 
