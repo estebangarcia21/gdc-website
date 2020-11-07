@@ -55,7 +55,7 @@ h1 {
 }
 
 .todo-card:hover {
-  border: 3px solid rgb(241, 223, 121);
+  border: 3px solid;
 
   $scale: 1.05;
 
@@ -64,6 +64,12 @@ h1 {
   -moz-transform: scale($scale);
   -o-transform: scale($scale);
   transform: scale($scale);
+}
+
+.todo-card #icon {
+  position: absolute;
+  left: -27.5px;
+  bottom: -32.5px;
 }
 
 #dropdown-filter {
