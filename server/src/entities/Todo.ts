@@ -17,7 +17,7 @@ export default class Todo extends BaseEntity {
   title: string;
 
   @Field()
-  @Column()
+  @Column({ default: 'Unassigned' })
   assignee: string;
 
   @Field()
@@ -25,6 +25,6 @@ export default class Todo extends BaseEntity {
   task: string;
 
   @Field()
-  @Column()
+  @Column({ default: false })
   completed: boolean;
 }
