@@ -1,5 +1,5 @@
+import { Arg, Query, Resolver } from 'type-graphql';
 import Todo from '../entities/Todo';
-import { Resolver, Query, Arg } from 'type-graphql';
 
 @Resolver()
 export default class TodoResolver {
