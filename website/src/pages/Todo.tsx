@@ -1,18 +1,19 @@
 import { gql, useQuery } from '@apollo/client';
 import { easeCubicOut } from 'd3-ease';
-import { m, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useContext, useEffect, useState } from 'react';
-import { addTodo, viewTodo } from '../contexts/todo-context/actions';
+import { addTodo, setFilter, viewTodo } from '../contexts/todo-context/actions';
 import { TodoContext } from '../contexts/todo-context/TodoContext';
 import redx from '../assets/svgs/red-x.svg';
 import checkmark from '../assets/svgs/checkmark.svg';
 
-const GET_TODOS = gql`
-  {
-    todos {
+const GET_TODOS_BY_TEAM = gql`
+  query GetTodos($team: String!) {
+    getTodosByTeam(team: $team) {
       id
       team
       title
+      assignee
       task
       completed
     }
@@ -23,13 +24,49 @@ interface Todo {
   id: number;
   team: string;
   title: string;
+  assignee: string;
   task: string;
   completed: boolean;
 }
 
-interface TodoData {
-  todos: Todo[];
+interface TodoVariables {
+  team: string;
 }
+
+interface TodoData {
+  getTodosByTeam: Todo[];
+}
+
+const TodoList: React.FC = () => {
+  const context = useContext(TodoContext);
+  const filter = context.state.filter;
+
+  const { data, loading } = useQuery<TodoData, TodoVariables>(
+    GET_TODOS_BY_TEAM,
+    {
+      variables: {
+        team: filter,
+      },
+    }
+  );
+
+  if (loading) return <p>Loading...</p>;
+
+  const sortedTodos = [...data?.getTodosByTeam!];
+  sortedTodos.sort(todo => (todo.completed === false ? 0 : 1));
+
+  return (
+    <div id='todo-container'>
+      {sortedTodos.map(todo => {
+        return (
+          <div key={todo.id}>
+            <TodoCard todo={todo} />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
   const [isHovered, setHovered] = useState(false);
@@ -81,6 +118,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
           <img src={redx} width='32px' alt='Not Finished' />
         )}
       </div>
+      <p id='name'>{todo.assignee}</p>
       {state?.isVisible && (
         <motion.p
           initial='hidden'
@@ -112,13 +150,31 @@ const Todo: React.FC = () => {
   const context = useContext(TodoContext);
   const filter = context.state.filter;
 
-  const { data, loading } = useQuery<TodoData>(GET_TODOS);
+  enum Filters {
+    Programmers = 'Programmers',
+    Artists = 'Artists',
+    Writers = 'Writers',
+    Musicians = 'Musicians',
+    Animators = 'Animators',
+  }
 
-  if (loading) return <p>Loading...</p>;
+  const dropdowns: JSX.Element[] = [];
+
+  for (const filter in Filters) {
+    dropdowns.push(
+      <button
+        onClick={() => {
+          context.dispatch(setFilter(filter));
+        }}
+      >
+        {filter}
+      </button>
+    );
+  }
 
   return (
     <div className='background-a' style={{ textAlign: 'center' }}>
-      <h1>Todos</h1>
+      <h1>To-Dos</h1>
 
       <button
         id='dropdown-filter'
@@ -127,29 +183,10 @@ const Todo: React.FC = () => {
         }}
       >
         <p>{filter}</p>
-        {isDroppedDown && (
-          <div id='dropdown-filter-content'>
-            <button>Artist</button>
-            <button>yum --fix</button>
-            <button>yum --fix</button>
-            <button>yum --fix</button>
-            <button>yum --fix</button>
-          </div>
-        )}
+        {isDroppedDown && <div id='dropdown-filter-content'>{dropdowns}</div>}
       </button>
 
-      <div id='todo-container'>
-        {data &&
-          data.todos.map(todo => {
-            return (
-              filter === todo.team && (
-                <div key={todo.id}>
-                  <TodoCard todo={todo} />
-                </div>
-              )
-            );
-          })}
-      </div>
+      <TodoList />
 
       <div id='end' />
     </div>
