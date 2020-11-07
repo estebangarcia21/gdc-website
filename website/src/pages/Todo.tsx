@@ -1,7 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 import { easeCubicOut } from 'd3-ease';
 import { motion } from 'framer-motion';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { addTodo, viewTodo } from '../contexts/todo-context/actions';
 import { TodoContext } from '../contexts/todo-context/TodoContext';
 
@@ -18,7 +18,7 @@ const GET_TODOS = gql`
 `;
 
 interface Todo {
-  id: string;
+  id: number;
   team: string;
   title: string;
   task: string;
@@ -33,6 +33,17 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
   const context = useContext(TodoContext);
   const todoObject = context.state.todos.find(t => t.id === todo.id);
 
+  useEffect(() => {
+    if (todoObject === undefined) {
+      context.dispatch(
+        addTodo({
+          id: todo.id,
+          isVisible: false,
+        })
+      );
+    }
+  }, [context, todoObject, todo]);
+
   return (
     <motion.div
       key={todo.id}
@@ -42,7 +53,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
       variants={{
         closed: { height: '150px' },
         opened: {
-          height: '375px',
+          height: '500px',
         },
       }}
       transition={{ ease: easeCubicOut, duration: 0.55 }}
@@ -51,6 +62,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
       }}
     >
       <h1>{todo.title}</h1>
+      <p style={{ position: 'absolute', bottom: '0px' }}>{todo.completed}</p>
       {todoObject?.isVisible && (
         <motion.p
           initial='hidden'
@@ -111,18 +123,13 @@ const Todo: React.FC = () => {
       <div id='todo-container'>
         {data &&
           data.todos.map(todo => {
-            const todoObject = context.state.todos.find(t => t.id === todo.id);
-
-            if (todoObject === undefined) {
-              context.dispatch(
-                addTodo({
-                  id: todo.id,
-                  isVisible: false,
-                })
-              );
-            }
-
-            return filter === todo.team && <TodoCard todo={todo} />;
+            return (
+              filter === todo.team && (
+                <div key={todo.id}>
+                  <TodoCard todo={todo} />
+                </div>
+              )
+            );
           })}
       </div>
 
