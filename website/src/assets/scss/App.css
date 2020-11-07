@@ -306,6 +306,14 @@ input:focus {
   cursor: pointer;
 }
 
+.todo-card div {
+  margin: 35px;
+}
+
+.todo-card h1 {
+  font-size: 22px;
+}
+
 .todo-card:hover {
   border: 3px solid #f1df79;
   transform: scale(1.05);

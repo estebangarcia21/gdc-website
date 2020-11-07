@@ -35,7 +35,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
 
   return (
     <div>
-      <h1 style={{ fontSize: '22px' }}>{todo.title}</h1>
+      <h1>{todo.title}</h1>
       {todoObject?.isVisible && (
         <motion.p
           initial='hidden'
@@ -52,7 +52,6 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
           }}
           transition={{
             delay: 0.15,
-            bounce: false,
           }}
         >
           {todo.task}
