@@ -9,10 +9,10 @@ export default class TodoResolver {
   }
 
   @Query(() => [Todo])
-  async getTodosFromGroup(@Arg('group') group: string): Promise<Todo[]> {
+  async getTodosByTeam(@Arg('team') team: string): Promise<Todo[]> {
     return Todo.find({
       where: {
-        group: group,
+        team: team,
       },
     });
   }
