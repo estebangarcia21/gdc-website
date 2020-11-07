@@ -23,13 +23,6 @@ interface GameData {
   games: Game[];
 }
 
-interface Todo {
-  id: number;
-  group: string;
-  name: string;
-  completed: boolean;
-}
-
 const OurGames: React.FC = () => {
   const { data, loading } = useQuery<GameData>(GET_GAMES);
 
