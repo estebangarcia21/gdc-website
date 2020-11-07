@@ -11,8 +11,9 @@ import TodoResolver from './resolvers/TodoResolver';
 
 const main = async () => {
   await createConnection({
-    type: 'postgres',
-    username: 'postgres',
+    type: 'mysql',
+    username: 'root',
+    password: 'password',
     database: 'gdc_website',
     synchronize: true,
     entities: [Game, Todo],

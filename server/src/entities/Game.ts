@@ -19,8 +19,4 @@ export default class Game extends BaseEntity {
   @Field()
   @Column()
   year: string;
-
-  @Field(() => [String])
-  @Column('text', { array: true })
-  tags: string[];
 }
