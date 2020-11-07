@@ -39,6 +39,7 @@
   transform: scale($scale);
 
   cursor: pointer;
+  -webkit-user-select: none;
 }
 
 .todo-card div {
@@ -66,10 +67,21 @@ h1 {
   transform: scale($scale);
 }
 
-.todo-card #icon {
+.todo-card #icon,
+#name {
   position: absolute;
+}
+
+.todo-card #icon {
   left: -27.5px;
   bottom: -32.5px;
+}
+
+.todo-card #name {
+  margin: 0px;
+
+  right: 22px;
+  bottom: 5px;
 }
 
 #dropdown-filter {
