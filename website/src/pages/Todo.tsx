@@ -1,9 +1,11 @@
 import { gql, useQuery } from '@apollo/client';
 import { easeCubicOut } from 'd3-ease';
-import { motion } from 'framer-motion';
+import { m, motion } from 'framer-motion';
 import React, { useContext, useEffect, useState } from 'react';
 import { addTodo, viewTodo } from '../contexts/todo-context/actions';
 import { TodoContext } from '../contexts/todo-context/TodoContext';
+import redx from '../assets/svgs/red-x.svg';
+import checkmark from '../assets/svgs/checkmark.svg';
 
 const GET_TODOS = gql`
   {
@@ -30,11 +32,13 @@ interface TodoData {
 }
 
 const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
+  const [isHovered, setHovered] = useState(false);
+
   const context = useContext(TodoContext);
-  const todoObject = context.state.todos.find(t => t.id === todo.id);
+  const state = context.state.todos.find(t => t.id === todo.id);
 
   useEffect(() => {
-    if (todoObject === undefined) {
+    if (state === undefined) {
       context.dispatch(
         addTodo({
           id: todo.id,
@@ -42,14 +46,13 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
         })
       );
     }
-  }, [context, todoObject, todo]);
+  }, [context, state, todo]);
 
   return (
     <motion.div
-      key={todo.id}
       className='todo-card'
       initial='closed'
-      animate={todoObject?.isVisible ? 'opened' : 'closed'}
+      animate={state?.isVisible ? 'opened' : 'closed'}
       variants={{
         closed: { height: '150px' },
         opened: {
@@ -58,15 +61,30 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
       }}
       transition={{ ease: easeCubicOut, duration: 0.55 }}
       onClick={() => {
-        context.dispatch(viewTodo(todoObject!));
+        context.dispatch(viewTodo(state!));
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        borderColor: isHovered
+          ? todo.completed
+            ? '#4af09d'
+            : '#f0524a'
+          : 'rgb(36, 36, 36)',
       }}
     >
       <h1>{todo.title}</h1>
-      <p style={{ position: 'absolute', bottom: '0px' }}>{todo.completed}</p>
-      {todoObject?.isVisible && (
+      <div id='icon'>
+        {todo.completed ? (
+          <img src={checkmark} width='32px' alt='Finished' />
+        ) : (
+          <img src={redx} width='32px' alt='Not Finished' />
+        )}
+      </div>
+      {state?.isVisible && (
         <motion.p
           initial='hidden'
-          animate={todoObject?.isVisible ? 'visible' : 'hidden'}
+          animate={state?.isVisible ? 'visible' : 'hidden'}
           variants={{
             hidden: {
               opacity: 0,
