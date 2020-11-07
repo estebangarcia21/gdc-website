@@ -11,8 +11,6 @@
 }
 
 #content {
-  position: relative;
-
   background-color: #181818;
 
   width: 75%;
@@ -24,25 +22,26 @@
   overflow-y: auto;
 }
 
-#welcome-page {
-  p {
-    text-align: center;
-  }
+#welcome-page p {
+  text-align: center;
+  max-width: 50ch;
+
+  padding: 0px 100px;
+  margin: 35px auto;
 }
 
 #group-title {
   text-align: left;
 
   margin-top: 20px;
-  cursor: pointer;
-
   font-weight: 400;
+
+  cursor: pointer;
 }
 
 #resource {
   font-size: 14px;
   margin-left: 140px;
-  max-width: unset;
 
   color: white;
   cursor: pointer;

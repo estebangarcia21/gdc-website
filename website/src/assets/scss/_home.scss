@@ -1,11 +1,12 @@
-#home-container {
-  p,
-  h1,
-  h2,
-  h3 {
-    margin: 35px 15%;
-    max-width: 50ch;
-  }
+#home-container p,
+h1,
+h2 {
+  margin: 35px 15%;
+  max-width: 50ch;
+}
+
+#home-container h3 {
+  text-align: center;
 }
 
 #image-container {
@@ -19,18 +20,14 @@
 
 #join-footer {
   text-align: center;
-
   margin: 0px 0px 75px 0px;
+}
 
-  p {
-    text-align: center;
-    max-width: unset;
-  }
+#join-footer p {
+  max-width: unset;
 }
 
 .button {
-  position: relative;
-
   transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1),
     0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
 
@@ -93,10 +90,10 @@
   justify-content: center;
 
   margin: 20px auto;
+}
 
-  p {
-    margin: unset;
-  }
+#info-cards-container p {
+  margin: unset;
 }
 
 .info-card {
@@ -105,69 +102,56 @@
 
   border-radius: 6px;
   padding: 20px;
+}
 
-  p {
-    color: white;
-    text-align: center;
-  }
+.info-card p {
+  color: white;
+  text-align: center;
+}
 
-  #title {
-    font-size: 1.5rem;
-    margin: 10px;
-  }
+.info-card #title {
+  font-size: 1.5rem;
+  margin: 10px;
+}
 
-  img {
-    display: block;
+.info-card img {
+  display: block;
 
-    margin: 0px auto;
+  margin: 0px auto;
 
-    filter: contrast(0) brightness(100);
-  }
+  filter: contrast(0) brightness(100);
 }
 
 @media only screen and (max-width: 600px) {
-  #home-container {
-    p,
-    h1,
-    h2,
-    h3 {
-      margin: 35px 20px;
-    }
-
-    h3 {
-      font-size: 40px;
-    }
+  #home-container p,
+  h1,
+  h2 {
+    margin: 35px 20px;
   }
 }
 
 @media only screen and (max-width: 525px) {
-  #home-container {
-    h1 {
-      font-size: 50px;
-    }
+  #home-container h1 {
+    font-size: 50px;
+  }
 
-    h2 {
-      font-size: 34px;
-    }
+  #home-container h2 {
+    font-size: 34px;
+  }
 
-    h3 {
-      font-size: 30px;
-    }
+  #home-container h3 {
+    font-size: 30px;
   }
 }
 
 @media only screen and (min-width: 1600px) {
   #images {
-    position: relative;
-
     right: 5%;
   }
 }
 
 @media only screen and (min-width: 2200px) {
   #images {
-    position: relative;
-
     right: 25%;
   }
 }
@@ -179,10 +163,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .info-card {
-    p,
-    h3 {
-      text-align: center;
-    }
+  .info-card p,
+  h3 {
+    text-align: center;
   }
 }

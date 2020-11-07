@@ -1,11 +1,7 @@
 #todo-container {
-  position: relative;
-
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  margin: 100px 0px;
 
   margin: 0px auto;
 
@@ -18,8 +14,6 @@
 }
 
 .todo-card {
-  position: relative;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,44 +31,12 @@
 
   $scale: 1;
 
-  transform: scale($scale);
   -webkit-transform: scale($scale);
   -moz-transform: scale($scale);
   -o-transform: scale($scale);
   transform: scale($scale);
 
   cursor: pointer;
-}
-
-#dropdown-filter {
-  width: 250px;
-  height: 50px;
-
-  display: inline-block;
-
-  border: 3px solid white;
-  border: 3px solid rgb(36, 36, 36);
-  background-color: #111111;
-  border-radius: 8px;
-
-  margin: 30px auto;
-
-  p {
-    margin: 0px 0px;
-  }
-
-  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1);
-  cursor: pointer;
-}
-
-#dropdown-filter-content {
-  display: table-cell;
-  position: absolute;
-  z-index: 1;
-}
-
-#dropdown-filter:hover {
-  border: 3px solid white;
 }
 
 .todo-card:hover {
@@ -87,4 +49,36 @@
   -moz-transform: scale($scale);
   -o-transform: scale($scale);
   transform: scale($scale);
+}
+
+#dropdown-filter {
+  display: inline-block;
+
+  width: 250px;
+  height: 50px;
+
+  border: 3px solid white;
+  border: 3px solid rgb(36, 36, 36);
+  background-color: #111111;
+  border-radius: 8px;
+
+  margin: 30px auto;
+
+  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+
+#dropdown-filter p {
+  margin: unset;
+}
+
+#dropdown-filter-content {
+  position: absolute;
+  display: table-cell;
+
+  z-index: 1;
+}
+
+#dropdown-filter:hover {
+  border: 3px solid white;
 }

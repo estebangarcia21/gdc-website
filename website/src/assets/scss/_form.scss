@@ -1,5 +1,6 @@
 #join-gdc-container {
   background-color: #111111;
+
   height: 100vh;
   min-height: 850px;
 }
@@ -16,10 +17,10 @@ form {
   transform: translateY(-50%);
 
   margin: 0px auto;
+}
 
-  button {
-    margin: 30px 0px;
-  }
+form button {
+  margin: 30px 0px;
 }
 
 label {
