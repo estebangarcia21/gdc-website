@@ -1,5 +1,5 @@
 export interface TodoObject {
-  id: string;
+  id: number;
   isVisible: boolean;
 }
 
