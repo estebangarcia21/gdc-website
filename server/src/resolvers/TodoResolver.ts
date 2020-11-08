@@ -16,6 +16,7 @@ export default class TodoResolver {
       },
       order: {
         completed: 'ASC',
+        title: 'ASC',
       },
     });
   }
