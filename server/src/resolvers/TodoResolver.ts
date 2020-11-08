@@ -14,6 +14,9 @@ export default class TodoResolver {
       where: {
         team: team,
       },
+      order: {
+        completed: 'ASC',
+      },
     });
   }
 }
