@@ -1,15 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Rubik&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
-#home-container p,
-h1,
-h2 {
+#home-container h1,
+h2,
+p {
   margin: 35px 15%;
   max-width: 50ch;
-}
-
-#home-container h1 {
-  margin: 35px 15%;
 }
 
 #home-container h3 {
@@ -118,9 +114,9 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
-  #home-container p,
-  h1,
-  h2 {
+  #home-container h1,
+  h2,
+  p {
     margin: 35px 20px;
   }
 }
@@ -353,10 +349,10 @@ h1 {
 }
 
 #dropdown-filter {
+  position: relative;
   display: inline-block;
   width: 250px;
   height: 50px;
-  border: 3px solid white;
   border: 3px solid #242424;
   background-color: #111111;
   border-radius: 8px;
@@ -372,7 +368,10 @@ h1 {
 
 #dropdown-filter-content {
   position: absolute;
-  display: table-cell;
+  width: 100%;
+  margin-top: 12px;
+  margin-left: 0px;
+  background-color: red;
   z-index: 1;
 }
 
