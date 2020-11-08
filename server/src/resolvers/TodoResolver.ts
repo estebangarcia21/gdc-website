@@ -29,6 +29,6 @@ export default class TodoResolver {
 
     Object.assign(todo, { completed: !todo.completed });
 
-    return await todo?.save();
+    return await todo.save();
   }
 }
