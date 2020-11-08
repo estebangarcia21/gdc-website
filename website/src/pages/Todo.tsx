@@ -6,6 +6,10 @@ import { addTodo, setFilter, viewTodo } from '../contexts/todo-context/actions';
 import { TodoContext } from '../contexts/todo-context/TodoContext';
 import redx from '../assets/svgs/red-x.svg';
 import checkmark from '../assets/svgs/checkmark.svg';
+// @ts-ignore
+import FlareComponent from 'flare-react';
+// @ts-ignore
+import loadingAnimation from '../assets/animations/loading.flr';
 
 const GET_TODOS_BY_TEAM = gql`
   query GetTodos($team: String!) {
@@ -50,7 +54,17 @@ const TodoList: React.FC = () => {
     }
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div>
+        <FlareComponent
+          width={75}
+          height={75}
+          animationName='loading'
+          file={loadingAnimation}
+        />
+      </div>
+    );
 
   const sortedTodos = [...data?.getTodosByTeam!];
   sortedTodos.sort(todo => (todo.completed === false ? 0 : 1));
