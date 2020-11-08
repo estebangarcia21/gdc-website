@@ -10,6 +10,7 @@
     "@types/d3-ease": "^2.0.0",
     "@types/react-router-dom": "^5.1.5",
     "d3-ease": "^2.0.0",
+    "flare-react": "^1.0.7",
     "formik": "^2.2.1",
     "framer-motion": "^2.9.1",
     "graphql": "^15.3.0",
