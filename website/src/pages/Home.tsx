@@ -158,7 +158,6 @@ const Home: React.FC = () => {
 
       <div className='background-b'>
         <motion.div
-          id='home-banner'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

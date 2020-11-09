@@ -3,7 +3,7 @@ import { easeCubicOut } from 'd3-ease';
 // @ts-ignore
 import FlareComponent from 'flare-react';
 import { motion } from 'framer-motion';
-import React, { useContext, useEffect, useReducer, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // @ts-ignore
 import loadingAnimation from '../assets/animations/loading.flr';
 import checkmark from '../assets/svgs/checkmark.svg';
