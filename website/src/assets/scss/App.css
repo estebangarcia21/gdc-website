@@ -333,7 +333,8 @@ h1 {
 }
 
 .todo-card #icon,
-#name {
+#name,
+#complete-icon {
   position: absolute;
 }
 
@@ -344,8 +345,24 @@ h1 {
 
 .todo-card #name {
   margin: 0px;
-  right: 22px;
+  right: 12px;
   bottom: 5px;
+}
+
+.todo-card #complete-icon {
+  margin: 0px;
+  top: 32.5px;
+  right: 27.5px;
+  -webkit-transition: 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1), 0.5s -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.todo-card #complete-icon:hover {
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 #dropdown-filter {
