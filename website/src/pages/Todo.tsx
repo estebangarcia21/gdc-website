@@ -1,15 +1,15 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useMutation, useQuery } from '@apollo/client';
 import { easeCubicOut } from 'd3-ease';
-import { motion } from 'framer-motion';
-import React, { useContext, useEffect, useState } from 'react';
-import { addTodo, setFilter, viewTodo } from '../contexts/todo-context/actions';
-import { TodoContext } from '../contexts/todo-context/TodoContext';
-import redx from '../assets/svgs/red-x.svg';
-import checkmark from '../assets/svgs/checkmark.svg';
 // @ts-ignore
 import FlareComponent from 'flare-react';
+import { motion } from 'framer-motion';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 // @ts-ignore
 import loadingAnimation from '../assets/animations/loading.flr';
+import checkmark from '../assets/svgs/checkmark.svg';
+import redx from '../assets/svgs/red-x.svg';
+import { addTodo, setFilter, viewTodo } from '../contexts/todo-context/actions';
+import { TodoContext } from '../contexts/todo-context/TodoContext';
 
 const GET_TODOS_BY_TEAM = gql`
   query GetTodos($team: String!) {
@@ -19,6 +19,15 @@ const GET_TODOS_BY_TEAM = gql`
       title
       assignee
       task
+      completed
+    }
+  }
+`;
+
+const TOGGLE_COMPLETION = gql`
+  mutation ToggleTodoCompletion($id: Float!) {
+    toggleCompletion(id: $id) {
+      id
       completed
     }
   }
@@ -54,30 +63,26 @@ const TodoList: React.FC = () => {
     }
   );
 
-  if (loading)
-    return (
-      <div>
-        <FlareComponent
-          width={75}
-          height={75}
-          animationName='loading'
-          file={loadingAnimation}
-        />
-      </div>
-    );
-
-  const sortedTodos = [...data?.getTodosByTeam!];
-  sortedTodos.sort(todo => (todo.completed === false ? 0 : 1));
-
   return (
     <div id='todo-container'>
-      {sortedTodos.map(todo => {
-        return (
-          <div key={todo.id}>
-            <TodoCard todo={todo} />
-          </div>
-        );
-      })}
+      {loading ? (
+        <div>
+          <FlareComponent
+            width={75}
+            height={75}
+            animationName='loading'
+            file={loadingAnimation}
+          />
+        </div>
+      ) : (
+        data?.getTodosByTeam.map(todo => {
+          return (
+            <div style={{ opacity: todo.completed ? 0.5 : 1 }}>
+              <TodoCard todo={todo} />
+            </div>
+          );
+        })
+      )}
     </div>
   );
 };
@@ -86,10 +91,10 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
   const [isHovered, setHovered] = useState(false);
 
   const context = useContext(TodoContext);
-  const state = context.state.todos.find(t => t.id === todo.id);
+  const todoState = context.state.todos.find(t => t.id === todo.id);
 
   useEffect(() => {
-    if (state === undefined) {
+    if (todoState === undefined) {
       context.dispatch(
         addTodo({
           id: todo.id,
@@ -97,13 +102,20 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
         })
       );
     }
-  }, [context, state, todo]);
+  }, [context, todoState, todo]);
+
+  const [markTodoAsComplete] = useMutation<{ toggleCompletion: Todo }>(
+    TOGGLE_COMPLETION,
+    {
+      variables: { id: todo.id },
+    }
+  );
 
   return (
     <motion.div
       className='todo-card'
       initial='closed'
-      animate={state?.isVisible ? 'opened' : 'closed'}
+      animate={todoState?.isVisible ? 'opened' : 'closed'}
       variants={{
         closed: { height: '150px' },
         opened: {
@@ -112,7 +124,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
       }}
       transition={{ ease: easeCubicOut, duration: 0.55 }}
       onClick={() => {
-        context.dispatch(viewTodo(state!));
+        context.dispatch(viewTodo(todoState!));
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -125,6 +137,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
       }}
     >
       <h1>{todo.title}</h1>
+
       <div id='icon'>
         {todo.completed ? (
           <img src={checkmark} width='32px' alt='Finished' />
@@ -132,11 +145,13 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
           <img src={redx} width='32px' alt='Not Finished' />
         )}
       </div>
+
       <p id='name'>{todo.assignee}</p>
-      {state?.isVisible && (
+
+      {todoState?.isVisible && (
         <motion.p
           initial='hidden'
-          animate={state?.isVisible ? 'visible' : 'hidden'}
+          animate={todoState?.isVisible ? 'visible' : 'hidden'}
           variants={{
             hidden: {
               opacity: 0,
@@ -151,6 +166,18 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
             delay: 0.15,
           }}
         >
+          {!todo.completed && (
+            <div id='complete-icon'>
+              <img
+                src={checkmark}
+                width='42px'
+                alt='Finished'
+                onClick={() => {
+                  markTodoAsComplete();
+                }}
+              />
+            </div>
+          )}
           {todo.task}
         </motion.p>
       )}
@@ -176,13 +203,13 @@ const Todo: React.FC = () => {
 
   for (const filter in Filters) {
     dropdowns.push(
-      <button
+      <p
         onClick={() => {
           context.dispatch(setFilter(filter));
         }}
       >
         {filter}
-      </button>
+      </p>
     );
   }
 
@@ -190,7 +217,7 @@ const Todo: React.FC = () => {
     <div className='background-a' style={{ textAlign: 'center' }}>
       <h1>To-Dos</h1>
 
-      <button
+      <div
         id='dropdown-filter'
         onClick={() => {
           setDroppedDown(!isDroppedDown);
@@ -198,7 +225,7 @@ const Todo: React.FC = () => {
       >
         <p>{filter}</p>
         {isDroppedDown && <div id='dropdown-filter-content'>{dropdowns}</div>}
-      </button>
+      </div>
 
       <TodoList />
 
