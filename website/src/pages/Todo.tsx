@@ -77,7 +77,7 @@ const TodoList: React.FC = () => {
       ) : (
         data?.getTodosByTeam.map(todo => {
           return (
-            <div style={{ opacity: todo.completed ? 0.5 : 1 }}>
+            <div key={todo.id} style={{ opacity: todo.completed ? 0.5 : 1 }}>
               <TodoCard todo={todo} />
             </div>
           );
@@ -104,12 +104,9 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
     }
   }, [context, todoState, todo]);
 
-  const [markTodoAsComplete] = useMutation<{ toggleCompletion: Todo }>(
-    TOGGLE_COMPLETION,
-    {
-      variables: { id: todo.id },
-    }
-  );
+  const [markTodoAsComplete] = useMutation(TOGGLE_COMPLETION, {
+    variables: { id: todo.id },
+  });
 
   return (
     <motion.div
@@ -186,10 +183,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
 };
 
 const Todo: React.FC = () => {
-  const [isDroppedDown, setDroppedDown] = useState(false);
-
   const context = useContext(TodoContext);
-  const filter = context.state.filter;
 
   enum Filters {
     Programmers = 'Programmers',
@@ -199,17 +193,18 @@ const Todo: React.FC = () => {
     Animators = 'Animators',
   }
 
-  const dropdowns: JSX.Element[] = [];
+  const filters: JSX.Element[] = [];
 
   for (const filter in Filters) {
-    dropdowns.push(
-      <p
+    filters.push(
+      <motion.button
+        key={filter}
         onClick={() => {
           context.dispatch(setFilter(filter));
         }}
       >
         {filter}
-      </p>
+      </motion.button>
     );
   }
 
@@ -217,15 +212,7 @@ const Todo: React.FC = () => {
     <div className='background-a' style={{ textAlign: 'center' }}>
       <h1>To-Dos</h1>
 
-      <div
-        id='dropdown-filter'
-        onClick={() => {
-          setDroppedDown(!isDroppedDown);
-        }}
-      >
-        <p>{filter}</p>
-        {isDroppedDown && <div id='dropdown-filter-content'>{dropdowns}</div>}
-      </div>
+      <div id='filters'>{filters}</div>
 
       <TodoList />
 
