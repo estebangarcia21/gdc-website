@@ -88,7 +88,7 @@ h1 {
 .todo-card #complete-icon {
   margin: 0px;
 
-  top: 32.5px;
+  top: 27.5px;
   right: 27.5px;
 
   transition: 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -104,39 +104,35 @@ h1 {
   transform: scale($scale);
 }
 
-#dropdown-filter {
-  position: relative;
-  display: inline-block;
+#filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  width: 250px;
-  height: 50px;
+  margin: 30px 30px;
+}
 
-  border: 3px solid rgb(36, 36, 36);
+#filters button {
   background-color: #111111;
-  border-radius: 8px;
+  border: none;
 
-  margin: 30px auto;
+  margin: 0px 20px;
+  padding: 0px;
 
-  transition: 0.5s border cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 24px;
+  color: white;
+
+  transition: 0.5s color cubic-bezier(0.075, 0.82, 0.165, 1);
+
   cursor: pointer;
 }
 
-#dropdown-filter p {
-  margin: unset;
+#filters p {
+  margin: 0px 30px;
+  cursor: pointer;
 }
 
-#dropdown-filter-content {
-  position: absolute;
-  width: 100%;
-
-  margin-top: 12px;
-  margin-left: 0px;
-
-  background-color: red;
-
-  z-index: 1;
-}
-
-#dropdown-filter:hover {
-  border: 3px solid white;
+#filters:hover p {
+  color: #4af09d;
 }
