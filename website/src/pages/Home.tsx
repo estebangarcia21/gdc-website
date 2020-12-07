@@ -12,8 +12,9 @@ import musicImage from "../assets/svgs/music-illustration.svg";
 import musicSvg from "../assets/svgs/music.svg";
 import writersSvg from "../assets/svgs/pencil-draw.svg";
 import photoImage from "../assets/svgs/photo.svg";
+import { ComponentChildren } from "../utils/component-children";
 
-interface CardProps {
+interface CardProps extends ComponentChildren {
     title: string;
     icon: string;
 }
@@ -28,7 +29,7 @@ interface FloatingImageProps {
     };
 }
 
-const Card: React.FC<CardProps> = ({ title, icon, children }) => {
+const Card = ({ title, icon, children }: CardProps) => {
     return (
         <div className="info-card">
             <img src={icon} width="35px" height="35px" alt="Icon" />
@@ -40,16 +41,11 @@ const Card: React.FC<CardProps> = ({ title, icon, children }) => {
     );
 };
 
-const Checkmark: React.FC = () => {
+const Checkmark = () => {
     return <img src={checkmark} width="30" alt="Checkmark" />;
 };
 
-const FloatingImage: React.FC<FloatingImageProps> = ({
-    src,
-    alt,
-    width,
-    position,
-}) => {
+const FloatingImage = ({ src, alt, width, position }: FloatingImageProps) => {
     return (
         <motion.img
             src={src}
@@ -72,7 +68,7 @@ const FloatingImage: React.FC<FloatingImageProps> = ({
     );
 };
 
-const Home: React.FC = () => {
+const Home = () => {
     const [playedAnimations, setPlayedAnimations] = useState({
         joinTeamCards: false,
         footer: false,
