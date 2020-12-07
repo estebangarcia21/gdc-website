@@ -1,60 +1,60 @@
 #sidebar {
-  background-color: #111111;
+    background-color: #111111;
 
-  width: 25%;
-  height: 100vh;
+    width: 25%;
+    height: 100vh;
 
-  float: left;
+    float: left;
 
-  overflow-x: hidden;
-  overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #content {
-  background-color: #181818;
+    background-color: #181818;
 
-  width: 75%;
-  height: 100vh;
+    width: 75%;
+    height: 100vh;
 
-  float: left;
+    float: left;
 
-  overflow-x: hidden;
-  overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #welcome-page p {
-  text-align: center;
-  max-width: 50ch;
+    text-align: center;
+    max-width: 50ch;
 
-  padding: 0px 100px;
-  margin: 35px auto;
+    padding: 0px 100px;
+    margin: 35px auto;
 }
 
 #group-title {
-  text-align: left;
+    text-align: left;
 
-  margin-top: 20px;
-  font-weight: 400;
+    margin-top: 20px;
+    font-weight: 400;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #resource {
-  font-size: 14px;
-  margin-left: 140px;
+    font-size: 14px;
+    margin-left: 140px;
 
-  color: white;
-  cursor: pointer;
+    color: white;
+    cursor: pointer;
 
-  font-weight: 400;
+    font-weight: 400;
 }
 
 #resource-title {
-  font-size: 32px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+    font-size: 32px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
 
-  color: white;
+    color: white;
 
-  margin: 35px 35px;
+    margin: 35px 35px;
 }

@@ -1,168 +1,203 @@
-import React, { CSSProperties, useContext, useEffect, useState } from 'react';
+import React, { CSSProperties, useContext, useEffect, useState } from "react";
 import {
-  addResource,
-  viewResource,
-} from '../contexts/resource-context/actions';
-import { ResourceContext } from '../contexts/resource-context/ResourceContext';
-import GettingStartedProgrammers from './resource-pages/programmers/GettingStartedProgrammers';
+    addResource,
+    viewResource,
+} from "../contexts/resource-context/actions";
+import { ResourceContext } from "../contexts/resource-context/ResourceContext";
+import GettingStartedProgrammers from "./resource-pages/programmers/GettingStartedProgrammers";
 
 interface DirectoryProps {
-  name: string;
-  depth: number;
+    name: string;
+    depth: number;
 }
 
 interface ResourceProps {
-  name: string;
-  page: React.FC;
+    name: string;
+    page: React.FC;
 }
 
 const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
-  const [isViewed, setIsViewed] = useState(false);
+    const [isViewed, setIsViewed] = useState(false);
 
-  const marginLeft = 50 + 30 * (depth + 1);
-  const fontSize = 20 - 4 * depth - 1;
+    const marginLeft = 50 + 30 * (depth + 1);
+    const fontSize = 20 - 4 * depth - 1;
 
-  return (
-    <div>
-      <h4
-        id='group-title'
-        style={{
-          marginLeft: `${marginLeft}px`,
-          fontSize: `${fontSize}px`,
-        }}
-        onClick={() => {
-          setIsViewed(!isViewed);
-        }}
-      >
-        {name}
-      </h4>
-      {isViewed && <div>{children}</div>}
-    </div>
-  );
+    return (
+        <div>
+            <h4
+                id="group-title"
+                style={{
+                    marginLeft: `${marginLeft}px`,
+                    fontSize: `${fontSize}px`,
+                }}
+                onClick={() => {
+                    setIsViewed(!isViewed);
+                }}
+            >
+                {name}
+            </h4>
+            {isViewed && <div>{children}</div>}
+        </div>
+    );
 };
 
 const Resource: React.FC<ResourceProps> = ({ name, page }) => {
-  const context = useContext(ResourceContext);
+    const context = useContext(ResourceContext);
 
-  const resource = context.state.resources.find(r => r.name === name);
+    const resource = context.state.resources.find(r => r.name === name);
 
-  useEffect(() => {
-    if (resource === undefined) {
-      context.dispatch(
-        addResource({
-          name: name,
-          page: page,
-          isActive: false,
-        })
-      );
-    }
-  }, [name, page, resource, context]);
+    useEffect(() => {
+        if (resource === undefined) {
+            context.dispatch(
+                addResource({
+                    name: name,
+                    page: page,
+                    isActive: false,
+                })
+            );
+        }
+    }, [name, page, resource, context]);
 
-  return (
-    <div>
-      <h3
-        id='resource'
-        onClick={() => {
-          context.dispatch(viewResource(resource!));
-        }}
-      >
-        {name}
-      </h3>
-    </div>
-  );
+    return (
+        <div>
+            <h3
+                id="resource"
+                onClick={() => {
+                    context.dispatch(viewResource(resource!));
+                }}
+            >
+                {name}
+            </h3>
+        </div>
+    );
 };
 
 const Resources: React.FC = () => {
-  const activeResource = useContext(ResourceContext).state.resources.find(
-    r => r.isActive
-  );
+    const activeResource = useContext(ResourceContext).state.resources.find(
+        r => r.isActive
+    );
 
-  const ActivePage = ((Page: React.FC): React.FC => ({ ...props }) => (
-    <Page {...props} />
-  ))(activeResource?.page!);
+    const ActivePage = ((Page: React.FC): React.FC => ({ ...props }) => (
+        <Page {...props} />
+    ))(activeResource?.page!);
 
-  const styles = (isDefault: boolean): CSSProperties => {
-    return isDefault
-      ? {
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }
-      : {};
-  };
+    const styles = (isDefault: boolean): CSSProperties => {
+        return isDefault
+            ? {
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+              }
+            : {};
+    };
 
-  return (
-    <div>
-      <div id='sidebar'>
-        <p style={{ marginLeft: '50px', fontSize: '32px' }}>Resources</p>
+    return (
+        <div>
+            <div id="sidebar">
+                <p style={{ marginLeft: "50px", fontSize: "32px" }}>
+                    Resources
+                </p>
 
-        <Directory name='Programmers' depth={0}>
-          <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
-          </Directory>
-          <Directory name='Your First Program' depth={1}>
-            <Resource
-              name='1.0 What is Object Oriented Programming'
-              page={GettingStartedProgrammers}
-            />
-          </Directory>
-        </Directory>
-        <Directory name='Artists' depth={0}>
-          <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
-          </Directory>
-          <Directory name='Your First Program' depth={1}>
-            <Resource
-              name='1.0 The Art Workflow'
-              page={GettingStartedProgrammers}
-            />
-          </Directory>
-        </Directory>
-        <Directory name='Animators' depth={0}>
-          <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
-          </Directory>
-          <Directory name='Your First Program' depth={1}>
-            <Resource
-              name='1.0 Animation Introduction'
-              page={GettingStartedProgrammers}
-            />
-          </Directory>
-        </Directory>
-        <Directory name='Writers' depth={0}>
-          <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
-          </Directory>
-          <Directory name='Your First Program' depth={1}>
-            <Resource
-              name='1.0 The Writing Workflow'
-              page={GettingStartedProgrammers}
-            />
-          </Directory>
-        </Directory>
-        <Directory name='Musicians' depth={0}>
-          <Directory name='Getting Started' depth={1}>
-            <Resource name='1.0 Welcome' page={GettingStartedProgrammers} />
-            <Resource name='1.1 Setting Up' page={GettingStartedProgrammers} />
-          </Directory>
-          <Directory name='The Digital Audio Workstation' depth={1}>
-            <Resource
-              name='1.0 Learning the Digital Audio Workstation (DAW)'
-              page={GettingStartedProgrammers}
-            />
-          </Directory>
-        </Directory>
-      </div>
+                <Directory name="Programmers" depth={0}>
+                    <Directory name="Getting Started" depth={1}>
+                        <Resource
+                            name="1.0 Welcome"
+                            page={GettingStartedProgrammers}
+                        />
+                        <Resource
+                            name="1.1 Setting Up"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                    <Directory name="Your First Program" depth={1}>
+                        <Resource
+                            name="1.0 What is Object Oriented Programming"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                </Directory>
+                <Directory name="Artists" depth={0}>
+                    <Directory name="Getting Started" depth={1}>
+                        <Resource
+                            name="1.0 Welcome"
+                            page={GettingStartedProgrammers}
+                        />
+                        <Resource
+                            name="1.1 Setting Up"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                    <Directory name="Your First Program" depth={1}>
+                        <Resource
+                            name="1.0 The Art Workflow"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                </Directory>
+                <Directory name="Animators" depth={0}>
+                    <Directory name="Getting Started" depth={1}>
+                        <Resource
+                            name="1.0 Welcome"
+                            page={GettingStartedProgrammers}
+                        />
+                        <Resource
+                            name="1.1 Setting Up"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                    <Directory name="Your First Program" depth={1}>
+                        <Resource
+                            name="1.0 Animation Introduction"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                </Directory>
+                <Directory name="Writers" depth={0}>
+                    <Directory name="Getting Started" depth={1}>
+                        <Resource
+                            name="1.0 Welcome"
+                            page={GettingStartedProgrammers}
+                        />
+                        <Resource
+                            name="1.1 Setting Up"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                    <Directory name="Your First Program" depth={1}>
+                        <Resource
+                            name="1.0 The Writing Workflow"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                </Directory>
+                <Directory name="Musicians" depth={0}>
+                    <Directory name="Getting Started" depth={1}>
+                        <Resource
+                            name="1.0 Welcome"
+                            page={GettingStartedProgrammers}
+                        />
+                        <Resource
+                            name="1.1 Setting Up"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                    <Directory name="The Digital Audio Workstation" depth={1}>
+                        <Resource
+                            name="1.0 Learning the Digital Audio Workstation (DAW)"
+                            page={GettingStartedProgrammers}
+                        />
+                    </Directory>
+                </Directory>
+            </div>
 
-      <div id='content' style={styles(activeResource?.name === 'Welcome')}>
-        <ActivePage />
-      </div>
-    </div>
-  );
+            <div
+                id="content"
+                style={styles(activeResource?.name === "Welcome")}
+            >
+                <ActivePage />
+            </div>
+        </div>
+    );
 };
 
 export default Resources;

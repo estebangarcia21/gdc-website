@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 interface ResourcePageHeaderProps {
-  title: string;
+    title: string;
 }
 
 const ResourcePageHeader: React.FC<ResourcePageHeaderProps> = ({ title }) => {
-  return <div>{title}</div>;
+    return <div>{title}</div>;
 };
 
 export default ResourcePageHeader;
