@@ -14,7 +14,7 @@ interface DirectoryProps extends ComponentChildren {
 
 interface ResourceProps {
     name: string;
-    page: React.ComponentType;
+    page: JSX.Element;
 }
 
 const Directory = ({ name, depth, children }: DirectoryProps) => {
@@ -73,14 +73,10 @@ const Resource = ({ name, page }: ResourceProps) => {
     );
 };
 
-const Resources: React.FC = () => {
+const Resources = () => {
     const activeResource = useContext(ResourceContext).state.resources.find(
         r => r.isActive
     );
-
-    const ActivePage = (Page: React.ComponentType) => ({ ...props }) => {
-        return <Page {...props} />;
-    };
 
     const styles = (isDefault: boolean): CSSProperties => {
         return isDefault
@@ -195,7 +191,7 @@ const Resources: React.FC = () => {
                 id="content"
                 style={styles(activeResource?.name === "Welcome")}
             >
-                <ActivePage />
+                {activeResource?.page}
             </div>
         </div>
     );
