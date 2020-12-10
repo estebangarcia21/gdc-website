@@ -14,7 +14,7 @@ interface DirectoryProps extends ComponentChildren {
 
 interface ResourceProps {
     name: string;
-    page: JSX.Element;
+    page: () => JSX.Element;
 }
 
 const Directory = ({ name, depth, children }: DirectoryProps) => {
@@ -52,7 +52,7 @@ const Resource = ({ name, page }: ResourceProps) => {
             context.dispatch(
                 addResource({
                     name: name,
-                    page: page,
+                    page: page(),
                     isActive: false,
                 })
             );

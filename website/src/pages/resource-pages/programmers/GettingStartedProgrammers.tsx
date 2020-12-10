@@ -1,7 +1,7 @@
 import React from "react";
 import ResourcePageHeader from "../../../components/ResourcePageHeader";
 
-const GettingStartedProgrammers: React.FC = () => {
+const GettingStartedProgrammers = () => {
     return (
         <div>
             <ResourcePageHeader title="Getting Started | Programmers" />
