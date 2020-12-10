@@ -1,18 +1,23 @@
-import { PrismaClient } from "@prisma/client";
+import cors from "cors";
+import dotenv from "dotenv";
 import express from "express";
+import { client } from "./pg-client";
 import { masterRouter } from "./routes/master-router";
 
-const prisma = new PrismaClient();
-
 const main = async () => {
+    dotenv.config();
+
     const app = express();
+    app.use(cors());
 
     app.use("/api", masterRouter);
 
-    const port = process.env.PORT || 4000;
+    const port = process.env.PORT;
     app.listen(port, () =>
-        console.log(`api started on http://localhost:${port}/api`)
+        console.log(`API started on ${process.env.BASE_URL}:${port}/api`)
     );
 };
 
-main().catch(err => console.log(err));
+main()
+    .then(() => client.end())
+    .catch(err => console.log(err));
