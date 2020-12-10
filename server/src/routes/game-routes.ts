@@ -26,16 +26,18 @@ router.get("/:title", async (req, res) => {
 
 router.get("/:id/tags", async (req, res) => {
     const result = await client.query(
-        `SELECT * FROM "Tag" WHERE game_id = $1`,
+        `SELECT tag FROM "Tag" WHERE game_id = $1`,
         [req.params.id]
     );
-    const data = result.rows[0];
+    const data = result.rows;
 
     if (!data) res.status(404).send(gameNotFoundResponse);
 
-    const tags = Object.keys(data).filter(
-        key => data[key] !== false && key !== "game_id"
-    );
+    const tags: number[] = [];
+
+    for (let i = 0; i < data.length; i++) {
+        tags.push(data[i].tag);
+    }
 
     res.send({ tags });
 });
