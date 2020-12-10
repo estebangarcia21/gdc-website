@@ -4,19 +4,20 @@ import {
     viewResource,
 } from "../contexts/resource-context/actions";
 import { ResourceContext } from "../contexts/resource-context/ResourceContext";
+import { ComponentChildren } from "../utils/component-children";
 import GettingStartedProgrammers from "./resource-pages/programmers/GettingStartedProgrammers";
 
-interface DirectoryProps {
+interface DirectoryProps extends ComponentChildren {
     name: string;
     depth: number;
 }
 
 interface ResourceProps {
     name: string;
-    page: React.FC;
+    page: React.ComponentType;
 }
 
-const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
+const Directory = ({ name, depth, children }: DirectoryProps) => {
     const [isViewed, setIsViewed] = useState(false);
 
     const marginLeft = 50 + 30 * (depth + 1);
@@ -41,7 +42,7 @@ const Directory: React.FC<DirectoryProps> = ({ name, depth, children }) => {
     );
 };
 
-const Resource: React.FC<ResourceProps> = ({ name, page }) => {
+const Resource = ({ name, page }: ResourceProps) => {
     const context = useContext(ResourceContext);
 
     const resource = context.state.resources.find(r => r.name === name);
@@ -77,9 +78,9 @@ const Resources: React.FC = () => {
         r => r.isActive
     );
 
-    const ActivePage = ((Page: React.FC): React.FC => ({ ...props }) => (
-        <Page {...props} />
-    ))(activeResource?.page!);
+    const ActivePage = (Page: React.ComponentType) => ({ ...props }) => {
+        return <Page {...props} />;
+    };
 
     const styles = (isDefault: boolean): CSSProperties => {
         return isDefault

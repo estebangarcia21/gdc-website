@@ -23,7 +23,7 @@ interface GameData {
     games: Game[];
 }
 
-const OurGames: React.FC = () => {
+const OurGames = () => {
     const { data, loading } = useQuery<GameData>(GET_GAMES);
 
     if (loading) return <div>Loading...</div>;

@@ -50,7 +50,7 @@ interface TodoData {
     getTodosByTeam: Todo[];
 }
 
-const TodoList: React.FC = () => {
+const TodoList = () => {
     const context = useContext(TodoContext);
     const filter = context.state.filter;
 
@@ -185,7 +185,7 @@ const TodoCard: React.FC<{ todo: Todo }> = ({ todo }) => {
     );
 };
 
-const Todo: React.FC = () => {
+const Todo = () => {
     const [isDroppedDown, setDroppedDown] = useState(false);
 
     const context = useContext(TodoContext);

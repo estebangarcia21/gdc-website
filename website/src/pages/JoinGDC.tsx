@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import React from "react";
 
-const JoinGDC: React.FC = () => {
+const JoinGDC = () => {
     const formik = useFormik({
         initialValues: {
             firstName: "",
