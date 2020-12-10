@@ -25,10 +25,12 @@ router.get("/:team", async (req, res) => {
             error:
                 "Team must be either programmers, artists, writers, animators, musicians",
         });
+
+        return;
     }
 
     const result = await client.query(`SELECT * FROM "Todo" WHERE team = $1`, [
-        inputTeam.charAt(0).toUpperCase() + inputTeam.slice(1),
+        inputTeam,
     ]);
     const data = result.rows;
 
