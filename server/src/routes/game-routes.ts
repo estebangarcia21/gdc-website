@@ -17,7 +17,6 @@ router.get("/:title", async (req, res) => {
     const result = await client.query(`SELECT * FROM "Game" WHERE title = $1`, [
         req.params.title,
     ]);
-
     const data = result.rows[0];
 
     if (!data) res.status(404).send(gameNotFoundResponse);
@@ -30,7 +29,6 @@ router.get("/:id/tags", async (req, res) => {
         `SELECT * FROM "Tag" WHERE game_id = $1`,
         [req.params.id]
     );
-
     const data = result.rows[0];
 
     if (!data) res.status(404).send(gameNotFoundResponse);
