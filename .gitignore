@@ -22,4 +22,4 @@ website/build
 
 # other
 .vscode
-.code-workspace
+*.code-workspace
