@@ -1,6 +1,5 @@
 # dependencies
-server/node_modules
-website/node_modules
+node_modules
 
 # testing
 website/coverage
