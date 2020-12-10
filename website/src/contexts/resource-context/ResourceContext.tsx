@@ -1,5 +1,6 @@
 import React, { createContext, Dispatch, useReducer } from "react";
 import Welcome from "../../pages/resource-pages/Welcome";
+import { ComponentChildren } from "../../utils/component-children";
 import { resourceReducer } from "./reducers";
 import { ResourceStates } from "./types";
 
@@ -21,7 +22,7 @@ export const ResourceContext = createContext<{
     dispatch: () => null,
 });
 
-export const ResourceContextProvider: React.FC = ({ children }) => {
+export const ResourceContextProvider = ({ children }: ComponentChildren) => {
     const [state, dispatch] = useReducer(resourceReducer, initialState);
 
     return (
