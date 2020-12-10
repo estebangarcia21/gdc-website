@@ -1,32 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./App.css";
-import logo from "./logo.svg";
+import { Game } from "./utils/api-types";
+import { serverConfig } from "./utils/default-axios-config";
 
 function App() {
-    const [result, setResult] = useState<{ title: string; content: string }>({
-        title: "loading",
-        content: "loading",
-    });
+    const [result, setResult] = useState<Game[]>([]);
 
     useEffect(() => {
-        axios.get("http://localhost:4000/api/games").then(res => {
-            const { title, content } = res.data;
-
-            setResult({ title, content });
-        });
+        axios.get("/games", serverConfig).then(res => setResult(res.data));
     });
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-
-                {result.title}
-                <br />
-                <br />
-                {result.content}
-            </header>
+        <div className="App" style={{ color: "black" }}>
+            {result.map(game => (
+                <div key={game.id}>
+                    {game.title} + {game.description}
+                </div>
+            ))}
         </div>
     );
 }
