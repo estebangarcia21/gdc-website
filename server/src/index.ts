@@ -18,6 +18,8 @@ const main = async () => {
     );
 };
 
-main()
-    .then(() => client.end())
-    .catch(err => console.log(err));
+process.on("exit", () => {
+    client.end();
+});
+
+main().catch(err => console.log(err));
