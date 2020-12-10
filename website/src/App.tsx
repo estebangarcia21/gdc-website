@@ -21,23 +21,28 @@ const App: React.FC = () => {
         <ApolloProvider client={client}>
             <Router>
                 <ScrollToTop />
+
                 <Switch>
                     <Route path="/todo">
                         <TodoContextProvider>
                             <Todo />
                         </TodoContextProvider>
                     </Route>
+
                     <Route path="/join-gdc">
                         <JoinGDC />
                     </Route>
+
                     <Route path="/our-games">
                         <OurGames />
                     </Route>
+
                     <Route path="/resources">
                         <ResourceContextProvider>
                             <Resources />
                         </ResourceContextProvider>
                     </Route>
+
                     <Route path="/">
                         <Home />
                     </Route>
