@@ -1,6 +1,6 @@
 export interface ResourceObject {
     name: string;
-    page: React.FC;
+    page: React.ComponentType;
     isActive: boolean;
 }
 
